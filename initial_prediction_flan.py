@@ -55,7 +55,7 @@ def create_prompt(self, problem: str, options: str) -> str:
         Returns:
             Formatted prompt string
         """
-        prompt = f"""Solve the following problem step by step and select the correct answer.
+        prompt = f"""Solve the following problem step by step and select the correct answer. These questions are from different subjects including math, physics, and chemistry.
 
     Problem: {problem}
 

@@ -1,0 +1,250 @@
+{
+  "results": [
+    {
+      "problem": "the banker ' s gain of a certain sum due 3 years hence at 10 % per annum is rs . 36 . what is the present worth ?",
+      "options": "a ) rs . 400 , b ) rs . 300 , c ) rs . 500 , d ) rs . 350 , e ) none of these",
+      "correct_answer": "a",
+      "predicted_answer": "e",
+      "is_correct": false,
+      "rationale": "1. We need to calculate the present worth (P) of a future amount (F) using the formula: P = F / (1 + r)^n where r is the annual interest rate and n is the number of years. In this case, the future amount (F) is Rs. 36, the annual interest rate (r) is 10% or 0.10, and the number of years (n) is 3.\n\n   P = 36 / (1 + 0.10)^3\n\n2. Calculate the present worth:\n\n   P = 36 / (1.10)^3\n   P = 36 / 1.331\n   P = approximately 27.16\n\n3. Rounding to the nearest rupee, the present worth is approximately Rs. 27.\n\nFinal answer: e) None of these (since the given options are not close to the calculated present worth of Rs. 27)",
+      "category": "gain"
+    },
+    {
+      "problem": "average age of students of an adult school is 40 years . 120 new students whose average age is 32 years joined the school . as a result the average age is decreased by 4 years . find the number of students of the school after joining of the new students .",
+      "options": "a ) 1200 , b ) 120 , c ) 360 , d ) 240 , e ) none of these",
+      "correct_answer": "d",
+      "predicted_answer": "d",
+      "is_correct": true,
+      "rationale": "1. Let x be the original number of students in the school. Their average age is 40 years, so their total age is 40x years.\n\n2. 120 new students join the school, whose average age is 32 years. The total age of these new students is 32 * 120 = 3840 years.\n\n3. After the new students join, the total age of all students is (40x + 3840) years.\n\n4. The new average age is 40 - 4 = 36 years. So, the total age of all students should be 36 * (x + 120).\n\n5. Equating the total ages, we get: 40x + 3840 = 36 * (x + 120).\n\n6. Solving for x, we find x \u2248 240.\n\nFinal answer: d ) 240",
+      "category": "general"
+    },
+    {
+      "problem": "sophia finished 2 / 3 of a book . she calculated that she finished 90 more pages than she has yet to read . how long is her book ?",
+      "options": "a ) 229 , b ) 270 , c ) 877 , d ) 266 , e ) 281",
+      "correct_answer": "b",
+      "predicted_answer": "b",
+      "is_correct": true,
+      "rationale": "1. Let's denote the number of pages in the book as x.\n2. Sophia finished 2/3 of the book, so she read 2/3 * x pages.\n3. The remaining pages are 1/3 of the book, which is 1/3 * x pages.\n4. The difference between the pages she finished and the pages she has left is 90, so we can write the equation: 2/3 * x - 1/3 * x = 90\n5. Simplifying the equation: 1/3 * x = 90\n6. Multiplying both sides by 3: x = 270\n\nFinal answer: b) 270",
+      "category": "general"
+    },
+    {
+      "problem": "120 is what percent of 50 ?",
+      "options": "a ) 5 % , b ) 240 % , c ) 50 % , d ) 2 % , e ) 500 %",
+      "correct_answer": "b",
+      "predicted_answer": "d",
+      "is_correct": false,
+      "rationale": "Step 1: Find the fraction of 120 as a fraction of 50.\n\n120/50 = (120/100) * (1/50) = (12/10) * (1/50) = 12/500\n\nStep 2: Convert the fraction to a decimal by dividing the numerator by the denominator.\n\n12/500 = 0.024\n\nStep 3: Convert the decimal to a percent by multiplying by 100.\n\n0.024 * 100 = 2.4\n\nSince we are looking for a percent, we round our answer to the nearest whole number:\n\n2.4 \u2248 2\n\nFinal answer: d) 2%\n\nThis means that 120 is 2% of 50.",
+      "category": "gain"
+    },
+    {
+      "problem": "there are 10 girls and 20 boys in a classroom . what is the ratio of girls to boys ?",
+      "options": "a ) 1 / 2 , b ) 1 / 3 , c ) 1 / 5 , d ) 10 / 30 , e ) 2 / 5",
+      "correct_answer": "a",
+      "predicted_answer": "a",
+      "is_correct": true,
+      "rationale": "1. To find the ratio of girls to boys, we divide the number of girls by the number of boys.\n\n2. So, the ratio = (number of girls) / (number of boys) = 10 / 20 = 1 / 2\n\nFinal answer: a) 1 / 2",
+      "category": "other"
+    },
+    {
+      "problem": "an empty fuel tank with a capacity of 218 gallons was filled partially with fuel a and then to capacity with fuel b . fuel a contains 12 % ethanol by volume and fuel b contains 16 % ethanol by volume . if the full fuel tank contains 30 gallons of ethanol , how many gallons of fuel a were added ?",
+      "options": "a ) 122 , b ) 150 , c ) 100 , d ) 80 , e ) 50",
+      "correct_answer": "a",
+      "predicted_answer": "a",
+      "is_correct": true,
+      "rationale": "1. First, let's find the amount of ethanol in the full tank (218 gallons) with only fuel b. Since fuel b contains 16% ethanol by volume, we can calculate the amount of ethanol in the full tank as follows:\n\n   Ethanol in full tank (with fuel b only) = Tank capacity * Ethanol percentage in fuel b\n   = 218 gallons * 0.16\n   = 34.88 gallons (rounded to two decimal places for simplicity)\n\n2. Now, we know that the full tank contains 30 gallons of ethanol. So, the amount of ethanol in the tank after adding fuel a is:\n\n   Ethanol in tank after adding fuel a = 30 gallons (from step 1) + Ethanol in fuel a\n\n3. Since fuel a contains 12% ethanol by volume, we can calculate the amount of ethanol in the fuel a added as follows:\n\n   Ethanol in fuel a = (Total ethanol in the tank after adding fuel a - Ethanol in full tank with fuel b only) / Ethanol percentage in fuel a\n   = (30 gallons - 34.88 gallons) / 0.12\n   = -4.88 gallons (This value is negative because we're trying to find the amount of fuel a added, not the amount of ethanol in it)\n\n4. To find the amount of fuel a added, we can rearrange the formula from step 3 as follows:\n\n   Amount of fuel a added = (Total ethanol in the tank after adding fuel a - Ethanol in full tank with fuel b only) / (Ethanol percentage in fuel a * Gallons of ethanol per gallon of fuel a)\n\n   First, we need to find the gallons of ethanol per gallon of fuel a. Since fuel a contains 12% ethanol by volume, 1 gallon of fuel a contains 0.12 gallons of ethanol.\n\n   Then, we can calculate the amount of fuel a added:\n\n   Amount of fuel a added = (30 gallons - 34.",
+      "category": "gain"
+    },
+    {
+      "problem": "an article is bought for rs . 823 and sold for rs . 1000 , find the gain percent ?",
+      "options": "a ) 21.4 % , b ) 21.5 % , c ) 21.6 % , d ) 21.7 % , e ) 21.8 %",
+      "correct_answer": "b",
+      "predicted_answer": "c",
+      "is_correct": false,
+      "rationale": "1. First, let's find the gain or profit by subtracting the cost price from the selling price:\n   Gain = Selling price - Cost price\n   Gain = 1000 - 823 = 177\n\n2. Now, let's find the gain as a percentage of the cost price:\n   Gain percent = (Gain / Cost price) * 100%\n   Gain percent = (177 / 823) * 100%\n\n3. To calculate the gain percent, we'll perform the division first:\n   177 / 823 = 0.21585046356\n\n4. Now, let's multiply by 100% to get the gain percent:\n   Gain percent = 0.21585046356 * 100% = 21.585046356%\n\n5. Since we're looking for the whole number, we'll round the gain percent to the nearest whole number:\n   Gain percent \u2248 21.6%\n\nFinal answer: c) 21.6%",
+      "category": "gain"
+    },
+    {
+      "problem": "6 workers should finish a job in 8 days . after 3 days came 4 workers join them . how many days m do they need to finish the same job ?",
+      "options": "a ) 3 , b ) 4 , c ) 5 , d ) 6 , e ) 7",
+      "correct_answer": "a",
+      "predicted_answer": "c",
+      "is_correct": false,
+      "rationale": "1. Let's first find the work done by 6 workers in 1 day. Since they complete the job in 8 days, their combined work rate is 1/8 of the job per day. Since there are 6 workers, each worker's individual work rate is 1/8/6 = 1/48 of the job per day.\n\n2. Now, the 6 workers have worked for 3 days, so they have completed 3*1/48 = 3/48 of the job.\n\n3. After 3 days, 4 more workers join them. Now, the combined work rate of all 10 workers is (6+4)*1/48 = 10/48 of the job per day.\n\n4. To find out how many days they need to finish the remaining 3/48 - 3/48 (since they have already done 3/48 of the job) of the job, we divide the remaining work by their combined work rate: (3/48 - 3/48) / (10/48) = 0 days.\n\n5. However, this answer is incorrect because we cannot finish a fraction of a day. Since the work rate increased significantly with the addition of the 4 workers, the remaining time should be less than 3 days.\n\n6. To find the correct answer, we subtract the time the original 6 workers took to complete 1/48 of the job from the remaining work: 1/48 - (3/48 - 3/48) = 1/48.\n\n7. Since their combined work rate is now 10/48, we divide the remaining work by their combined work rate: 1/48 / (10/48) = 1/10.\n\nFinal answer: c ) 5\n\nThe final answer is c) 5 days because the 10 workers can complete 1/10 of the job each day, and they have 1/48 of the job remaining, which is equivalent to 5 days of work.",
+      "category": "physics"
+    },
+    {
+      "problem": "j is 25 % less than p and 20 % less than t . t is q % less than p . what is the value of q ?",
+      "options": "a ) 93.5 , b ) 90 , c ) 6.75 , d ) 6.25 , e ) 2",
+      "correct_answer": "d",
+      "predicted_answer": "e",
+      "is_correct": false,
+      "rationale": "1. Let's denote the values as follows: p = 100, t = 0.8p (since t is 20% less than p), and j = 0.75p (since j is 25% less than p).\n\n2. From the given information, we can find the value of t: t = 0.8 * 100 = 80.\n\n3. Since j is 25% less than t, we can find the value of j: j = 0.75 * 80 = 60.\n\n4. Now, we know that t is q% less than p, so we can write the equation: 80 = 0.0q * 100. Solving for q, we get q = 80 / 100 = 0.8.\n\nFinal answer: e) 2 (since q = 0.8 and q is closest to 2 among the given options)",
+      "category": "gain"
+    },
+    {
+      "problem": "a student was asked to find 4 / 5 of a number . but the student divided the number by 4 / 5 , thus the student got 36 more than the correct answer . find the number .",
+      "options": "a ) 60 , b ) 70 , c ) 80 , d ) 90 , e ) 100",
+      "correct_answer": "c",
+      "predicted_answer": "b",
+      "is_correct": false,
+      "rationale": "1. First, let's denote the unknown number as N.\n2. The student made a mistake by dividing N by 4/5 instead of multiplying it by 4/5.\n3. This means the student calculated N * (1 - 4/5) instead of N * (4/5).\n4. We know that the student's answer is 36 more than the correct answer, so we can write the equation as follows:\n\n   N * (1 - 4/5) = N * (4/5) + 36\n\n5. To solve for N, we first subtract N * (4/5) from both sides of the equation:\n\n   N * (1 - 4/5) - N * (4/5) = 36\n\n6. Simplifying the equation:\n\n   N * (-1/5) = 36\n\n7. Multiplying both sides by -5 to get N:\n\n   N = -5 * 36 = -180\n\n8. Since the number cannot be negative, we know there must be an error in the question or the student's calculation. In this case, let's assume there is a typo and the question should be \"find 5/4 of a number\" instead of \"find 4/5 of a number.\"\n\n9. To find the number, we can rewrite the equation as:\n\n   N * (5/4) = N + 36\n\n10. Solving for N:\n\n    N * (5/4) - N = 36\n    (5/4) * N - N = 36\n    (1/4) * N = 36\n    N = 4 * 36 = 144\n\nFinal answer: b ) 70 (since 70 * (5/4) = 144)",
+      "category": "general"
+    },
+    {
+      "problem": "the average weight of 8 person ' s increases by 1.5 kg when a new person comes in place of one of them weighing 75 kg . what might be the weight of the new person ?",
+      "options": "a ) 81 kg , b ) 85 kg , c ) 90 kg , d ) 100 kg , e ) 110 kg",
+      "correct_answer": "a",
+      "predicted_answer": "d",
+      "is_correct": false,
+      "rationale": "1. Let the weight of the 75 kg person be x kg. The average weight of the 8 persons initially is (8*x - 75) / 8.\n\n2. When the 75 kg person is replaced by a new person, the average weight becomes (8*x + 1.5) / 8.\n\n3. Since the average weight increased by 1.5 kg, we can write the equation: (8*x - 75 + 1.5) / 8 = (8*x + 1.5) / 8 + 1.5.\n\n4. Simplifying the equation, we get: 8*x - 75 = 8*x + 1.5.\n\n5. Solving for x, we find that x = 83.75 kg. However, since the weight must be a whole number, we round it to the nearest whole number: x = 84 kg.\n\n6. But this value of x does not fit the given options. Let's check the next multiple of 4 (since the average weight is calculated by summing the weights and dividing by 8) greater than 83.75 kg: 88 kg.\n\n7. When we check the options, we find that 88 kg is not provided. Let's find the next multiple of 4 greater than 88 kg: 92 kg.\n\n8. When we check the options again, we find that 90 kg is not provided. Let's find the next multiple of 4 greater than 90 kg: 96 kg.\n\n9. When we check the options again, we find that 96 kg is not provided. Let's find the next multiple of 4 greater than 96 kg: 100 kg.\n\n10. When we check the options again, we find that 100 kg is provided (option d).\n\nFinal answer: d ) 100 kg.\n\nNote: It's important to note that in this case, the provided options do not cover the exact weight calculated (84 kg), but the closest option provided is 100 kg, which is the next multiple of 4 greater than the calculated weight.",
+      "category": "general"
+    },
+    {
+      "problem": "a train 125 m long passes a man , running at 15 km / hr in the same direction in which the train is going , in 10 seconds . the speed of the train is ?",
+      "options": "a ) 60 , b ) 50 , c ) 28 , d ) 26 , e ) 29",
+      "correct_answer": "a",
+      "predicted_answer": "a",
+      "is_correct": true,
+      "rationale": "1. First, we need to convert the speed of the man from km/hr to m/s. We know that 1 km = 1000 m and 1 hour = 3600 seconds. So, 15 km/hr = (15 * 1000) / (3600 * 3.6) = 4.17 m/s.\n\n2. Since the train passes the man in 10 seconds, the distance covered by the train in those 10 seconds is the same as the distance covered by the man in those 10 seconds. We know the speed of the man (4.17 m/s) and the time taken (10 seconds). So, the distance covered by the man in 10 seconds is 4.17 * 10 = 41.7 m.\n\n3. The train is 125 m long. Since it passed the man in 10 seconds while covering a distance of 41.7 m, the remaining distance the train needs to cover is 125 - 41.7 = 83.3 m.\n\n4. The time it takes for the train to cover the remaining distance is the total time (10 seconds) minus the time it took the man to be passed by the train (10 seconds). So, the time it takes for the train to cover the remaining distance is 0 seconds. This means the train is already moving at a speed such that it covers the entire length in the same 10 seconds that the man was passing.\n\n5. Since the distance covered by the train in 10 seconds is 125 m and the time taken is 10 seconds, the speed of the train is 125 / 10 = 12.5 m/s.\n\nFinal answer: a) 60 (which is approximately equal to 12.5 m/s * 3600 seconds/hr, rounded to the nearest integer).",
+      "category": "physics"
+    },
+    {
+      "problem": "the average of 15 result is 60 . average of the first 10 of them is 10 and that of the last 10 is 80 . find the 8 th result ?",
+      "options": "a ) 35 , b ) 200 , c ) 150 , d ) 250 , e ) 300",
+      "correct_answer": "b",
+      "predicted_answer": "b",
+      "is_correct": true,
+      "rationale": "1. Let's denote the numbers as x1, x2, ..., x15 in the order they are given.\n   The sum of all 15 numbers is 15 * 60 = 900.\n   The sum of the first 10 numbers is 10 * 10 = 100.\n   The sum of the last 10 numbers is 10 * 80 = 800.\n\n2. So, the sum of the middle 5 numbers is 900 - (100 + 800) = 40.\n   Since the average of the middle 5 numbers is the 8th number (x8), we can find the sum of the middle 4 numbers and then add x8 to it.\n\n3. The sum of the middle 4 numbers is (x5 + x6 + x7 + x8) / 4.\n   Since the average of the middle 4 numbers is the average of the first 10 numbers plus the average of the last 10 numbers, we have:\n   (x5 + x6 + x7 + x8) / 4 = (10 + 80) / 2 = 45.\n\n4. Now we have two equations:\n   a) (x5 + x6 + x7 + x8) = 4 * 45 = 180\n   b) x8 = (x5 + x6 + x7 + x8) / 4\n\n5. Solving the second equation for x5, we get:\n   x5 = 4 * x8 - (x6 + x7)\n\n6. Substitute the value of x8 from the first equation:\n   x8 = 180 / 4 - (x6 + x7) / 4\n\n7. Since the sum of the middle 4 numbers is 180, the sum of the remaining two numbers (x6 and x7) is also 180.\n   So, x6 and x7 are the same number (let's call it y).\n\n8. Now we have:\n   x8 = 45 - y\n   x5 = 4 * x8 - y = 4 * (45 -",
+      "category": "general"
+    },
+    {
+      "problem": "a salesman \u00e2 \u20ac \u2122 s terms were changed from a flat commission of 5 % on all his sales to a fixed salary of rs . 1000 plus 2.5 % commission on all sales exceeding rs . 4,000 . if his remuneration as per new scheme was rs . 500 more than that by the previous schema , his sales were worth ?",
+      "options": "a ) s . 14,000 , b ) s . 12,000 , c ) s . 16,000 , d ) s . 40,000 , e ) s . 50,000",
+      "correct_answer": "c",
+      "predicted_answer": "a",
+      "is_correct": false,
+      "rationale": "1. First, let's denote the total sales under the old scheme as S. Under the old scheme, the commission was 5% of the total sales, so the commission was 0.05 * S.\n\n2. Under the new scheme, the salesperson receives a fixed salary of Rs. 1000 and an additional 2.5% commission on sales exceeding Rs. 4000. Let x be the amount of sales exceeding Rs. 4000. The total sales under the new scheme, S', is S + x. The commission under the new scheme is 0.025 * x.\n\n3. The difference in remuneration between the two schemes is Rs. 500, so we have:\n\n  0.05 * S + 0.025 * x = S + 1000 + 0.025 * x + 500\n\n4. Rearranging the equation to solve for S, we get:\n\n  S = 0.025 * x + 1500\n\n5. Since the difference in remuneration was Rs. 500, we can write the inequality:\n\n  0.05 * S < 0.025 * x + 500\n\n6. Substitute the expression for S from step 4 into the inequality:\n\n  0.05 * (0.025 * x + 1500) < 0.025 * x + 500\n\n7. Simplify the inequality:\n\n  0.0125 * x + 75 < 0.025 * x + 500\n\n8. Subtract 0.0125 * x from both sides to isolate x:\n\n  0.0125 * x < 425\n\n9. Divide both sides by 0.0125 to find the minimum value of x:\n\n  x > 34,000\n\n10. Since x is the amount of sales exceeding Rs. 4000, the total sales, S, is at least Rs. 4000 + Rs. 34,000",
+      "category": "general"
+    },
+    {
+      "problem": "a rectangular floor that measures 15 meters by 18 meters is to be covered with carpet squares that each measure 3 meters by 3 meters . if the carpet squares cost $ 12 apiece , what is the total cost for the number of carpet squares needed to cover the floor ?",
+      "options": "a ) $ 200 , b ) $ 240 , c ) $ 360 , d ) $ 960 , e ) $ 1,920",
+      "correct_answer": "c",
+      "predicted_answer": "c",
+      "is_correct": true,
+      "rationale": "1. To find the number of carpet squares needed, we divide the area of the floor by the area of each carpet square. The area of the floor is 15 meters * 18 meters = 270 square meters. The area of each carpet square is 3 meters * 3 meters = 9 square meters. So, the number of carpet squares needed is 270 square meters / 9 square meters per carpet square = 30 carpet squares.\n2. The total cost is the number of carpet squares multiplied by the cost per carpet square. So, the total cost is 30 carpet squares * $12 per carpet square = $360.\n\nFinal answer: c) $360",
+      "category": "geometry"
+    },
+    {
+      "problem": "a vessel of capacity 2 litre has 30 % of alcohol and another vessel of capacity 6 litre had 40 % alcohol . the total liquid of 8 litre was poured out in a vessel of capacity 10 litre and thus the rest part of the vessel was filled with the water . what is the new concentration of mixture ?",
+      "options": "a ) 30 % . , b ) 71 % . , c ) 49 % . , d ) 29 % . , e ) 51 % .",
+      "correct_answer": "a",
+      "predicted_answer": "a",
+      "is_correct": true,
+      "rationale": "1. First, let's calculate the amount of alcohol from both vessels.\n   Vessel 1: 2L * 30% = 0.6L of alcohol\n   Vessel 2: 6L * 40% = 2.4L of alcohol\n\n2. Combine the alcohol from both vessels: 0.6L + 2.4L = 3L of alcohol\n\n3. The total volume of the mixture is 8L (from the original vessels) + 2L (the volume of the vessel) = 10L\n\n4. The total volume of the mixture is 10L, and it contains 3L of alcohol. So, the new concentration of the mixture is 3L/10L = 0.3 or 30% (as a decimal).\n\nFinal answer: a) 30%",
+      "category": "general"
+    },
+    {
+      "problem": "the total of 324 of 20 paise and 25 paise make a sum of rs . 70 . the no of 20 paise coins is",
+      "options": "a ) 238 , b ) 277 , c ) 220 , d ) 200 , e ) 288",
+      "correct_answer": "c",
+      "predicted_answer": "a",
+      "is_correct": false,
+      "rationale": "1. First, convert the total amount to paise: Rs. 70 = 7000 paise\n2. Next, find the total value of the 20 paise coins: 324 * 20 = 6480 paise\n3. Now, find the total value of the 25 paise coins: (Total amount - value of 20 paise coins) / 25 = (7000 - 6480) / 25 = 520 paise\n4. Convert the value of 520 paise back to coins: 520 / 25 = 20.8, but since we can't have a fraction of a coin, round down to 20 coins.\n5. The number of 20 paise coins is the total number of 20 paise coins minus the number of 25 paise coins: 324 - 20 = 304\n\nFinal answer: a) 238 (This is incorrect, it should be 304, but the question provided the incorrect total sum of money)",
+      "category": "general"
+    },
+    {
+      "problem": "in 1970 there were 8,902 women stockbrokers in the united states . by 1978 the number had increased to 18,947 . approximately what was the percent increase ?",
+      "options": "a ) 45 % , b ) 113 % , c ) 145 % , d ) 150 % , e ) 225 %",
+      "correct_answer": "b",
+      "predicted_answer": "b",
+      "is_correct": true,
+      "rationale": "1. First, we find the difference in the number of stockbrokers between the two years: 18,947 - 8,902 = 9,045\n2. Next, we find the ratio of the difference to the initial number of stockbrokers: 9,045 / 8,902 = 1.0214 (rounded to four decimal places)\n3. The percent increase is then the ratio multiplied by 100: 1.0214 * 100 = 102.14%\n4. However, since the question asks for an approximation, we round this to the nearest whole number: 102.14% \u2248 102%\n\nFinal answer: b ) 113 % (This is an approximation, as the exact percent increase is 102.14%)",
+      "category": "general"
+    },
+    {
+      "problem": "what is the number of integers from 1 to 1100 ( inclusive ) that are divisible by neither 11 nor by 35 ?",
+      "options": "a ) 884 , b ) 890 , c ) 892 , d ) 910 , e ) 945",
+      "correct_answer": "e",
+      "predicted_answer": "a",
+      "is_correct": false,
+      "rationale": "1. To find the numbers that are divisible neither by 11 nor by 35, we first list the prime factors of 11 and 35:\n   - For 11, the prime factor is 11 itself.\n   - For 35, the prime factors are 5 and 7.\n\n2. We then list the multiples of 11 from 1 to 1100. Since 11 itself is a multiple of 11, we start the list from 11.\n   Multiples of 11 from 11 to 1100 are: 11, 22, 33, ..., 1099.\n\n3. We next list the multiples of 35 from 1 to 1100.\n   Multiples of 35 from 1 to 1100 are: 35, 70, 105, ..., 1100.\n\n4. We subtract the multiples of 35 from the list of multiples of 11 to find the numbers that are divisible neither by 11 nor by 35.\n   The numbers that are divisible neither by 11 nor by 35 are: 11, 22, 33, ..., 1089.\n\n5. To find the number of these integers, we count the number of integers from 11 to 1089 (inclusive).\n   We can do this by finding the number of multiples of 11 from 11 to 1089 (exclusive) and subtracting one (since 11 is already counted as a multiple of 11).\n   The number of multiples of 11 from 11 to 1089 (exclusive) is (1089 - 11) / 11 = 1078 / 11 \u2248 97.\n   However, since 1078 is not a multiple of 11, we need to add one more multiple of 11, which is 1089 itself.\n   So, the total number of multiples of 11 from 11 to 1089 (",
+      "category": "other"
+    },
+    {
+      "problem": "arun makes a popular brand of ice cream in a rectangular shaped bar 6 cm long , 5 cm wide and 2 cm thick . to cut costs , the company had decided to reduce the volume of the bar by 19 % . the thickness will remain same , but the length and width will be decreased by some percentage . the new width will be ,",
+      "options": "a ) 33 , b ) 87 , c ) 99 , d ) 367 , e ) 72",
+      "correct_answer": "a",
+      "predicted_answer": "a",
+      "is_correct": true,
+      "rationale": "1. First, we need to find the original volume of the ice cream bar. The formula for the volume of a rectangular prism is length * width * height. In this case, the volume is 6 cm * 5 cm * 2 cm = 60 cubic cm.\n2. Now, we need to find the new volume after a 19% decrease. We can do this by finding 81% of the original volume (since 100% - 19% = 81%) and then subtracting it from the original volume.\n3. So, the new volume is 60 cubic cm * 0.81 = 48.6 cubic cm (rounded to two decimal places).\n4. Since the thickness remains the same, we can now focus on finding the new length and width. Let x be the percentage decrease in length and y be the percentage decrease in width.\n5. We know that the original volume is 60 cubic cm and the new volume is 48.6 cubic cm. We also know that the original length is 6 cm, the original width is 5 cm, and the thickness is 2 cm.\n6. Using these relationships, we can set up two equations:\n   - Original volume = 6 * 5 * 2\n   - New volume = (6 - x) * (5 - y) * 2\n7. Solving these equations, we get:\n   - 60 = 6 * 5 * 2\n   - 48.6 = (6 - x) * (5 - y) * 2\n8. Simplifying the second equation, we get:\n   - 24.3 = (6 - x) * (5 - y)\n9. Now, we have a system of two equations with two variables (x and y). We can solve this system using various methods, but a simple approach is to guess and check.\n10. Since the new volume is smaller, both x and y must be positive numbers. Let's start by trying small values for x and y and see if we can find a solution that satisfies both equations.\n11. For example, if we try x = 0.2 (a 20% decrease in length) and y = 0.1 (a 10%",
+      "category": "gain"
+    },
+    {
+      "problem": "kim finds a 5 - meter tree branch and marks it off in thirds and fifths . she then breaks the branch along all the markings and removes one piece of every distinct length . what fraction of the original branch remains ?",
+      "options": "a ) 8 / 15 , b ) 1 / 2 , c ) 7 / 5 , d ) 3 / 5 , e ) 7 / 5",
+      "correct_answer": "d",
+      "predicted_answer": "a",
+      "is_correct": false,
+      "rationale": "1. Kim marks the tree branch off in thirds and fifths. This means there are 5*3 = 15 thirds and 5*5 = 25 fifths in total.\n\n2. Since she breaks the branch along all the markings, the number of pieces she gets is the least common multiple (LCM) of the number of thirds and fifths, which is 30 (LCM(15, 25) = 30).\n\n3. Kim removes one piece of every distinct length, which means for each third, she removes one piece, and for each fifth, she removes one piece.\n\n4. To find out how many pieces remain, we subtract the number of pieces she removed from the total number of pieces:\n   Remaining pieces = Total pieces - Pieces removed\n   = 30 - (15 thirds pieces + 5 fifths pieces)\n   = 30 - (15 + 5 * 3) (since one third is equal to 3 fifths)\n   = 30 - 20 * 3\n   = 30 - 60\n   = -30\n\n5. Since the number of remaining pieces is negative, it means that all pieces have been removed, and nothing remains. However, the question asks for a fraction of the original branch, not the number of pieces.\n\n6. To find the fraction of the original branch that remains, we can divide the length of the remaining branch by the total length of the original branch:\n   Fraction = Remaining length / Original length\n   = 0 / 5\n   = 0\n\n7. However, since it's impossible to have 0 pieces of a non-zero length, we can assume that one very small piece remains. In this case, we can approximate the fraction as a rational number close to 0.\n\n8. Since the original branch was 5 meters long, and we're assuming that one very small piece remains, we can approximate the length of that piece as close to 0 meters but not exactly 0.\n\nFinal answer: There is no exact fraction of the original branch that remains. However, we can approximate it as a rational number close to 0, which is not an option in the given choices. Therefore, the question might be incorrect, and",
+      "category": "physics"
+    },
+    {
+      "problem": "mark bought a set of 6 flower pots of different sizes at a total cost of $ 8.25 . each pot cost 0.1 more than the next one below it in size . what was the cost , in dollars , of the largest pot ?",
+      "options": "a ) $ 1.62 , b ) $ 1.85 , c ) $ 2.00 , d ) $ 2.15 , e ) $ 2.30",
+      "correct_answer": "a",
+      "predicted_answer": "a",
+      "is_correct": true,
+      "rationale": "1. Let's denote the cost of the smallest pot as x. The cost of the next pot will be x + 0.1, the next one x + 2*0.1 = x + 0.2, and so on.\n2. The total cost of the six pots is $ 8.25, so we can write the equation: x + (x + 0.1) + (x + 0.2) + (x + 0.3) + (x + 0.4) + (x + 0.5) = 8.25\n3. Simplify the equation: 6x + 1.6 = 8.25\n4. Solve for x: 6x = 6.65, x = 1.11 (but we cannot have a negative cost, so we'll round up to the nearest whole dollar)\n5. The cost of the smallest pot is $ 1.11, and each pot costs 0.1 more, so the cost of the largest pot is $ 1.11 + 5*0.1 = $ 1.62\n\nFinal answer: a) $ 1.62",
+      "category": "general"
+    },
+    {
+      "problem": "in the above number , a and b represent the tens and units digits , respectively . if the above number is divisible by 45 , what is the greatest possible value of b x a ?",
+      "options": "a ) 0 , b ) 5 , c ) 10 , d ) 15 , e ) 20",
+      "correct_answer": "e",
+      "predicted_answer": "a",
+      "is_correct": false,
+      "rationale": "1. A number is divisible by 45 if it is divisible by both 3 and 15. Since the units digit is b, it must be 0, 5, or 0 (since a number ending in 0 is also divisible by 3). However, 0 is not divisible by 3, so b cannot be 0.\n\n2. Now, let's check if a and b can form a number divisible by 15. A number is divisible by 15 if it is divisible by both 3 and 5. Since a and b are the tens and units digits, they can form a number divisible by 15 if they are of the form 3x or 5x.\n\n3. For b to be 5, a must be 0, 3, or 5, since a number ending in 5 is divisible by 5. But this would make the number divisible by 3 only, not by 15.\n\n4. So, let's try b = 5 and find the maximum possible value for a. Since a can only be 0, 3, or 5, the maximum possible value for a * b is 5 * 5 = 25. However, this number is not divisible by 45.\n\n5. Let's try b = 5 again, but this time let's check if we can add another digit to the left (a) to make the number divisible by 45. The number 5a would be divisible by 3 if a is 0, 3, or 6, and divisible by 5 if a is 0 or 5. So, a can only be 0, 3, 5, or 6.\n\n6. If a = 0, the number is 50, which is divisible by 45. If a = 3, the number is 53, which is not divisible by 45. If a = 5, the number is 55, which is divisible by 45. If a = 6, the number is 56, which is not divisible by 45.\n\n7. So, the maximum possible value of b * a is 5 * 5 = 2",
+      "category": "general"
+    },
+    {
+      "problem": "the profit obtained by selling an article for rs . 57 is the same as the loss obtained by selling it for rs . 43 . what is the cost price of the article ?",
+      "options": "a ) rs . 40 , b ) rs . 50 , c ) rs . 49 , d ) rs . 59 , e ) none of these",
+      "correct_answer": "b",
+      "predicted_answer": "c",
+      "is_correct": false,
+      "rationale": "1. Let's denote the cost price as CP.\n2. When selling for a profit of Rs. 57, the selling price is CP + 57.\n3. When selling for a loss of Rs. 43, the selling price is CP - 43.\n4. Since the profit and loss are equal, we have CP + 57 = CP - 43.\n5. Solving this equation gives CP = Rs. 49.\n\nFinal answer: c) Rs. 49",
+      "category": "gain"
+    }
+  ],
+  "overall_accuracy": 0.4583333333333333,
+  "correct_count": 11,
+  "total_count": 24,
+  "category_stats": {
+    "gain": {
+      "correct": 2,
+      "total": 7,
+      "accuracy": 0.2857142857142857
+    },
+    "general": {
+      "correct": 6,
+      "total": 11,
+      "accuracy": 0.5454545454545454
+    },
+    "other": {
+      "correct": 1,
+      "total": 2,
+      "accuracy": 0.5
+    },
+    "physics": {
+      "correct": 1,
+      "total": 3,
+      "accuracy": 0.3333333333333333
+    },
+    "geometry": {
+      "correct": 1,
+      "total": 1,
+      "accuracy": 1.0
+    }
+  }
+}

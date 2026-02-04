@@ -57,15 +57,15 @@ def create_prompt(self, problem: str, options: str) -> str:
         """
         prompt = f"""Solve the following math problem step by step and select the correct answer.
 
-Problem: {problem}
+    Problem: {problem}
 
-Options: {options}
+    Options: {options}
 
-Please provide:
-1. Step-by-step solution
-2. Final answer (letter only: a, b, c, d, or e)
+    Please provide:
+    1. Step-by-step solution
+    2. Final answer (letter only: a, b, c, d, or e)
 
-Solution:"""
+    Solution:"""
         return prompt
 def get_model_prediction(model, tokenizer, prompt, max_new_tokens=10):
     """

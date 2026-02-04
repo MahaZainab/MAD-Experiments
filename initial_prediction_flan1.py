@@ -195,7 +195,7 @@ def main():
     import sys
     
     # Check if dataset file exists
-    dataset_path = '/mnt/user-data/uploads'
+    dataset_path = 'train.json'
     
     try:
         # List files in uploads
@@ -237,7 +237,7 @@ def main():
               f"({stats['correct']}/{stats['total']})")
     
     # Save results
-    output_path = '/mnt/user-data/outputs/evaluation_results.json'
+    output_path = 'evaluation_results.json'
     with open(output_path, 'w') as f:
         json.dump(evaluation, f, indent=2)
     print(f"\nResults saved to {output_path}")

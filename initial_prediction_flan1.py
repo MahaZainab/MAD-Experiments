@@ -11,7 +11,7 @@ import re
 
 
 class MathProblemSolver:
-    def __init__(self, model_name: str = "google/flan-t5-xl"):
+    def __init__(self, model_name: str = "meta-llama/Llama-3.1-8B-Instruct"):
         """
         Initialize the Math Problem Solver with Llama model.
         
@@ -195,7 +195,7 @@ def main():
     import sys
     
     # Check if dataset file exists
-    dataset_path = 'train.json'
+    dataset_path = 'datsets'
     
     try:
         # List files in uploads

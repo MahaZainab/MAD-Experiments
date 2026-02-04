@@ -195,7 +195,7 @@ def main():
     import sys
     
     # Check if dataset file exists
-    dataset_path = 'datsets'
+    dataset_path = 'datasets'
     
     try:
         # List files in uploads

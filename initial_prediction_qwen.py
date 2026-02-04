@@ -11,7 +11,7 @@ import re
 
 
 class MathProblemSolver:
-    def __init__(self, model_name: str = "mistralai/Mistral-7B-Instruct-v0.3"):
+    def __init__(self, model_name: str = "Qwen/Qwen3-8B"):
         """
         Initialize the Math Problem Solver with Llama model.
         

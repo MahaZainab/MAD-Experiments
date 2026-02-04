@@ -237,7 +237,7 @@ def main():
               f"({stats['correct']}/{stats['total']})")
     
     # Save results
-    output_path = 'qwen_evaluation_results.json'
+    output_path = 'qwen38b_evaluation_results.json'
     with open(output_path, 'w') as f:
         json.dump(evaluation, f, indent=2)
     print(f"\nResults saved to {output_path}")

@@ -29,7 +29,7 @@ def load_model_and_tokenizer(model_name):
     print(f"Model loaded successfully on: {model.device}")
     return model, tokenizer
 
-def create_prompt(problem, options):
+def create_prompt1(problem, options):
     """
     Create a prompt for the model with the problem and options.
     """
@@ -43,6 +43,30 @@ Answer (only the letter):"""
     
     return prompt
 
+
+def create_prompt(self, problem: str, options: str) -> str:
+        """
+        Create a structured prompt for the model.
+        
+        Args:
+            problem: The math problem statement
+            options: The multiple choice options
+            
+        Returns:
+            Formatted prompt string
+        """
+        prompt = f"""Solve the following math problem step by step and select the correct answer.
+
+Problem: {problem}
+
+Options: {options}
+
+Please provide:
+1. Step-by-step solution
+2. Final answer (letter only: a, b, c, d, or e)
+
+Solution:"""
+        return prompt
 def get_model_prediction(model, tokenizer, prompt, max_new_tokens=10):
     """
     Get prediction from the model.

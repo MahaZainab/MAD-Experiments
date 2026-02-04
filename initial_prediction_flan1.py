@@ -11,7 +11,7 @@ import re
 
 
 class MathProblemSolver:
-    def __init__(self, model_name: str = "meta-llama/Llama-3.1-8B-Instruct"):
+    def __init__(self, model_name: str = "google/flan-t5-xl"):
         """
         Initialize the Math Problem Solver with Llama model.
         

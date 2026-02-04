@@ -237,13 +237,13 @@ def main():
               f"({stats['correct']}/{stats['total']})")
     
     # Save results
-    output_path = 'qwen38b_evaluation_results.json'
+    output_path = 'gemma34b_evaluation_results.json'
     with open(output_path, 'w') as f:
         json.dump(evaluation, f, indent=2)
     print(f"\nResults saved to {output_path}")
     
     # Save detailed report
-    report_path = 'qwen38b_detailed_report.txt'
+    report_path = 'gemma34b_detailed_report.txt'
     with open(report_path, 'w') as f:
         f.write("MATH PROBLEM SOLVER - DETAILED REPORT\n")
         f.write("="*80 + "\n\n")

@@ -243,7 +243,7 @@ def main():
     print(f"\nResults saved to {output_path}")
     
     # Save detailed report
-    report_path = '/mnt/user-data/outputs/detailed_report.txt'
+    report_path = 'detailed_report.txt'
     with open(report_path, 'w') as f:
         f.write("MATH PROBLEM SOLVER - DETAILED REPORT\n")
         f.write("="*80 + "\n\n")

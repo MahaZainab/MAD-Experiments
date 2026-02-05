@@ -68,6 +68,11 @@ class CruxEvalSolver:
 Task:
 Predict the exact return value of the function.
 
+Definition of explanation:
+- A short, high-level description of your chain of thought. How did you arrive at the answer?
+- Make it concise.
+- Use 2-3 sentences to explain your reasoning.
+
 Rules for predicted_output:
 - Return the value exactly as Python would display it (repr-style).
 - If it is a string, include quotes.

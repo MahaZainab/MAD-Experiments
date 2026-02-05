@@ -27,8 +27,8 @@ from transformers import (
 DEFAULT_DATASET = "cruxeval_mini.json"
 DEFAULT_MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.3"
 DEFAULT_MAX_NEW_TOKENS = 256
-DEFAULT_RESULTS_JSON = "cruxeval_qwen257b_results.json"
-DEFAULT_REPORT_TXT = "cruxeval_qwen257b_report.txt"
+DEFAULT_RESULTS_JSON = "cruxeval_mistral7b_results.json"
+DEFAULT_REPORT_TXT = "cruxeval_mistral7b_report.txt"
 
 
 class StopAfterFirstJSONObject(StoppingCriteria):

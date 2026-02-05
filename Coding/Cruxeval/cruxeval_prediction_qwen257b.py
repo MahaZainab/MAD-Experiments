@@ -31,7 +31,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 # -------------------------
 # Defaults (edit once here)
 # -------------------------
-DEFAULT_DATASET = "cruxeval.json"              # or "cruxeval_mini.json"
+DEFAULT_DATASET = "cruxeval_mini.json"              # or "cruxeval_mini.json"
 DEFAULT_MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
 DEFAULT_MAX_NEW_TOKENS = 256
 DEFAULT_RESULTS_JSON = "cruxeval_qwen257b_results.json"

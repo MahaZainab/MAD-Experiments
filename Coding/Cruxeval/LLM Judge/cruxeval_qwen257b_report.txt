@@ -1,0 +1,1055 @@
+CRUXEVAL SOLVER - DETAILED REPORT
+================================================================================
+
+Example 1
+ID: sample_0
+Category: unknown
+Code:
+def f(nums):
+    output = []
+    for n in nums:
+        output.append((nums.count(n), n))
+    output.sort(reverse=True)
+    return output
+
+Input:
+[1, 1, 3, 1, 3, 1]
+
+Gold Output:
+[(4, 1), (4, 1), (4, 1), (4, 1), (2, 3), (2, 3)]
+
+Output:
+[[4, 1], [2, 3]]
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function counts the occurrences of each number and sorts the list of tuples in descending order based on the count. The number 1 appears 4 times, and the number 3 appears 2 times.
+
+Raw model text:
+```json
+{
+  "predicted_output": "[[4, 1], [2, 3]]",
+  "explanation": "The function counts the occurrences of each number and sorts the list of tuples in descending order based on the count. The number 1 appears 4 times, and the number 3 appears 2 times."
+}
+
+--------------------------------------------------------------------------------
+
+Example 2
+ID: sample_1
+Category: unknown
+Code:
+def f(a, b, c):
+    result = {}
+    for d in a, b, c:
+        result.update(dict.fromkeys(d))
+    return result
+
+Input:
+(1, ), (1, ), (1, 2)
+
+Gold Output:
+{1: None, 2: None}
+
+Output:
+
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+
+
+Raw model text:
+Let's analyze the function `f` step by step:
+
+1. The function initializes an empty dictionary `result`.
+2. It iterates over the elements of the input tuple `(a, b, c)`, which are `(1,)`, `(1,)`, and `(1, 2)` respectively.
+3. For each element `d` in the iteration, it creates a dictionary with keys from `d` using `dict.fromkeys(d)` and updates `result` with these keys.
+4. Since `dict.fromkeys(d)` returns a dictionary with all keys set to `None`, the first two iterations will add one key `1` each time, resulting in `{1: None}`
+
+--------------------------------------------------------------------------------
+
+Example 3
+ID: sample_2
+Category: unknown
+Code:
+def f(text):
+    new_text = list(text)
+    for i in '+':
+        if i in new_text:
+            new_text.remove(i)
+    return ''.join(new_text)
+
+Input:
+'hbtofdeiequ'
+
+Gold Output:
+'hbtofdeiequ'
+
+Output:
+hbtofedqu
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+
+
+Raw model text:
+Output:
+{
+  "predicted_output": "hbtofedqu",
+  "+": "The function iterates over each character in the string '+', checks if it's in the list representation of the input string 'hbtofdeiequ', and removes it if found. Since '+' has no common characters with the input string, the output remains unchanged."
+}
+
+--------------------------------------------------------------------------------
+
+Example 4
+ID: sample_3
+Category: unknown
+Code:
+def f(text, value):
+    text_list = list(text)
+    text_list.append(value)
+    return ''.join(text_list)
+
+Input:
+'bcksrut', 'q'
+
+Gold Output:
+'bcksrutq'
+
+Output:
+bcksrutq
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function appends the value 'q' to the end of the list representation of the string 'bcksrut' and then joins the list back into a string.
+
+Raw model text:
+{
+"predicted_output": "bcksrutq",
+"explanation": "The function appends the value 'q' to the end of the list representation of the string 'bcksrut' and then joins the list back into a string."
+}
+
+--------------------------------------------------------------------------------
+
+Example 5
+ID: sample_4
+Category: unknown
+Code:
+def f(array):
+    s = ' '
+    s += ''.join(array)
+    return s
+
+Input:
+[' ', '  ', '    ', '   ']
+
+Gold Output:
+'           '
+
+Output:
+ '     ' 
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function f concatenates all elements of the input list using an empty string as the separator. The input list contains four strings with varying numbers of spaces. When concatenated, they form a single string with five spaces.
+
+Raw model text:
+```json
+{
+  "predicted_output": " '     ' ",
+  "explanation": "The function f concatenates all elements of the input list using an empty string as the separator. The input list contains four strings with varying numbers of spaces. When concatenated, they form a single string with five spaces."
+}
+
+--------------------------------------------------------------------------------
+
+Example 6
+ID: sample_5
+Category: unknown
+Code:
+def f(text, lower, upper):
+    count = 0
+    new_text = list()
+    for char in text:
+        char = lower if char.isdecimal() else upper
+        if char in ['p', 'C']:
+            count += 1
+        new_text.append(char)
+    return count, ''.join(new_text)
+
+Input:
+'DSUWeqExTQdCMGpqur', 'a', 'x'
+
+Gold Output:
+(0, 'xxxxxxxxxxxxxxxxxx')
+
+Output:
+(4, 'DSUWeaqExTQdxMGpqur')
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function iterates through each character in the input text. It replaces decimal characters with 'a' and non-decimal characters with 'x'. It also counts occurrences of 'p' and 'C', which are both replaced by 'x'. The final count and modified text are returned as a tuple.
+
+Raw model text:
+Output:
+{
+  "predicted_output": "(4, 'DSUWeaqExTQdxMGpqur')",
+  "explanation": "The function iterates through each character in the input text. It replaces decimal characters with 'a' and non-decimal characters with 'x'. It also counts occurrences of 'p' and 'C', which are both replaced by 'x'. The final count and modified text are returned as a tuple."
+}
+
+--------------------------------------------------------------------------------
+
+Example 7
+ID: sample_6
+Category: unknown
+Code:
+def f(dic):
+    for k,v in sorted(dic.items(), key=lambda x: len(str(x)))[:-1]:
+        dic.pop(k)
+    return list(dic.items())
+
+Input:
+{'11': 52, '65': 34, 'a': 12, '4': 52, '74': 31}
+
+Gold Output:
+[('74', 31)]
+
+Output:
+[('a', 12)]
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The dictionary items are first sorted by the length of their string representation. Then, all but the last item (based on this sorting) are removed. The last item left is ('a', 12).
+
+Raw model text:
+```json
+{
+  "predicted_output": "[('a', 12)]",
+  "explanation": "The dictionary items are first sorted by the length of their string representation. Then, all but the last item (based on this sorting) are removed. The last item left is ('a', 12)."
+}
+
+--------------------------------------------------------------------------------
+
+Example 8
+ID: sample_7
+Category: unknown
+Code:
+def f(list):
+    original = list[:]
+    while len(list) > 1:
+        list.pop(len(list) - 1)
+        for i in range(len(list)):
+            list.pop(i)
+    list = original[:]
+    if list:
+        list.pop(0)
+    return list
+
+Input:
+[]
+
+Gold Output:
+[]
+
+Output:
+[]
+
+Strict: CORRECT
+Normalized: CORRECT
+
+Explanation (model-provided):
+The function always ends up with an empty list because it first copies the input list, then removes all elements from the copied list, and finally tries to modify the original list which is already empty.
+
+Raw model text:
+Output: ```json
+{
+  "predicted_output": [],
+  "explanation": "The function always ends up with an empty list because it first copies the input list, then removes all elements from the copied list, and finally tries to modify the original list which is already empty."
+}
+
+--------------------------------------------------------------------------------
+
+Example 9
+ID: sample_8
+Category: unknown
+Code:
+def f(string, encryption):
+    if encryption == 0:
+        return string
+    else:
+        return string.upper().encode('rot13')
+
+Input:
+'UppEr', 0
+
+Gold Output:
+'UppEr'
+
+Output:
+UppEr
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+Since encryption is 0, the function returns the string as is without any modifications.
+
+Raw model text:
+{
+"predicted_output": "UppEr",
+"explanation": "Since encryption is 0, the function returns the string as is without any modifications."
+}
+
+--------------------------------------------------------------------------------
+
+Example 10
+ID: sample_9
+Category: unknown
+Code:
+def f(t):
+    for c in t:
+        if not c.isnumeric():
+            return False
+    return True
+
+Input:
+'#284376598'
+
+Gold Output:
+False
+
+Output:
+False
+
+Strict: CORRECT
+Normalized: CORRECT
+
+Explanation (model-provided):
+The function checks if all characters in the string are numeric. Since the first character is '#', which is not numeric, the function returns False.
+
+Raw model text:
+{
+ "predicted_output": "False",
+ "explanation": "The function checks if all characters in the string are numeric. Since the first character is '#', which is not numeric, the function returns False."
+}
+
+--------------------------------------------------------------------------------
+
+Example 11
+ID: sample_10
+Category: unknown
+Code:
+def f(text):
+    new_text = ''
+    for ch in text.lower().strip():
+        if ch.isnumeric() or ch in 'ÄäÏïÖöÜü':
+            new_text += ch
+    return new_text
+
+Input:
+''
+
+Gold Output:
+''
+
+Output:
+
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The input is an empty string, so there are no characters to process, hence the output is an empty string.
+
+Raw model text:
+Output: ```json
+{
+  "predicted_output": "",
+  "explanation": "The input is an empty string, so there are no characters to process, hence the output is an empty string."
+}
+
+--------------------------------------------------------------------------------
+
+Example 12
+ID: sample_11
+Category: unknown
+Code:
+def f(a, b):
+    for key, value in b.items():
+        if key not in a:
+            a[key] = [value]
+        else:
+            a[key].append(value)
+    return a
+
+Input:
+{}, {'foo': 'bar'}
+
+Gold Output:
+{'foo': ['bar']}
+
+Output:
+
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+
+
+Raw model text:
+{
+  "predicted_output": "{\'foo\': [\\'bar\\']}",
+  "explanation": "The function f takes two dictionaries, a and b. It iterates over the items in b and adds them to a. Since 'foo' is not already a key in a, it creates a new key-value pair where the value is a list containing 'bar'."
+}
+
+--------------------------------------------------------------------------------
+
+Example 13
+ID: sample_12
+Category: unknown
+Code:
+def f(s, x):
+    count = 0
+    while s[:len(x)] == x and count < len(s)-len(x):
+        s = s[len(x):]
+        count += len(x)
+    return s
+
+Input:
+'If you want to live a happy life! Daniel', 'Daniel'
+
+Gold Output:
+'If you want to live a happy life! Daniel'
+
+Output:
+you want to live a happy life! Daniel
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function removes the substring 'Daniel' from the beginning of the input string as long as it matches and the count is less than the length of the input minus the length of 'Daniel'. It continues until the condition is no longer met, resulting in the remaining string.
+
+Raw model text:
+Output: 
+"you want to live a happy life! Daniel"
+{
+  "predicted_output": "you want to live a happy life! Daniel",
+  "explanation": "The function removes the substring 'Daniel' from the beginning of the input string as long as it matches and the count is less than the length of the input minus the length of 'Daniel'. It continues until the condition is no longer met, resulting in the remaining string."
+}
+
+--------------------------------------------------------------------------------
+
+Example 14
+ID: sample_13
+Category: unknown
+Code:
+def f(names):
+    count = len(names)
+    numberOfNames = 0
+    for i in names:
+        if i.isalpha():
+            numberOfNames += 1
+    return numberOfNames
+
+Input:
+['sharron', 'Savannah', 'Mike Cherokee']
+
+Gold Output:
+2
+
+Output:
+3
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function counts the number of names that contain only alphabetic characters. All three names in the input list ('sharron', 'Savannah', 'Mike Cherokee') contain alphabetic characters, so the function returns 3.
+
+Raw model text:
+```json
+{
+  "predicted_output": 3,
+  "explanation": "The function counts the number of names that contain only alphabetic characters. All three names in the input list ('sharron', 'Savannah', 'Mike Cherokee') contain alphabetic characters, so the function returns 3."
+}
+
+--------------------------------------------------------------------------------
+
+Example 15
+ID: sample_14
+Category: unknown
+Code:
+def f(s):
+    arr = list(s.strip())
+    arr.reverse()
+    return ''.join(arr)
+
+Input:
+'   OOP   '
+
+Gold Output:
+'POO'
+
+Output:
+PPO
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function removes leading and trailing whitespace, reverses the string, and then joins it back together.
+
+Raw model text:
+{
+"predicted_output": "PPO",
+"explanation": "The function removes leading and trailing whitespace, reverses the string, and then joins it back together."
+}
+
+--------------------------------------------------------------------------------
+
+Example 16
+ID: sample_15
+Category: unknown
+Code:
+def f(text, wrong, right):
+    new_text = text.replace(wrong, right)
+    return new_text.upper()
+
+Input:
+"zn kgd jw lnt", "h", "u"
+
+Gold Output:
+'ZN KGD JW LNT'
+
+Output:
+ZU KGD JU LNT
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function replaces 'h' with 'u' in the input string and then converts the entire string to uppercase.
+
+Raw model text:
+{
+"predicted_output": "ZU KGD JU LNT",
+"explanation": "The function replaces 'h' with 'u' in the input string and then converts the entire string to uppercase."
+}
+
+--------------------------------------------------------------------------------
+
+Example 17
+ID: sample_16
+Category: unknown
+Code:
+def f(text, suffix):
+    if text.endswith(suffix):
+        return text[:-len(suffix)]
+    return text
+
+Input:
+'zejrohaj', 'owc'
+
+Gold Output:
+'zejrohaj'
+
+Output:
+'zejroha'
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function checks if the input text ends with the suffix 'owc'. Since it doesn't, it returns the original text unchanged.
+
+Raw model text:
+{
+"predicted_output": "'zejroha'",
+"explanation": "The function checks if the input text ends with the suffix 'owc'. Since it doesn't, it returns the original text unchanged."
+}
+
+--------------------------------------------------------------------------------
+
+Example 18
+ID: sample_17
+Category: unknown
+Code:
+def f(text):
+    return text.find(",")
+
+Input:
+"There are, no, commas, in this text"
+
+Gold Output:
+9
+
+Output:
+-1
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function f() searches for the first occurrence of ',' in the input string. Since there are no commas in the input, it returns -1, indicating that the substring was not found.
+
+Raw model text:
+```json
+{
+  "predicted_output": "-1",
+  "explanation": "The function f() searches for the first occurrence of ',' in the input string. Since there are no commas in the input, it returns -1, indicating that the substring was not found."
+}
+
+--------------------------------------------------------------------------------
+
+Example 19
+ID: sample_18
+Category: unknown
+Code:
+def f(array, elem):
+    k = 0
+    l = array.copy()
+    for i in l:
+        if i > elem:
+            array.insert(k, elem)
+            break
+        k += 1
+    return array
+
+Input:
+[5, 4, 3, 2, 1, 0], 3
+
+Gold Output:
+[3, 5, 4, 3, 2, 1, 0]
+
+Output:
+[5, 4, 3, 3, 2, 1, 0]
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function iterates through the copied list 'l' and inserts 'elem' into 'array' just before the first element greater than 'elem'. Since 3 is less than 5, it is inserted at index 3, resulting in the output [5, 4, 3, 3, 2, 1, 0].
+
+Raw model text:
+Output: ```json
+{
+  "predicted_output": [5, 4, 3, 3, 2, 1, 0],
+  "explanation": "The function iterates through the copied list 'l' and inserts 'elem' into 'array' just before the first element greater than 'elem'. Since 3 is less than 5, it is inserted at index 3, resulting in the output [5, 4, 3, 3, 2, 1, 0]."
+}
+
+--------------------------------------------------------------------------------
+
+Example 20
+ID: sample_19
+Category: unknown
+Code:
+def f(x, y):
+    tmp = ''.join(['0' if c == '9' else '9' for c in y[::-1]])
+    if (x.isnumeric() and tmp.isnumeric()):
+        return x + tmp
+    else:
+        return x
+
+Input:
+"", "sdasdnakjsda80"
+
+Gold Output:
+''
+
+Output:
+
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+Since the first argument is an empty string, the function returns it directly without any modifications.
+
+Raw model text:
+```python
+{
+  "predicted_output": "",
+  "explanation": "Since the first argument is an empty string, the function returns it directly without any modifications."
+}
+
+--------------------------------------------------------------------------------
+
+Example 21
+ID: sample_20
+Category: unknown
+Code:
+def f(text):
+    result = ''
+    for i in range(len(text)-1, -1, -1):
+        result += text[i]
+    return result
+
+Input:
+'was,'
+
+Gold Output:
+',saw'
+
+Output:
+'saw',
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function iterates through the input string 'was,' in reverse order and concatenates the characters to form the reversed string 'saw,'.
+
+Raw model text:
+Explanation of the code:
+The function `f` takes a string `text` as an argument and reverses it character by character. It starts from the last character (index -1) and iterates backwards to the first character (index 0). The reversed string is then returned.
+
+Steps:
+1. Initialize an empty string `result`.
+2. Iterate over the indices of the string `text` in reverse order.
+3. For each index `i`, append the character at that index to `result`.
+4. Return the reversed string `result`.
+
+JSON format output:
+```json
+{
+  "predicted_output": "'saw',",
+  "explanation": "The function iterates through the input string 'was,' in reverse order and concatenates the characters to form the reversed string 'saw,'."
+}
+
+--------------------------------------------------------------------------------
+
+Example 22
+ID: sample_21
+Category: unknown
+Code:
+def f(array):
+    n = array.pop()
+    array.extend([n, n])
+    return array
+
+Input:
+[1, 1, 2, 2]
+
+Gold Output:
+[1, 1, 2, 2, 2]
+
+Output:
+[1, 1, 2, 2, 2, 2]
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function pops the last element from the array, which is 2, and then extends the array with two occurrences of this element. Therefore, [1, 1, 2, 2] becomes [1, 1, 2, 2, 2, 2].
+
+Raw model text:
+```json
+{
+  "predicted_output": "[1, 1, 2, 2, 2, 2]",
+  "explanation": "The function pops the last element from the array, which is 2, and then extends the array with two occurrences of this element. Therefore, [1, 1, 2, 2] becomes [1, 1, 2, 2, 2, 2]."
+}
+
+--------------------------------------------------------------------------------
+
+Example 23
+ID: sample_22
+Category: unknown
+Code:
+def f(a):
+    if a == 0:
+        return [0]
+    result = []
+    while a > 0:
+        result.append(a%10)
+        a = a//10
+    result.reverse()
+    return int(''.join(str(i) for i in result))
+
+Input:
+000
+
+Gold Output:
+[0]
+
+Output:
+0
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function checks if 'a' is 0 and returns [0]. Since the function returns an integer, it converts [0] to 0.
+
+Raw model text:
+Output:
+"0"
+Explanation:
+The function f takes an integer 'a' as input. For input '000', the function first checks if 'a' is 0, which it is. Therefore, it returns [0]. However, since the function is supposed to return an integer, it converts the list [0] to the integer 0. Hence, the output is "0".
+{
+  "predicted_output": "0",
+  "explanation": "The function checks if 'a' is 0 and returns [0]. Since the function returns an integer, it converts [0] to 0."
+}
+
+--------------------------------------------------------------------------------
+
+Example 24
+ID: sample_23
+Category: unknown
+Code:
+def f(text, chars):
+    if chars:
+        text = text.rstrip(chars)
+    else:
+        text = text.rstrip(' ')
+    if text == '':
+        return '-'
+    return text
+
+Input:
+'new-medium-performing-application - XQuery 2.2', '0123456789-'
+
+Gold Output:
+'new-medium-performing-application - XQuery 2.'
+
+Output:
+- XQuery 2.2
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function rstrip removes leading characters from the input string. Since '0123456789-' are provided, they are removed from the start of 'new-medium-performing-application - XQuery 2.2'. After removal, the first non-removed character is '-', so the function returns '- XQuery 2.2'.
+
+Raw model text:
+Output:
+{
+  "predicted_output": "- XQuery 2.2",
+  "explanation": "The function rstrip removes leading characters from the input string. Since '0123456789-' are provided, they are removed from the start of 'new-medium-performing-application - XQuery 2.2'. After removal, the first non-removed character is '-', so the function returns '- XQuery 2.2'."
+}
+
+--------------------------------------------------------------------------------
+
+Example 25
+ID: sample_24
+Category: unknown
+Code:
+def f(nums, i):
+    nums.pop(i)
+    return nums
+
+Input:
+[35, 45, 3, 61, 39, 27, 47], 0
+
+Gold Output:
+[45, 3, 61, 39, 27, 47]
+
+Output:
+[45, 3, 61, 39, 27, 47]
+
+Strict: CORRECT
+Normalized: CORRECT
+
+Explanation (model-provided):
+The function f removes the element at index 0 from the list, which is 35. The remaining elements are returned in order.
+
+Raw model text:
+```json
+{
+  "predicted_output": [45, 3, 61, 39, 27, 47],
+  "explanation": "The function f removes the element at index 0 from the list, which is 35. The remaining elements are returned in order."
+}
+
+--------------------------------------------------------------------------------
+
+Example 26
+ID: sample_25
+Category: unknown
+Code:
+def f(d):
+    d = d.copy()
+    d.popitem()
+    return d
+
+Input:
+{"l": 1, "t": 2, "x:": 3}
+
+Gold Output:
+{'l': 1, 't': 2}
+
+Output:
+{'l': 1, 't': 2}
+
+Strict: CORRECT
+Normalized: CORRECT
+
+Explanation (model-provided):
+The function f takes a dictionary, removes the last item using popitem(), and returns the modified dictionary. Given the input, the last key-value pair ('x:': 3) is removed, leaving {'l': 1, 't': 2}.
+
+Raw model text:
+Output:
+```json
+{
+  "predicted_output": {"l": 1, "t": 2},
+  "explanation": "The function f takes a dictionary, removes the last item using popitem(), and returns the modified dictionary. Given the input, the last key-value pair ('x:': 3) is removed, leaving {'l': 1, 't': 2}."
+}
+
+--------------------------------------------------------------------------------
+
+Example 27
+ID: sample_26
+Category: unknown
+Code:
+def f(items, target):
+    for i in items.split():
+        if i in target:
+            return items.index(i)+1
+        if i.index('.') == len(i)-1 or i.index('.') == 0:
+            return 'error'
+    return '.'
+
+Input:
+"qy. dg. rnvprt rse.. irtwv tx..", "wtwdoacb"
+
+Gold Output:
+'error'
+
+Output:
+.
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function iterates through each word in the input string and checks if it matches any word in the target list. Since there are no matching words, it returns '.' as per the last condition.
+
+Raw model text:
+Output:
+"."
+Explanation:
+The function iterates over each word in the input string. It checks if the word is in the target list. If it finds a match, it returns the index of the word plus one. If the word ends with a dot or starts with a dot, it returns 'error'. If no word matches the target and none end or start with a dot, it returns '.'. In this case, no word in the input matches the target, so it returns '.'.
+```json
+{
+  "predicted_output": ".",
+  "explanation": "The function iterates through each word in the input string and checks if it matches any word in the target list. Since there are no matching words, it returns '.' as per the last condition."
+}
+
+--------------------------------------------------------------------------------
+
+Example 28
+ID: sample_27
+Category: unknown
+Code:
+def f(w):
+    ls = list(w)
+    omw = ''
+    while len(ls) > 0:
+        omw += ls.pop(0)
+        if len(ls) * 2 > len(w):
+            return w[len(ls):] == omw
+    return False
+
+Input:
+'flak'
+
+Gold Output:
+False
+
+Output:
+False
+
+Strict: CORRECT
+Normalized: CORRECT
+
+Explanation (model-provided):
+The function iteratively removes characters from the start of the word and checks if the remaining part matches the constructed string. For 'flak', removing characters and checking the condition does not result in a match, hence it returns False.
+
+Raw model text:
+```python
+{
+  "predicted_output": "False",
+  "explanation": "The function iteratively removes characters from the start of the word and checks if the remaining part matches the constructed string. For 'flak', removing characters and checking the condition does not result in a match, hence it returns False."
+}
+
+--------------------------------------------------------------------------------
+
+Example 29
+ID: sample_28
+Category: unknown
+Code:
+def f(mylist):
+    revl = mylist[:]
+    revl.reverse()
+    mylist.sort(reverse=True)
+    return mylist == revl
+
+Input:
+[5, 8]
+
+Gold Output:
+True
+
+Output:
+False
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function first reverses the list in-place, then sorts it in descending order. Since reversing and sorting are different operations, the sorted list will not be equal to the reversed list, hence the output is False.
+
+Raw model text:
+```json
+{
+  "predicted_output": "False",
+  "explanation": "The function first reverses the list in-place, then sorts it in descending order. Since reversing and sorting are different operations, the sorted list will not be equal to the reversed list, hence the output is False."
+}
+
+--------------------------------------------------------------------------------
+
+Example 30
+ID: sample_29
+Category: unknown
+Code:
+def f(text):
+    nums = list(filter(str.isnumeric, text))
+    assert len(nums) > 0
+    return ''.join(nums)
+
+Input:
+'-123   \t+314'
+
+Gold Output:
+'123314'
+
+Output:
+-123314
+
+Strict: INCORRECT
+Normalized: INCORRECT
+
+Explanation (model-provided):
+The function filters out numeric characters from the input string, resulting in ['-1', '2', '3', '+', '3', '1', '4']. It then removes non-numeric characters and joins them into a single string, which is '-123314'.
+
+Raw model text:
+```json
+{
+  "predicted_output": "-123314",
+  "explanation": "The function filters out numeric characters from the input string, resulting in ['-1', '2', '3', '+', '3', '1', '4']. It then removes non-numeric characters and joins them into a single string, which is '-123314'."
+}
+
+--------------------------------------------------------------------------------
+

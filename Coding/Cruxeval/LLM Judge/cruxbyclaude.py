@@ -14,7 +14,7 @@ from transformers import (
 # Dataset and model 
 DEFAULT_DATASET = "cruxeval_mini.json"
 DEFAULT_MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
-DEFAULT_JUDGE_MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"  # Can use same or different model for judging
+DEFAULT_JUDGE_MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.2"  # Can use same or different model for judging
 DEFAULT_MAX_NEW_TOKENS = 256
 DEFAULT_JUDGE_MAX_TOKENS = 512
 DEFAULT_RESULTS_JSON = "cruxeval_qwen257b_results.json"

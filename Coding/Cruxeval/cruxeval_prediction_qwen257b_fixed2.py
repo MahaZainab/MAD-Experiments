@@ -96,7 +96,7 @@ class CruxEvalSolver:
         return f"""You are given Python code and input arguments.
 
 Task:
-Predict the exact return value of the function.
+Your job is to predict the exact output and return that output.
 
 Definition of explanation:
 - A short, high-level description of your chain of thought. How did you arrive at the answer?

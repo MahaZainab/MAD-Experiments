@@ -12,9 +12,7 @@ from transformers import (
     StoppingCriteriaList,
 )
 
-# -------------------------
-# Defaults (edit once here)
-# -------------------------
+# Dataset and model 
 DEFAULT_DATASET = "cruxeval_mini.json"
 DEFAULT_MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
 DEFAULT_MAX_NEW_TOKENS = 256

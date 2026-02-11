@@ -1,14 +1,5 @@
 
-"""
-CruxEval (code+input -> output) Solver using Hugging Face Transformers.
-
-Fixes vs original:
-- Prevents multi-example "Human:" continuation by stopping generation after the FIRST complete JSON object.
-- Robustly isolates newly generated tokens (token-based slicing, not string prefix slicing).
-- Robust JSON extraction that returns the first valid JSON dict even if the model repeats itself.
-- Stores only two user-facing fields: "output" and "explanation" (keeps "predicted_output" for backwards compat).
-"""
-
+# Importing libraries
 import json
 import re
 from typing import Dict, List, Tuple, Optional

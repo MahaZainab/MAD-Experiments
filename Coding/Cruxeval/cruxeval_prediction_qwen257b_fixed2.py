@@ -101,7 +101,7 @@ Your job is to predict the exact output and return that output along with the ex
 Definition of explanation:
 - A short, high-level description of your chain of thought. How did you arrive at the answer?
 - Make it concise.
-- Use 2-3 sentences to explain your reasoning.
+- Use 2-3 sentences to explain your reasoning about how you reached to the output.
 
 Rules for predicted_output:
 - Return the value exactly as Python would display it (repr-style).

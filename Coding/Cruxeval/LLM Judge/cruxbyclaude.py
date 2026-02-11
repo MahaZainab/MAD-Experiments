@@ -14,7 +14,7 @@ from transformers import (
 # Dataset and model 
 DEFAULT_DATASET = "cruxeval_mini.json"
 DEFAULT_MODEL_NAME = "Qwen/Qwen2.5-7B-Instruct"
-DEFAULT_JUDGE_MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.2"  # Can use same or different model for judging
+DEFAULT_JUDGE_MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.2" 
 DEFAULT_MAX_NEW_TOKENS = 256
 DEFAULT_JUDGE_MAX_TOKENS = 512
 DEFAULT_RESULTS_JSON = "cruxeval_qwen257b_results.json"
@@ -132,7 +132,6 @@ Predicted Output:
 
 Your task:
 Evaluate whether the predicted output is semantically correct compared to the expected output. Consider:
-1. Exact matches are correct
 2. Semantically equivalent outputs are correct (e.g., different representations of the same value)
 3. Different data types representing the same value may be correct (e.g., 1 vs 1.0)
 4. Whitespace differences alone should not make outputs incorrect

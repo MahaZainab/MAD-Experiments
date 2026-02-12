@@ -31,7 +31,7 @@ DEFAULT_RESULTS_CSV     = "cruxeval_multi_results.csv"
 # Contestant models  (M / P / Q)
 MODEL_M = "mistralai/Mistral-7B-Instruct-v0.3"
 MODEL_P = "microsoft/Phi-4-mini-instruct"
-MODEL_Q = "Qwen/Qwen3-8B"
+MODEL_Q = "Qwen/Qwen2.5-7B-Instruct"
 
 # Judge model (unchanged from original)
 MODEL_JUDGE = "Qwen/Qwen2.5-7B-Instruct"

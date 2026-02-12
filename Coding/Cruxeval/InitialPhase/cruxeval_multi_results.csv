@@ -1,0 +1,173 @@
+"code","input","gold_output","M_output","M_reasoning","M_Correctness","P_output","P_reasoning","P_Correctness","Q_output","Q_reasoning","Q_Correctness"
+"def f(nums):
+    output = []
+    for n in nums:
+        output.append((nums.count(n), n))
+    output.sort(reverse=True)
+    return output","[1, 1, 3, 1, 3, 1]","[(4, 1), (4, 1), (4, 1), (4, 1), (2, 3), (2, 3)]","[(3, 1), (2, 3)]","The function iterates through the input list and counts the occurrences of each number. It then appends a tuple containing the count and the number to the output list. The output list is then sorted in descending order by the count. The resulting list is then returned.","INCORRECT","[(4, 1), (3, 3)]","The function counts occurrences of each number in the list, pairs them with the number, sorts them in descending order by count, and returns the sorted list.","INCORRECT","","","CORRECT"
+"def f(a, b, c):
+    result = {}
+    for d in a, b, c:
+        result.update(dict.fromkeys(d))
+    return result","(1, ), (1, ), (1, 2)","{1: None, 2: None}","{1: 1, 2: 1}","The function `f` takes three arguments and for each argument, it creates a dictionary with keys from the argument. Then it merges all these dictionaries into one. Since the first two arguments are the same, they both have the same keys and values. The third argument has two keys, 1 and 2, both with value 1.","INCORRECT","{1: (1,), 2: (1, 2)}","The function iterates over the tuples (1,), (1,), and (1, 2), and for each unique element in the tuples, it creates a key-value pair in the result dictionary. Since all tuples contain the same element 1, the resulting dictionary will have keys 1 and 2, with their corresponding tuples as values.","INCORRECT","","","INCORRECT"
+"def f(text):
+    new_text = list(text)
+    for i in '+':
+        if i in new_text:
+            new_text.remove(i)
+    return ''.join(new_text)","'hbtofdeiequ'","'hbtofdeiequ'","hbteiequ","The function removes all occurrences of the '+' character from the input string.","INCORRECT","htoediequ","The function iterates over the string 'hbtofdeiequ' and removes the first occurrence of the character '+'. Since there is only one '+' in the string, it is removed, resulting in the string 'htoediequ'.","INCORRECT","'hbtofdeiequ'","The input string does not contain any '+', so the loop does not remove any characters. The function returns the original string unchanged.","CORRECT"
+"def f(text, value):
+    text_list = list(text)
+    text_list.append(value)
+    return ''.join(text_list)","'bcksrut', 'q'","'bcksrutq'","bcksrutq","The function takes a string and appends the given value to the end of the string.","CORRECT","bcksrutq","The function converts the string 'bcksrut' into a list of characters, appends the character 'q' to the end of the list, and then joins the list back into a string.","CORRECT","","","CORRECT"
+"def f(array):
+    s = ' '
+    s += ''.join(array)
+    return s","[' ', '  ', '    ', '   ']","'           '","   ","The function f(array) joins all the elements of the array with a space character. The input array contains only space characters, so the output is a single space character.","INCORRECT","   
+  
+    
+   ","The function concatenates the elements of the input list, which are all strings containing spaces. The resulting string is a sequence of spaces, and when printed, it appears as a series of spaces with newlines due to the implicit newline behavior of Python's print function.","INCORRECT","      ","The function concatenates a space with the joined elements of the input array. The input contains strings with 1, 2, 4, and 3 spaces, which when joined form 1+2+4+3=10 spaces. Adding the initial space gives a total of 11 spaces.","CORRECT"
+"def f(text, lower, upper):
+    count = 0
+    new_text = list()
+    for char in text:
+        char = lower if char.isdecimal() else upper
+        if char in ['p', 'C']:
+            count += 1
+        new_text.append(char)
+    return count, ''.join(new_text)","'DSUWeqExTQdCMGpqur', 'a', 'x'","(0, 'xxxxxxxxxxxxxxxxxx')","3xSxWxqxMxGxPxR","The function iterates through each character in the input string. If the character is a digit, it is replaced with the lowercase character. If the character is 'p' or 'C', the count is incremented. Finally, the count and the new string are returned.","INCORRECT","2, 'DSUWeqExTQdCMGpqur'","The function iterates over each character in the input string. It converts characters to lowercase if they are decimal digits, otherwise to uppercase. It counts occurrences of 'p' and 'C' (case-insensitive) and constructs a new string with the modified characters. The output is a tuple with the count of 'p' and 'C' and the new string.","INCORRECT","","","CORRECT"
+"def f(dic):
+    for k,v in sorted(dic.items(), key=lambda x: len(str(x)))[:-1]:
+        dic.pop(k)
+    return list(dic.items())","{'11': 52, '65': 34, 'a': 12, '4': 52, '74': 31}","[('74', 31)]","[('a', 12), ('4', 52)]","The function sorts the dictionary items by their lengths in descending order and removes the items with the longest lengths. The remaining items are returned as a list.","INCORRECT","","","CORRECT","","","CORRECT"
+"def f(list):
+    original = list[:]
+    while len(list) > 1:
+        list.pop(len(list) - 1)
+        for i in range(len(list)):
+            list.pop(i)
+    list = original[:]
+    if list:
+        list.pop(0)
+    return list","[]","[]","[]","The function does nothing to an empty list.","CORRECT","","","CORRECT","","","CORRECT"
+"def f(string, encryption):
+    if encryption == 0:
+        return string
+    else:
+        return string.upper().encode('rot13')","'UppEr', 0","'UppEr'","","","INCORRECT","UppEr","The function checks if the encryption parameter is 0. Since it is, the function returns the original string without any changes.","CORRECT","'UppEr'","The encryption value is 0, so the function returns the original string without any modifications.","CORRECT"
+"def f(t):
+    for c in t:
+        if not c.isnumeric():
+            return False
+    return True","'#284376598'","False","True","The function checks if all characters in the input string are numeric. In this case, '#284376598' contains only digits, so the function returns True.","INCORRECT","","","CORRECT","","","CORRECT"
+"def f(text):
+    new_text = ''
+    for ch in text.lower().strip():
+        if ch.isnumeric() or ch in 'ÄäÏïÖöÜü':
+            new_text += ch
+    return new_text","''","''","","","CORRECT","","The function f takes an empty string as input, processes it by converting to lowercase and stripping whitespace, but since the input is empty, the resulting new_text remains an empty string.","CORRECT","","","CORRECT"
+"def f(a, b):
+    for key, value in b.items():
+        if key not in a:
+            a[key] = [value]
+        else:
+            a[key].append(value)
+    return a","{}, {'foo': 'bar'}","{'foo': ['bar']}","","","INCORRECT","{'foo': ['bar']}","The function initializes an empty dictionary 'a' and iterates over the items in dictionary 'b'. Since 'a' is empty, it adds 'foo' as a key with the value ['bar'] as a list.","CORRECT","","","INCORRECT"
+"def f(s, x):
+    count = 0
+    while s[:len(x)] == x and count < len(s)-len(x):
+        s = s[len(x):]
+        count += len(x)
+    return s","'If you want to live a happy life! Daniel', 'Daniel'","'If you want to live a happy life! Daniel'","","","INCORRECT","If you want to live a happy life!","The function f removes the substring 'Daniel' from the start of the string 'If you want to live a happy life! Daniel' until it can no longer find 'Daniel' at the beginning. The loop stops when 'Daniel' is no longer at the start or when the remaining string is shorter than 'Daniel'.","INCORRECT","","","INCORRECT"
+"def f(names):
+    count = len(names)
+    numberOfNames = 0
+    for i in names:
+        if i.isalpha():
+            numberOfNames += 1
+    return numberOfNames","['sharron', 'Savannah', 'Mike Cherokee']","2","2","The function iterates through the list of names and checks if each name is an alphabetic string using the isalpha() method. It counts the number of alphabetic names and returns that count.","CORRECT","3","The function counts the number of names that consist only of alphabetic characters. All three names in the input list are alphabetic, so the count is 3.","INCORRECT","2","The function counts names with only alphabetic characters. 'sharron' and 'Savannah' are valid, while 'Mike Cherokee' contains a space, so the result is 2.","CORRECT"
+"def f(s):
+    arr = list(s.strip())
+    arr.reverse()
+    return ''.join(arr)","'   OOP   '","'POO'","OOP   ","The string is reversed and then the spaces are preserved.","CORRECT","   POO   ","The function strips whitespace, reverses the string, and rejoins it, resulting in the last character 'O' becoming the first and vice versa.","CORRECT","","","CORRECT"
+"def f(text, wrong, right):
+    new_text = text.replace(wrong, right)
+    return new_text.upper()","""zn kgd jw lnt"", ""h"", ""u""","'ZN KGD JW LNT'","ZN KGD JW LNT","The function replaces all occurrences of the string 'h' with 'u' in the given string. Then it converts the entire string to uppercase.","CORRECT","ZN KGD JU LINT","The function replaces 'h' with 'u' in the given text, resulting in 'zn kgd ju lint'. Then, it converts the entire string to uppercase, resulting in 'ZN KGD JU LINT'.","INCORRECT","","","CORRECT"
+"def f(text, suffix):
+    if text.endswith(suffix):
+        return text[:-len(suffix)]
+    return text","'zejrohaj', 'owc'","'zejrohaj'","","","CORRECT","zejrohaj","The function checks if the string 'zejrohaj' ends with the suffix 'owc'. Since it does not, it returns the original string 'zejrohaj'.","CORRECT","","","CORRECT"
+"def f(text):
+    return text.find("","")","""There are, no, commas, in this text""","9","4","The `find()` method in Python returns the index of the first occurrence of the specified value. In this case, it is looking for the comma (`,`). The string 'There are, no, commas, in this text' has 4 commas, and the first comma is at index 4.","INCORRECT","","","CORRECT","","","CORRECT"
+"def f(array, elem):
+    k = 0
+    l = array.copy()
+    for i in l:
+        if i > elem:
+            array.insert(k, elem)
+            break
+        k += 1
+    return array","[5, 4, 3, 2, 1, 0], 3","[3, 5, 4, 3, 2, 1, 0]","","","CORRECT","[5, 4, 3, 3, 2, 1, 0]","The function inserts the element '3' into the array at the index where the first element greater than '3' is found, which is at index 2. The original array is copied, and the insertion is done in the copied array, but the original array is returned.","INCORRECT","","","CORRECT"
+"def f(x, y):
+    tmp = ''.join(['0' if c == '9' else '9' for c in y[::-1]])
+    if (x.isnumeric() and tmp.isnumeric()):
+        return x + tmp
+    else:
+        return x",""""", ""sdasdnakjsda80""","''","80","The function reverses the string y and replaces all '9' with '0'. Then it checks if x is a number and the reversed y is also a number. If both are numbers, it concatenates them. Since x is an empty string, the final output is the reversed y.","INCORRECT","sdasdnakjsda8099","The function reverses the string 'sdasdnakjsda80', replaces '9' with '0', and since both 'sdasdnakjsda80' and '8099' are numeric, it concatenates them.","INCORRECT","","","CORRECT"
+"def f(text):
+    result = ''
+    for i in range(len(text)-1, -1, -1):
+        result += text[i]
+    return result","'was,'","',saw'","","","INCORRECT","s,","The function iterates over the string in reverse order, starting from the last character to the first, and concatenates each character to the result string.","INCORRECT","","","INCORRECT"
+"def f(array):
+    n = array.pop()
+    array.extend([n, n])
+    return array","[1, 1, 2, 2]","[1, 1, 2, 2, 2]","[1, 1, 2, 2, 2, 2]","The function removes the last element of the array and appends it twice to the end of the array.","INCORRECT","[1, 1, 2, 2, 1, 1]","The function pops the last element (2) from the array, then extends the array with two instances of this popped element (1, 1), resulting in the final array [1, 1, 2, 2, 1, 1].","INCORRECT","","","CORRECT"
+"def f(a):
+    if a == 0:
+        return [0]
+    result = []
+    while a > 0:
+        result.append(a%10)
+        a = a//10
+    result.reverse()
+    return int(''.join(str(i) for i in result))","000","[0]","0","The input is a string of zeros. The function converts the string to a list of digits, then reverses the list and converts it back to a string. Finally, it converts the string to an integer. Since all the digits are zeros, the final integer is 0.","INCORRECT","0","The function f is designed to convert a non-negative integer to its string representation. When the input is '000', which is equivalent to the integer 0, the function returns the string '0' as the output.","INCORRECT","","","CORRECT"
+"def f(text, chars):
+    if chars:
+        text = text.rstrip(chars)
+    else:
+        text = text.rstrip(' ')
+    if text == '':
+        return '-'
+    return text","'new-medium-performing-application - XQuery 2.2', '0123456789-'","'new-medium-performing-application - XQuery 2.'","new-medium-performing-application - XQuery 2.2","The function removes the trailing characters from the input string. Since the trailing characters are '-' and '0123456789-', the function removes them. Since the trailing characters are not present in the given string, the function does not remove anything.","INCORRECT","","","INCORRECT","","","INCORRECT"
+"def f(nums, i):
+    nums.pop(i)
+    return nums","[35, 45, 3, 61, 39, 27, 47], 0","[45, 3, 61, 39, 27, 47]","[45, 3, 61, 39, 27, 47]","The function removes the element at the given index from the list. Here, the index is 0, so the first element (35) is removed.","CORRECT","[45, 3, 61, 39, 27, 47]","The function f removes the element at index 0 from the list nums and returns the modified list.","CORRECT","","","CORRECT"
+"def f(d):
+    d = d.copy()
+    d.popitem()
+    return d","{""l"": 1, ""t"": 2, ""x:"": 3}","{'l': 1, 't': 2}","","","INCORRECT","{'l': 1, 't': 2}","The function creates a copy of the input dictionary, removes the last item, and returns the modified copy. The last item in the input is ('x:', 3), so it is removed, leaving only the first two items.","CORRECT","","","INCORRECT"
+"def f(items, target):
+    for i in items.split():
+        if i in target:
+            return items.index(i)+1
+        if i.index('.') == len(i)-1 or i.index('.') == 0:
+            return 'error'
+    return '.'","""qy. dg. rnvprt rse.. irtwv tx.."", ""wtwdoacb""","'error'","error","The input string does not contain the target string. The function checks each word in the input string and returns the index of the first word that matches the target. Since no word matches, it returns 'error'.","CORRECT","error","The function returns 'error' if any word in 'items' ends with a period, which is the case for 'dg' and 'tx' in the given input.","CORRECT","","","CORRECT"
+"def f(w):
+    ls = list(w)
+    omw = ''
+    while len(ls) > 0:
+        omw += ls.pop(0)
+        if len(ls) * 2 > len(w):
+            return w[len(ls):] == omw
+    return False","'flak'","False","True","The function reverses the input string and checks if the reversed string is equal to the original string from the index of the last character. Since the input string is 'flak', the reversed string is 'klafl' and the original string from the index of the last character is 'ak'. Since 'ak' is equal to 'klafl', the function returns True.","INCORRECT","False","The function f(w) processes the string 'flak' by repeatedly popping the first character and appending it to 'omw'. The loop continues until all characters are processed. The condition len(ls) * 2 > len(w) is never true for 'flak', so the function returns False.","CORRECT","","","CORRECT"
+"def f(mylist):
+    revl = mylist[:]
+    revl.reverse()
+    mylist.sort(reverse=True)
+    return mylist == revl","[5, 8]","True","False","The list is sorted in descending order, but it is not reversed. The first element is 5, which is not equal to the last element 8.","INCORRECT","True","The function creates a reversed copy of the input list and sorts the original list in descending order. It then checks if the sorted list is equal to the reversed copy, which is always true for a list with unique elements.","CORRECT","True","The function checks if sorting the list in reverse order equals its reversed copy. For [5, 8], both sorted and reversed versions are [8, 5], so they are equal.","CORRECT"
+"def f(text):
+    nums = list(filter(str.isnumeric, text))
+    assert len(nums) > 0
+    return ''.join(nums)","'-123   \t+314'","'123314'","-123314","The function f(text) filters the string text to only include the numeric characters. It then joins the filtered numeric characters together to form a single string.","INCORRECT","-123+314","The function filters out numeric characters from the input string, resulting in '-123' and '314'. It then joins these numeric strings without any spaces or special characters, producing '-123+314'.","INCORRECT","","","CORRECT"

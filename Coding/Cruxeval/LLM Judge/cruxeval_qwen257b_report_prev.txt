@@ -1,4 +1,4 @@
-CRUXEVAL SOLVER - DETAILED REPORT (LLM Judge)
+CRUXEVAL SOLVER - DETAILED REPORT
 ================================================================================
 
 Example 1
@@ -18,27 +18,20 @@ Input:
 Gold Output:
 [(4, 1), (4, 1), (4, 1), (4, 1), (2, 3), (2, 3)]
 
-Predicted Output:
+Output:
 [[4, 1], [2, 3]]
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function counts the occurrences of each number and sorts the list of tuples in descending order based on the count. The number 1 appears 4 times, and the number 3 appears 2 times.
 
-Raw Model Text:
+Raw model text:
 ```json
 {
   "predicted_output": "[[4, 1], [2, 3]]",
   "explanation": "The function counts the occurrences of each number and sorts the list of tuples in descending order based on the count. The number 1 appears 4 times, and the number 3 appears 2 times."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -59,29 +52,22 @@ Input:
 Gold Output:
 {1: None, 2: None}
 
-Predicted Output:
+Output:
 
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 
 
-Raw Model Text:
+Raw model text:
 Let's analyze the function `f` step by step:
 
 1. The function initializes an empty dictionary `result`.
 2. It iterates over the elements of the input tuple `(a, b, c)`, which are `(1,)`, `(1,)`, and `(1, 2)` respectively.
 3. For each element `d` in the iteration, it creates a dictionary with keys from `d` using `dict.fromkeys(d)` and updates `result` with these keys.
 4. Since `dict.fromkeys(d)` returns a dictionary with all keys set to `None`, the first two iterations will add one key `1` each time, resulting in `{1: None}`
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
-}
 
 --------------------------------------------------------------------------------
 
@@ -102,27 +88,20 @@ Input:
 Gold Output:
 'hbtofdeiequ'
 
-Predicted Output:
+Output:
 hbtofedqu
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 
 
-Raw Model Text:
+Raw model text:
 Output:
 {
   "predicted_output": "hbtofedqu",
   "+": "The function iterates over each character in the string '+', checks if it's in the list representation of the input string 'hbtofdeiequ', and removes it if found. Since '+' has no common characters with the input string, the output remains unchanged."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -142,26 +121,19 @@ Input:
 Gold Output:
 'bcksrutq'
 
-Predicted Output:
+Output:
 bcksrutq
 
-Result: CORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function appends the value 'q' to the end of the list representation of the string 'bcksrut' and then joins the list back into a string.
 
-Raw Model Text:
+Raw model text:
 {
 "predicted_output": "bcksrutq",
 "explanation": "The function appends the value 'q' to the end of the list representation of the string 'bcksrut' and then joins the list back into a string."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": true,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -181,27 +153,20 @@ Input:
 Gold Output:
 '           '
 
-Predicted Output:
+Output:
  '     ' 
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function f concatenates all elements of the input list using an empty string as the separator. The input list contains four strings with varying numbers of spaces. When concatenated, they form a single string with five spaces.
 
-Raw Model Text:
+Raw model text:
 ```json
 {
   "predicted_output": " '     ' ",
   "explanation": "The function f concatenates all elements of the input list using an empty string as the separator. The input list contains four strings with varying numbers of spaces. When concatenated, they form a single string with five spaces."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -226,27 +191,20 @@ Input:
 Gold Output:
 (0, 'xxxxxxxxxxxxxxxxxx')
 
-Predicted Output:
+Output:
 (4, 'DSUWeaqExTQdxMGpqur')
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function iterates through each character in the input text. It replaces decimal characters with 'a' and non-decimal characters with 'x'. It also counts occurrences of 'p' and 'C', which are both replaced by 'x'. The final count and modified text are returned as a tuple.
 
-Raw Model Text:
+Raw model text:
 Output:
 {
   "predicted_output": "(4, 'DSUWeaqExTQdxMGpqur')",
   "explanation": "The function iterates through each character in the input text. It replaces decimal characters with 'a' and non-decimal characters with 'x'. It also counts occurrences of 'p' and 'C', which are both replaced by 'x'. The final count and modified text are returned as a tuple."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -266,27 +224,20 @@ Input:
 Gold Output:
 [('74', 31)]
 
-Predicted Output:
+Output:
 [('a', 12)]
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The dictionary items are first sorted by the length of their string representation. Then, all but the last item (based on this sorting) are removed. The last item left is ('a', 12).
 
-Raw Model Text:
+Raw model text:
 ```json
 {
   "predicted_output": "[('a', 12)]",
   "explanation": "The dictionary items are first sorted by the length of their string representation. Then, all but the last item (based on this sorting) are removed. The last item left is ('a', 12)."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -312,27 +263,20 @@ Input:
 Gold Output:
 []
 
-Predicted Output:
+Output:
 []
 
-Result: CORRECT
-Judge Confidence: high
+Strict: CORRECT
+Normalized: CORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function always ends up with an empty list because it first copies the input list, then removes all elements from the copied list, and finally tries to modify the original list which is already empty.
 
-Raw Model Text:
+Raw model text:
 Output: ```json
 {
   "predicted_output": [],
   "explanation": "The function always ends up with an empty list because it first copies the input list, then removes all elements from the copied list, and finally tries to modify the original list which is already empty."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": true,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -353,26 +297,19 @@ Input:
 Gold Output:
 'UppEr'
 
-Predicted Output:
+Output:
 UppEr
 
-Result: CORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 Since encryption is 0, the function returns the string as is without any modifications.
 
-Raw Model Text:
+Raw model text:
 {
 "predicted_output": "UppEr",
 "explanation": "Since encryption is 0, the function returns the string as is without any modifications."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": true,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -393,26 +330,19 @@ Input:
 Gold Output:
 False
 
-Predicted Output:
+Output:
 False
 
-Result: CORRECT
-Judge Confidence: high
+Strict: CORRECT
+Normalized: CORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function checks if all characters in the string are numeric. Since the first character is '#', which is not numeric, the function returns False.
 
-Raw Model Text:
+Raw model text:
 {
  "predicted_output": "False",
  "explanation": "The function checks if all characters in the string are numeric. Since the first character is '#', which is not numeric, the function returns False."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": true,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -434,27 +364,20 @@ Input:
 Gold Output:
 ''
 
-Predicted Output:
+Output:
 
 
-Result: CORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The input is an empty string, so there are no characters to process, hence the output is an empty string.
 
-Raw Model Text:
+Raw model text:
 Output: ```json
 {
   "predicted_output": "",
   "explanation": "The input is an empty string, so there are no characters to process, hence the output is an empty string."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": true,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -477,26 +400,19 @@ Input:
 Gold Output:
 {'foo': ['bar']}
 
-Predicted Output:
+Output:
 
 
-Result: CORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 
 
-Raw Model Text:
+Raw model text:
 {
   "predicted_output": "{\'foo\': [\\'bar\\']}",
   "explanation": "The function f takes two dictionaries, a and b. It iterates over the items in b and adds them to a. Since 'foo' is not already a key in a, it creates a new key-value pair where the value is a list containing 'bar'."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": true,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -518,28 +434,21 @@ Input:
 Gold Output:
 'If you want to live a happy life! Daniel'
 
-Predicted Output:
+Output:
 you want to live a happy life! Daniel
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function removes the substring 'Daniel' from the beginning of the input string as long as it matches and the count is less than the length of the input minus the length of 'Daniel'. It continues until the condition is no longer met, resulting in the remaining string.
 
-Raw Model Text:
+Raw model text:
 Output: 
 "you want to live a happy life! Daniel"
 {
   "predicted_output": "you want to live a happy life! Daniel",
   "explanation": "The function removes the substring 'Daniel' from the beginning of the input string as long as it matches and the count is less than the length of the input minus the length of 'Daniel'. It continues until the condition is no longer met, resulting in the remaining string."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -562,27 +471,20 @@ Input:
 Gold Output:
 2
 
-Predicted Output:
+Output:
 3
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function counts the number of names that contain only alphabetic characters. All three names in the input list ('sharron', 'Savannah', 'Mike Cherokee') contain alphabetic characters, so the function returns 3.
 
-Raw Model Text:
+Raw model text:
 ```json
 {
   "predicted_output": 3,
   "explanation": "The function counts the number of names that contain only alphabetic characters. All three names in the input list ('sharron', 'Savannah', 'Mike Cherokee') contain alphabetic characters, so the function returns 3."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -602,26 +504,19 @@ Input:
 Gold Output:
 'POO'
 
-Predicted Output:
+Output:
 PPO
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function removes leading and trailing whitespace, reverses the string, and then joins it back together.
 
-Raw Model Text:
+Raw model text:
 {
 "predicted_output": "PPO",
 "explanation": "The function removes leading and trailing whitespace, reverses the string, and then joins it back together."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -640,26 +535,19 @@ Input:
 Gold Output:
 'ZN KGD JW LNT'
 
-Predicted Output:
+Output:
 ZU KGD JU LNT
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function replaces 'h' with 'u' in the input string and then converts the entire string to uppercase.
 
-Raw Model Text:
+Raw model text:
 {
 "predicted_output": "ZU KGD JU LNT",
 "explanation": "The function replaces 'h' with 'u' in the input string and then converts the entire string to uppercase."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -679,26 +567,19 @@ Input:
 Gold Output:
 'zejrohaj'
 
-Predicted Output:
+Output:
 'zejroha'
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function checks if the input text ends with the suffix 'owc'. Since it doesn't, it returns the original text unchanged.
 
-Raw Model Text:
+Raw model text:
 {
 "predicted_output": "'zejroha'",
 "explanation": "The function checks if the input text ends with the suffix 'owc'. Since it doesn't, it returns the original text unchanged."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -716,27 +597,20 @@ Input:
 Gold Output:
 9
 
-Predicted Output:
+Output:
 -1
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function f() searches for the first occurrence of ',' in the input string. Since there are no commas in the input, it returns -1, indicating that the substring was not found.
 
-Raw Model Text:
+Raw model text:
 ```json
 {
   "predicted_output": "-1",
   "explanation": "The function f() searches for the first occurrence of ',' in the input string. Since there are no commas in the input, it returns -1, indicating that the substring was not found."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -761,27 +635,20 @@ Input:
 Gold Output:
 [3, 5, 4, 3, 2, 1, 0]
 
-Predicted Output:
+Output:
 [5, 4, 3, 3, 2, 1, 0]
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function iterates through the copied list 'l' and inserts 'elem' into 'array' just before the first element greater than 'elem'. Since 3 is less than 5, it is inserted at index 3, resulting in the output [5, 4, 3, 3, 2, 1, 0].
 
-Raw Model Text:
+Raw model text:
 Output: ```json
 {
   "predicted_output": [5, 4, 3, 3, 2, 1, 0],
   "explanation": "The function iterates through the copied list 'l' and inserts 'elem' into 'array' just before the first element greater than 'elem'. Since 3 is less than 5, it is inserted at index 3, resulting in the output [5, 4, 3, 3, 2, 1, 0]."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -803,27 +670,20 @@ Input:
 Gold Output:
 ''
 
-Predicted Output:
+Output:
 
 
-Result: CORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 Since the first argument is an empty string, the function returns it directly without any modifications.
 
-Raw Model Text:
+Raw model text:
 ```python
 {
   "predicted_output": "",
   "explanation": "Since the first argument is an empty string, the function returns it directly without any modifications."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": true,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -844,16 +704,16 @@ Input:
 Gold Output:
 ',saw'
 
-Predicted Output:
+Output:
 'saw',
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function iterates through the input string 'was,' in reverse order and concatenates the characters to form the reversed string 'saw,'.
 
-Raw Model Text:
+Raw model text:
 Explanation of the code:
 The function `f` takes a string `text` as an argument and reverses it character by character. It starts from the last character (index -1) and iterates backwards to the first character (index 0). The reversed string is then returned.
 
@@ -868,13 +728,6 @@ JSON format output:
 {
   "predicted_output": "'saw',",
   "explanation": "The function iterates through the input string 'was,' in reverse order and concatenates the characters to form the reversed string 'saw,'."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -894,27 +747,20 @@ Input:
 Gold Output:
 [1, 1, 2, 2, 2]
 
-Predicted Output:
+Output:
 [1, 1, 2, 2, 2, 2]
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function pops the last element from the array, which is 2, and then extends the array with two occurrences of this element. Therefore, [1, 1, 2, 2] becomes [1, 1, 2, 2, 2, 2].
 
-Raw Model Text:
+Raw model text:
 ```json
 {
   "predicted_output": "[1, 1, 2, 2, 2, 2]",
   "explanation": "The function pops the last element from the array, which is 2, and then extends the array with two occurrences of this element. Therefore, [1, 1, 2, 2] becomes [1, 1, 2, 2, 2, 2]."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -939,16 +785,16 @@ Input:
 Gold Output:
 [0]
 
-Predicted Output:
+Output:
 0
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function checks if 'a' is 0 and returns [0]. Since the function returns an integer, it converts [0] to 0.
 
-Raw Model Text:
+Raw model text:
 Output:
 "0"
 Explanation:
@@ -956,13 +802,6 @@ The function f takes an integer 'a' as input. For input '000', the function firs
 {
   "predicted_output": "0",
   "explanation": "The function checks if 'a' is 0 and returns [0]. Since the function returns an integer, it converts [0] to 0."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -986,27 +825,20 @@ Input:
 Gold Output:
 'new-medium-performing-application - XQuery 2.'
 
-Predicted Output:
+Output:
 - XQuery 2.2
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function rstrip removes leading characters from the input string. Since '0123456789-' are provided, they are removed from the start of 'new-medium-performing-application - XQuery 2.2'. After removal, the first non-removed character is '-', so the function returns '- XQuery 2.2'.
 
-Raw Model Text:
+Raw model text:
 Output:
 {
   "predicted_output": "- XQuery 2.2",
   "explanation": "The function rstrip removes leading characters from the input string. Since '0123456789-' are provided, they are removed from the start of 'new-medium-performing-application - XQuery 2.2'. After removal, the first non-removed character is '-', so the function returns '- XQuery 2.2'."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -1025,27 +857,20 @@ Input:
 Gold Output:
 [45, 3, 61, 39, 27, 47]
 
-Predicted Output:
+Output:
 [45, 3, 61, 39, 27, 47]
 
-Result: CORRECT
-Judge Confidence: high
+Strict: CORRECT
+Normalized: CORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function f removes the element at index 0 from the list, which is 35. The remaining elements are returned in order.
 
-Raw Model Text:
+Raw model text:
 ```json
 {
   "predicted_output": [45, 3, 61, 39, 27, 47],
   "explanation": "The function f removes the element at index 0 from the list, which is 35. The remaining elements are returned in order."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": true,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -1065,28 +890,21 @@ Input:
 Gold Output:
 {'l': 1, 't': 2}
 
-Predicted Output:
+Output:
 {'l': 1, 't': 2}
 
-Result: CORRECT
-Judge Confidence: high
+Strict: CORRECT
+Normalized: CORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function f takes a dictionary, removes the last item using popitem(), and returns the modified dictionary. Given the input, the last key-value pair ('x:': 3) is removed, leaving {'l': 1, 't': 2}.
 
-Raw Model Text:
+Raw model text:
 Output:
 ```json
 {
   "predicted_output": {"l": 1, "t": 2},
   "explanation": "The function f takes a dictionary, removes the last item using popitem(), and returns the modified dictionary. Given the input, the last key-value pair ('x:': 3) is removed, leaving {'l': 1, 't': 2}."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": true,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -1109,16 +927,16 @@ Input:
 Gold Output:
 'error'
 
-Predicted Output:
+Output:
 .
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function iterates through each word in the input string and checks if it matches any word in the target list. Since there are no matching words, it returns '.' as per the last condition.
 
-Raw Model Text:
+Raw model text:
 Output:
 "."
 Explanation:
@@ -1127,13 +945,6 @@ The function iterates over each word in the input string. It checks if the word 
 {
   "predicted_output": ".",
   "explanation": "The function iterates through each word in the input string and checks if it matches any word in the target list. Since there are no matching words, it returns '.' as per the last condition."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -1157,27 +968,20 @@ Input:
 Gold Output:
 False
 
-Predicted Output:
+Output:
 False
 
-Result: CORRECT
-Judge Confidence: high
+Strict: CORRECT
+Normalized: CORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function iteratively removes characters from the start of the word and checks if the remaining part matches the constructed string. For 'flak', removing characters and checking the condition does not result in a match, hence it returns False.
 
-Raw Model Text:
+Raw model text:
 ```python
 {
   "predicted_output": "False",
   "explanation": "The function iteratively removes characters from the start of the word and checks if the remaining part matches the constructed string. For 'flak', removing characters and checking the condition does not result in a match, hence it returns False."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": true,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -1198,27 +1002,20 @@ Input:
 Gold Output:
 True
 
-Predicted Output:
+Output:
 False
 
-Result: INCORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function first reverses the list in-place, then sorts it in descending order. Since reversing and sorting are different operations, the sorted list will not be equal to the reversed list, hence the output is False.
 
-Raw Model Text:
+Raw model text:
 ```json
 {
   "predicted_output": "False",
   "explanation": "The function first reverses the list in-place, then sorts it in descending order. Since reversing and sorting are different operations, the sorted list will not be equal to the reversed list, hence the output is False."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": false,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------
@@ -1238,27 +1035,20 @@ Input:
 Gold Output:
 '123314'
 
-Predicted Output:
+Output:
 -123314
 
-Result: CORRECT
-Judge Confidence: high
+Strict: INCORRECT
+Normalized: INCORRECT
 
-Model Explanation:
+Explanation (model-provided):
 The function filters out numeric characters from the input string, resulting in ['-1', '2', '3', '+', '3', '1', '4']. It then removes non-numeric characters and joins them into a single string, which is '-123314'.
 
-Raw Model Text:
+Raw model text:
 ```json
 {
   "predicted_output": "-123314",
   "explanation": "The function filters out numeric characters from the input string, resulting in ['-1', '2', '3', '+', '3', '1', '4']. It then removes non-numeric characters and joins them into a single string, which is '-123314'."
-}
-
-Raw Judge Text:
-```json
-{
-  "is_correct": true,
-  "confidence": "high"
 }
 
 --------------------------------------------------------------------------------

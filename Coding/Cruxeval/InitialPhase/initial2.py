@@ -159,7 +159,7 @@ Input:
 
 
 def build_judge_prompt(code: str, inp: str, gold: str, prediction: str) -> str:
-    return f"""You are a strict automated judge for a Python output prediction task.
+    return f"""You are a automated judge for a Python output prediction task.
 
 Your job is to decide whether the predicted output is CORRECT compared to the gold output.
 
@@ -167,14 +167,11 @@ Rules:
 - The UNDERLYING VALUE must match — focus on what the code actually returns.
 - Quote-style differences are ACCEPTABLE: if gold is "'hello'" and prediction is
   "hello" (or vice versa), treat them as CORRECT — the underlying string value matches.
-- Ignore leading/trailing whitespace differences.
 - Treat semantically equivalent representations as correct
-  (e.g. True vs true, trailing zeros in floats).
 - Only mark INCORRECT when the actual computed value differs, not just its formatting.
 - Return ONLY valid JSON with exactly these keys:
 {{
   "verdict": "CORRECT" or "INCORRECT",
-  "reason": string  (one concise sentence)
 }}
 
 Code:

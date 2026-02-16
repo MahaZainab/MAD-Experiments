@@ -12,6 +12,7 @@
 # Phase 3 – Judge evaluates BOTH the Phase-1 and Phase-2 predictions.
 # Phase 4 – Results written to JSON + CSV.
 #
+# Input:  cruxeval_mini.json
 # CSV columns (Phase 1 + Phase 2 side-by-side):
 #   code, input, gold_output,
 #   M_output,  M_reasoning,  M_Correctness,
@@ -38,7 +39,7 @@ from transformers import (
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
-DEFAULT_DATASET        = "cruxeval_mini.csv"      # ← now reads CSV
+DEFAULT_DATASET        = "cruxeval_mini.json"     # input dataset
 DEFAULT_MAX_NEW_TOKENS = 256
 DEFAULT_RESULTS_JSON   = "cruxeval_debate_results.json"
 DEFAULT_RESULTS_CSV    = "cruxeval_debate_results.csv"

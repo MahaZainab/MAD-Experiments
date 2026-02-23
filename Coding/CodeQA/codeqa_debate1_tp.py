@@ -89,7 +89,7 @@ MODEL_Q = "Qwen/Qwen2.5-7B-Instruct"
 MODEL_TEACHER = "Qwen/Qwen3-Coder-30B-A3B-Instruct"
 
 # Judge model
-MODEL_JUDGE = "Qwen/Qwen2.5-7B-Instruct"
+MODEL_JUDGE = "Qwen/Qwen3-8b"
 
 CONTESTANT_MODELS = [
     ("M", MODEL_M),

@@ -70,7 +70,7 @@ from transformers import (
 # Configuration
 # ---------------------------------------------------------------------------
 DEFAULT_DATASET        = "dataset.json"
-DEFAULT_MAX_NEW_TOKENS = 256
+DEFAULT_MAX_NEW_TOKENS = 384
 DEFAULT_RESULTS_JSON   = "codeqa_debate_results.json"
 DEFAULT_RESULTS_CSV    = "codeqa_debate_results.csv"
 

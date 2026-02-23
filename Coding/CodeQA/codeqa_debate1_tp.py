@@ -432,8 +432,8 @@ class ModelRunner:
             outputs = self.model.generate(
                 **inputs,
                 max_new_tokens=max_new_tokens,
-                do_sample=True,
-                temperature=0.3,
+                do_sample=False,
+                temperature=0.0,
                 pad_token_id=self.tokenizer.pad_token_id,
                 eos_token_id=self.tokenizer.eos_token_id,
                 stopping_criteria=stopping,

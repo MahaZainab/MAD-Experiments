@@ -258,12 +258,11 @@ Your role - Theory-of-Mind guidance:
 - For EACH agent, reason about WHY that agent may have arrived at its answer.
 - Identify the specific step or assumption in each agent's reasoning that is flawed \
 (or confirm it is on the right track).
-- Write personalised, Socratic guidance for each agent:
-  * If the agent's reasoning is already sound, explicitly say so and encourage them to stay confident and keep their answer unless they find a concrete mistake.
-  * Point out exactly where their reasoning may be going wrong.
-  * Ask a targeted question or suggest a specific aspect of the code to re-examine.
-  * Do NOT directly reveal the correct answer.
-  * Keep each guidance concise (2-4 sentences).
+- If an agent is WRONG: Tell them clearly which part of the code they 
+  misread (e.g., "You misread line 3 — the loop condition is X not Y"). 
+  You may hint strongly at the right direction without giving the full answer.
+- If an agent is CORRECT: Say "Your answer is on the right track. 
+  Maintain your position confidently."
 
 Return ONLY valid JSON with exactly these keys (one guidance string per agent):
 {{

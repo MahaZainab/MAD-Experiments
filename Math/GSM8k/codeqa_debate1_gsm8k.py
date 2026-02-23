@@ -1,9 +1,9 @@
 # =============================================================================
-# CodeQA Multi-Model Evaluator  -  Teacher-Guided Theory-of-Mind Debate
+# GSM8K Multi-Model Evaluator  -  Teacher-Guided Theory-of-Mind Debate
 #
-# Dataset : CodeQA  (each example has: code, question, answer)
-#           The task is to answer a natural-language question about a code
-#           snippet (e.g. "What does the code do?", "Does it raise an error?")
+# Dataset : GSM8K  (each example has: question, answer)
+#           The task is to solve grade-school math word problems and produce
+#           the correct final numerical answer.
 #
 # Models:
 #   M       = Mistral-7B-Instruct-v0.3         (student agent)
@@ -43,7 +43,7 @@
 #
 # CSV columns
 # -----------
-# code, question, gold_answer,
+# question, gold_answer,
 # M_output,    M_reasoning,    M_Correctness,           <- Phase 0
 # P_output,    P_reasoning,    P_Correctness,
 # Q_output,    Q_reasoning,    Q_Correctness,
@@ -70,9 +70,9 @@ from transformers import (
 # Configuration
 # ---------------------------------------------------------------------------
 DEFAULT_DATASET        = "dataset.json"
-DEFAULT_MAX_NEW_TOKENS = 256
-DEFAULT_RESULTS_JSON   = "codeqa_debate_results.json"
-DEFAULT_RESULTS_CSV    = "codeqa_debate_results.csv"
+DEFAULT_MAX_NEW_TOKENS = 384
+DEFAULT_RESULTS_JSON   = "gsm8k_debate_results.json"
+DEFAULT_RESULTS_CSV    = "gsm8k_debate_results.csv"
 
 NUM_DEBATE_ROUNDS      = 5
 
@@ -147,33 +147,6 @@ class StopAfterFirstJSONObject(StoppingCriteria):
 # ---------------------------------------------------------------------------
 # JSON parsing helpers
 # ---------------------------------------------------------------------------
-
-def extract_final_answer(ans: str) -> str:
-    """Extract a concise final answer from a possibly long solution string.
-
-    Supports formats like GSM8K where the final answer appears after '####'.
-    Falls back to the last non-empty line.
-    """
-    if ans is None:
-        return ""
-
-
-def format_context_block(code: str) -> str:
-    """Format an optional code context block for prompts."""
-    if code and str(code).strip():
-        return f"""```python
-{code}
-```"""
-    return "(no code snippet)"
-    s = str(ans).strip()
-    if not s:
-        return ""
-    m = re.search(r"####\s*(.+)\s*$", s)
-    if m:
-        return m.group(1).strip()
-    lines = [ln.strip() for ln in s.splitlines() if ln.strip()]
-    return lines[-1] if lines else s
-
 def _first_json_object(text: str) -> Optional[dict]:
     """Extract the first valid JSON dict from raw model output."""
     if not text:
@@ -212,41 +185,27 @@ def _first_json_object(text: str) -> Optional[dict]:
 # ---------------------------------------------------------------------------
 # Prompt builders
 # ---------------------------------------------------------------------------
-
-def build_contestant_prompt(code: str, question: str) -> str:
-    """Phase 0: independent QA, no context from other agents."""
-    if code and code.strip():
-        context_header = "You are given a Python code snippet and a question about it."
-        context_block = f"""
-
-Code:
-```python
-{code}
-```
-"""
-    else:
-        context_header = "You are given a question."
-        context_block = ""
-
-    return f"""{context_header}
+def build_contestant_prompt(question: str) -> str:
+    """Phase 0: independent math QA, no context from other agents."""
+    return f"""You are a math reasoning assistant. Your task is to solve a grade-school math word problem.
 
 Task:
-Answer the question. Return your answer along with a brief explanation.
+Read the problem carefully, reason step by step, and provide the final numerical answer.
 
 Definition of explanation:
-- A short, high-level description of your reasoning. How did you arrive at the answer?
-- Make it concise — 2-3 sentences.
+- A brief step-by-step walkthrough of how you solved the problem.
+- Make it concise — 3-5 sentences covering the key calculation steps.
 
 Rules for predicted_output (your answer):
-- Give a direct, concise answer to the question (e.g. "Yes", "No", "a suite", "an error", "18").
-- Match the expected answer style: short noun phrases or Yes/No where appropriate. For math questions, output just the final number.
-- Do not include the question (or the code) in your answer.
+- Give only the final numerical answer as a number (e.g. "18", "70000", "3").
+- Do NOT include units, dollar signs, or extra words — just the number.
+- Do not include the question in your answer.
 
 Return ONLY valid JSON with exactly these keys:
 {{
   "predicted_output": string,
   "explanation": string
-}}{context_block}
+}}
 
 Question:
 {question}
@@ -254,13 +213,12 @@ Question:
 
 
 def build_teacher_prompt(
-    code: str,
     question: str,
     round_num: int,
     agent_responses: List[Tuple[str, str, str]],   # [(label, answer, reasoning), ...]
 ) -> str:
     """
-    Teacher (Theory-of-Mind) prompt for CodeQA.
+    Teacher (Theory-of-Mind) prompt for GSM8K.
 
     The teacher sees ALL three students' answers and must produce
     targeted, Socratic guidance for EACH student individually.
@@ -283,23 +241,22 @@ Answer: {answer}
 Reasoning: {reasoning}
 """
 
-    return f"""You are an expert Python teacher and Theory-of-Mind reasoner participating in \
+    return f"""You are an expert math teacher and Theory-of-Mind reasoner participating in \
 Round {round_num} of a {NUM_DEBATE_ROUNDS}-round multi-agent debate.
 
-Three small language model agents (M, P, Q) are each trying to answer a question about a \
-Python code snippet. You have received their latest answers and reasoning.
+Three small language model agents (M, P, Q) are each trying to solve a grade-school math word problem. \
+You have received their latest answers and reasoning.
 
 Your role - Theory-of-Mind guidance:
-- Carefully read the code and the question to determine the correct answer.
+- Carefully read the problem and work out the correct answer yourself.
 - For EACH agent, reason about WHY that agent may have arrived at its answer.
-- Identify the specific step or assumption in each agent's reasoning that is flawed \
+- Identify the specific step or calculation in each agent's reasoning that is flawed \
 (or confirm it is on the right track).
-- Write personalised, Socratic guidance for each agent:
-  * If the agent's reasoning is already sound, explicitly say so and encourage them to stay confident and keep their answer unless they find a concrete mistake.
-  * Point out exactly where their reasoning may be going wrong.
-  * Ask a targeted question or suggest a specific aspect of the code to re-examine.
-  * Do NOT directly reveal the correct answer.
-  * Keep each guidance concise (2-4 sentences).
+- If an agent is WRONG: Tell them clearly which calculation step went wrong \
+(e.g., "You incorrectly multiplied 3 × 4 when it should be 3 + 4"). \
+You may hint strongly at the right direction without giving the final answer.
+- If an agent is CORRECT: Say "Your reasoning is on the right track. \
+Maintain your position confidently."
 
 Return ONLY valid JSON with exactly these keys (one guidance string per agent):
 {{
@@ -307,9 +264,6 @@ Return ONLY valid JSON with exactly these keys (one guidance string per agent):
   "guidance_P": string,
   "guidance_Q": string
 }}
-
-=== Context ===
-{format_context_block(code)}
 
 === Question ===
 {question}
@@ -320,7 +274,6 @@ Return ONLY valid JSON with exactly these keys (one guidance string per agent):
 
 
 def build_debate_prompt(
-    code: str,
     question: str,
     my_label: str,
     round_num: int,
@@ -330,7 +283,7 @@ def build_debate_prompt(
     teacher_guidance: str,                         # "" on pure-debate rounds
 ) -> str:
     """
-    Student debate prompt for CodeQA - works for both pure-debate and teacher-guided rounds.
+    Student debate prompt for GSM8K - works for both pure-debate and teacher-guided rounds.
     """
     peer_block = ""
     for peer_label, peer_output, peer_reasoning in peer_responses:
@@ -348,48 +301,45 @@ Reasoning: {peer_reasoning}
         teacher_job_line = (
             "- Read the teacher's guidance carefully - it is targeted specifically at "
             "your reasoning.\n"
-            "- Re-examine the code and the question, paying attention to the specific "
-            "concern the teacher raised.\n"
+            "- Re-examine the problem, paying attention to the specific "
+            "calculation step the teacher flagged.\n"
         )
         closing = (
-            "Now carefully re-analyse the code using the teacher's guidance and return "
+            "Now carefully re-solve the problem using the teacher's guidance and return "
             "your (possibly revised) answer as valid JSON."
         )
     else:
         teacher_section  = ""
         teacher_job_line = ""
         closing = (
-            "Now carefully re-analyse the code and return your "
+            "Now carefully re-solve the problem and return your "
             "(possibly revised) answer as valid JSON."
         )
 
     return f"""You are Agent {my_label} ({AGENT_DISPLAY_NAME[my_label]}), participating in \
-Round {round_num} of a {NUM_DEBATE_ROUNDS}-round multi-agent debate for code question answering.
+Round {round_num} of a {NUM_DEBATE_ROUNDS}-round multi-agent debate for math problem solving.
 
 You will receive:
-1. The Python code snippet and the question about it.
+1. The math word problem.
 2. YOUR answer and reasoning from the previous round (which may be correct or incorrect).
 3. The answers and reasoning of the other two agents from the previous round.
 
 Your job:
 {teacher_job_line}- Consider the other agents' reasoning critically - they may be right or wrong.
 - Do NOT blindly follow the majority. A lone agent can be right while two are wrong.
-- If another agent's reasoning exposes a flaw in your answer, revise it.
+- If another agent's reasoning exposes a flaw in your calculation, revise it.
 - If you remain confident in your answer, keep it and clearly explain why.
 
 Rules for predicted_output (your answer):
-- Give a direct, concise answer to the question (e.g. "Yes", "No", "a suite", "an error").
-- Match the expected answer style: short noun phrases or Yes/No where appropriate.
-- Do not include the question or the code in your answer.
+- Give only the final numerical answer as a number (e.g. "18", "70000", "3").
+- Do NOT include units, dollar signs, or extra words — just the number.
+- Do not include the question in your answer.
 
 Return ONLY valid JSON with exactly these keys:
 {{
   "predicted_output": string,
   "explanation": string
 }}
-
-=== Context ===
-{format_context_block(code)}
 
 === Question ===
 {question}
@@ -404,27 +354,22 @@ Reasoning: {my_reasoning}
 """
 
 
-def build_judge_prompt(code: str, question: str, gold: str, prediction: str) -> str:
-    return f"""You are an automated judge for a code question-answering task.
+def build_judge_prompt(question: str, gold: str, prediction: str) -> str:
+    return f"""You are an automated judge for a math word problem task.
 
 Your job is to decide whether the predicted answer is CORRECT compared to the gold answer.
 
 Rules:
-- The MEANING must match - focus on whether the predicted answer conveys the same information.
-- Minor wording differences are ACCEPTABLE: "a suite" and "suite" or "Yes" and "yes" are CORRECT.
-- For Yes/No questions, any clear affirmative ("Yes", "yeah", "correct", "true") counts as Yes,
-  and any clear negative ("No", "nope", "false", "not really") counts as No.
-- Partial answers that capture the key fact are CORRECT.
-- Only mark INCORRECT when the meaning clearly differs from the gold answer.
+- The predicted answer should match the final numerical value of the gold answer.
+- The gold answer may include intermediate steps ending with "#### <number>". \
+  Extract only the final number after "####" for comparison.
+- Ignore formatting differences: "$18", "18", "18.0" are all CORRECT if the gold is 18.
+- If the prediction contains only a number and it matches the gold's final number, mark CORRECT.
+- Only mark INCORRECT when the numerical value clearly differs from the gold answer.
 - Return ONLY valid JSON with exactly these keys:
 {{
   "verdict": "CORRECT" or "INCORRECT"
 }}
-
-Code:
-```python
-{code}
-```
 
 Question:
 {question}
@@ -466,7 +411,7 @@ class ModelRunner:
                 **inputs,
                 max_new_tokens=max_new_tokens,
                 do_sample=True,
-                temperature=0.9,
+                temperature=0.3,
                 pad_token_id=self.tokenizer.pad_token_id,
                 eos_token_id=self.tokenizer.eos_token_id,
                 stopping_criteria=stopping,
@@ -486,9 +431,13 @@ class ModelRunner:
 # ---------------------------------------------------------------------------
 def load_dataset(path: str) -> List[Dict]:
     """
-    Reads a CodeQA JSON dataset (list of dicts with keys: code, question, answer).
-    Normalises to internal keys: code, input (=question), output (=answer).
+    Reads a GSM8K JSON dataset (list of dicts with keys: question, answer).
+    Normalises to internal keys: input (=question), output (=answer).
     Also supports CSV with an optional 'id' column.
+
+    GSM8K answer strings may look like:
+      "Janet sells 16 - 3 - 4 = 9 duck eggs a day.\n...#### 18"
+    The final number after "####" is the ground-truth label.
     """
     if path.lower().endswith(".csv"):
         rows = []
@@ -497,8 +446,6 @@ def load_dataset(path: str) -> List[Dict]:
             for i, row in enumerate(reader):
                 rows.append({
                     "id":     row.get("id", f"idx_{i}"),
-                    "code":   row.get("code",   ""),
-                    # CodeQA CSV: question / answer  OR  input / output
                     "input":  row.get("question", row.get("input",  "")),
                     "output": row.get("answer",   row.get("output", row.get("gold_answer", ""))),
                 })
@@ -509,14 +456,12 @@ def load_dataset(path: str) -> List[Dict]:
     if not isinstance(data, list):
         raise ValueError("Dataset JSON must be a list of examples.")
 
-    # Normalise CodeQA JSON fields to internal convention
     normalised = []
     for i, ex in enumerate(data):
         normalised.append({
             "id":     ex.get("id", f"idx_{i}"),
-            "code":   ex.get("code",  ""),
-            "input":  ex.get("question", ex.get("input",  "")),   # CodeQA uses "question"
-            "output": ex.get("answer",   ex.get("output", "")),   # CodeQA uses "answer"
+            "input":  ex.get("question", ex.get("input",  "")),
+            "output": ex.get("answer",   ex.get("output", "")),
         })
     return normalised
 
@@ -542,10 +487,9 @@ def run_contestant(
     results = []
 
     for idx, ex in enumerate(dataset):
-        code   = ex.get("code",  "")
         inp    = ex.get("input", "")   # normalised from "question"
         ex_id  = ex.get("id",    f"idx_{idx}")
-        prompt = build_contestant_prompt(code, inp)
+        prompt = build_contestant_prompt(inp)
 
         print(f"  [{label}] Example {idx+1}/{len(dataset)}  id={ex_id}", end="  ")
         raw = runner.generate(prompt, max_new_tokens)
@@ -593,7 +537,6 @@ def run_teacher(
     results = []
 
     for idx, ex in enumerate(dataset):
-        code  = ex.get("code",  "")
         inp   = ex.get("input", "")
         ex_id = ex.get("id",    f"idx_{idx}")
 
@@ -604,7 +547,7 @@ def run_teacher(
             expl = prev_round_preds[label][idx]["reasoning"]
             agent_responses.append((label, out, expl))
 
-        prompt = build_teacher_prompt(code, inp, round_num, agent_responses)
+        prompt = build_teacher_prompt(inp, round_num, agent_responses)
 
         print(f"  [Teacher] Example {idx+1}/{len(dataset)}  id={ex_id}", end="  ")
         raw = runner.generate(prompt, max_new_tokens)
@@ -613,8 +556,8 @@ def run_teacher(
 
         # Extract per-agent guidance; fall back gracefully if parse fails
         fallback = (
-            "Re-examine each step of the code carefully. "
-            "Make sure you are tracing variable values correctly."
+            "Re-examine each step of your calculation carefully. "
+            "Make sure you are applying the correct arithmetic operations."
         )
         g_M = str(obj.get("guidance_M", fallback) or fallback) if obj else fallback
         g_P = str(obj.get("guidance_P", fallback) or fallback) if obj else fallback
@@ -663,7 +606,6 @@ def run_debate_round(
     results = []
 
     for idx, ex in enumerate(dataset):
-        code  = ex.get("code",  "")
         inp   = ex.get("input", "")
         ex_id = ex.get("id",    f"idx_{idx}")
 
@@ -685,7 +627,7 @@ def run_debate_round(
         )
 
         prompt = build_debate_prompt(
-            code, inp,
+            inp,
             my_label=label,
             round_num=round_num,
             my_output=my_output,
@@ -738,10 +680,8 @@ def run_judge(
     correctness: Dict[str, List[str]] = {lbl: [] for lbl in predictions}
 
     for idx, ex in enumerate(dataset):
-        code  = ex.get("code",   "")
-        inp   = ex.get("input",  "")   # normalised from "question"
-        gold_full  = ex.get("output", "")   # normalised from "answer"
-        gold       = extract_final_answer(gold_full)
+        inp   = ex.get("input",  "")
+        gold  = ex.get("output", "")   # normalised from "answer"
         ex_id = ex.get("id",     f"idx_{idx}")
 
         print(f"  [Judge] Example {idx+1}/{len(dataset)}  id={ex_id}")
@@ -758,7 +698,7 @@ def run_judge(
                 correctness[label].append(verdict)
                 continue
 
-            prompt  = build_judge_prompt(code, inp, gold, pred)
+            prompt  = build_judge_prompt(inp, gold, pred)
             raw     = runner.generate(prompt, max_new_tokens)
 
             obj     = _first_json_object(raw)
@@ -799,9 +739,8 @@ def write_outputs(
 
     for idx, ex in enumerate(dataset):
         row = {
-            "code":        ex.get("code",   ""),
-            "question":    ex.get("input",  ""),   # display as "question" in output
-            "gold_answer": extract_final_answer(ex.get("output", "")),   # final answer (extracted)
+            "question":    ex.get("input",  ""),
+            "gold_answer": ex.get("output", ""),
         }
 
         # Student predictions + correctness for every phase
@@ -833,7 +772,7 @@ def write_outputs(
     print(f"\nJSON results saved -> {json_path}")
 
     # ---- CSV  (student columns only; teacher guidance too nested for flat CSV) ----
-    fieldnames = ["code", "question", "gold_answer"]
+    fieldnames = ["question", "gold_answer"]
     for phase_idx in range(len(all_preds)):
         suffix = "" if phase_idx == 0 else f"_d{phase_idx}"
         for lbl in labels:
@@ -884,7 +823,7 @@ def print_summary(
 
     sep = "=" * (8 + col_w * num_phases)
     print("\n" + sep)
-    print("SUMMARY  (teacher-guided ToM debate  -  CodeQA)")
+    print("SUMMARY  (teacher-guided ToM debate  -  GSM8K)")
     print(sep)
     header = f"{'Agent':<8}" + "".join(f"{n:>{col_w}}" for n in phase_names)
     print(header)
@@ -922,7 +861,7 @@ def main():
     dataset_path   = DEFAULT_DATASET
     max_new_tokens = DEFAULT_MAX_NEW_TOKENS
 
-    print(f"Dataset        : {dataset_path}  [CodeQA]")
+    print(f"Dataset        : {dataset_path}  [GSM8K]")
     print(f"Debate rounds  : {NUM_DEBATE_ROUNDS}")
     print(f"Teacher model  : {MODEL_TEACHER}")
     dataset = load_dataset(dataset_path)

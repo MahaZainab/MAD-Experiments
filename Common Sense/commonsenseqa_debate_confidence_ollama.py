@@ -52,7 +52,7 @@ from typing import Dict, List, Optional, Tuple
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
-DEFAULT_DATASET      = "dataset.json"           # CommonsenseQA JSONL file
+DEFAULT_DATASET      = "dataset.json"           # CommonsenseQA JSON file
 DEFAULT_RESULTS_JSON = "csqa_confidence_results.json"
 DEFAULT_RESULTS_CSV  = "csqa_confidence_results.csv"
 

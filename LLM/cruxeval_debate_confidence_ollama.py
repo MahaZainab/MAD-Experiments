@@ -53,7 +53,7 @@ from typing import Dict, List, Optional, Tuple
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
-DEFAULT_DATASET      = "dataset.json"
+DEFAULT_DATASET      = "dataset_cruxeval.json"
 DEFAULT_RESULTS_JSON = "cruxeval_confidence_results.json"
 DEFAULT_RESULTS_CSV  = "cruxeval_confidence_results.csv"
 

@@ -54,7 +54,7 @@ from typing import Dict, List, Optional, Tuple
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
-DEFAULT_DATASET      = "dataset.json"
+DEFAULT_DATASET      = "dataset_gsm.json"
 DEFAULT_RESULTS_JSON = "gsm8k_confidence_results.json"
 DEFAULT_RESULTS_CSV  = "gsm8k_confidence_results.csv"
 

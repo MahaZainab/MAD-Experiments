@@ -66,9 +66,9 @@ OLLAMA_BASE_URL      = "http://localhost:11434"
 # ---------------------------------------------------------------------------
 # Model names exactly as registered in Ollama
 # ---------------------------------------------------------------------------
-MODEL_M     = "mistral:7b-instruct-v0.3"
-MODEL_P     = "phi4-mini"
-MODEL_Q     = "qwen2.5:7b"
+MODEL_M     = "mistral-small:24b"
+MODEL_P     = "phi4:14b"
+MODEL_Q     = "qwen3.5:35b"
 MODEL_JUDGE = "qwen2.5:7b"
 
 CONTESTANT_MODELS = [

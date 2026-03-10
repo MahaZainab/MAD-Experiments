@@ -1,0 +1,107 @@
+[
+    {
+        "code": "def Make Suite From Dict d label None suite Suite label label suite Set Dict d suite Normalize return suite",
+        "question": "What does the code make ?",
+        "answer": "a suite"
+    },
+    {
+        "code": "def Make Suite From Dict d label None suite Suite label label suite Set Dict d suite Normalize return suite",
+        "question": "Does the code make a suite ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def receive message topic name subscription name pubsub client pubsub Client topic pubsub client topic topic name subscription topic subscription subscription name results subscription pull return immediately True print ' Received{}messages ' format len results for ack id message in results print '*{} {} {}' format message message id message data message attributes if results subscription acknowledge [ack id for ack id message in results]",
+        "question": "Does the code receive a message from a pull subscription ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def receive message topic name subscription name pubsub client pubsub Client topic pubsub client topic topic name subscription topic subscription subscription name results subscription pull return immediately True print ' Received{}messages ' format len results for ack id message in results print '*{} {} {}' format message message id message data message attributes if results subscription acknowledge [ack id for ack id message in results]",
+        "question": "What does the code receive from a pull subscription ?",
+        "answer": "a message"
+    },
+    {
+        "code": "def Create Shared Budget client budget service client Get Service ' Budget Service' version 'v 201609 ' budget {'name' ' Shared Interplanetary Budget#%s' % uuid uuid 4 'amount' {'micro Amount' '2000000 '} 'delivery Method' 'STANDARD' 'is Explicitly Shared' 'true'}operation {'operator' 'ADD' 'operand' budget}response budget service mutate [operation] return response['value'][ 0 ]",
+        "question": "What be an explicit budget used only ?",
+        "answer": "to create the campaign"
+    },
+    {
+        "code": "def Create Shared Budget client budget service client Get Service ' Budget Service' version 'v 201609 ' budget {'name' ' Shared Interplanetary Budget#%s' % uuid uuid 4 'amount' {'micro Amount' '2000000 '} 'delivery Method' 'STANDARD' 'is Explicitly Shared' 'true'}operation {'operator' 'ADD' 'operand' budget}response budget service mutate [operation] return response['value'][ 0 ]",
+        "question": "Be an explicit budget used to create the campaign only ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def Create Shared Budget client budget service client Get Service ' Budget Service' version 'v 201609 ' budget {'name' ' Shared Interplanetary Budget#%s' % uuid uuid 4 'amount' {'micro Amount' '2000000 '} 'delivery Method' 'STANDARD' 'is Explicitly Shared' 'true'}operation {'operator' 'ADD' 'operand' budget}response budget service mutate [operation] return response['value'][ 0 ]",
+        "question": "What be used to create the campaign only ?",
+        "answer": "an explicit budget"
+    },
+    {
+        "code": "def get Plugins Directory Path return archive get Absolute Frozen Folder Path file 'xml plugins'",
+        "question": "What does the code get ?",
+        "answer": "the plugins directory path"
+    },
+    {
+        "code": "def get Plugins Directory Path return archive get Absolute Frozen Folder Path file 'xml plugins'",
+        "question": "Does the code get the plugins directory path ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def ffmpeg write image filename image logfile False if image dtype 'uint 8 ' image image astype 'uint 8 ' cmd [get setting 'FFMPEG BINARY' '-y' '-s' '%dx%d' % image shape[ 2][ -1 ] '-f' 'rawvideo' '-pix fmt' 'rgba' if image shape[ 2 ] 4 else 'rgb 24 ' '-i' '-' filename]if logfile log file open filename + ' log' 'w+' else log file sp PIP Epopen params {'stdout' DEVNULL 'stderr' log file 'stdin' sp PIPE}if os name 'nt' popen params['creationflags'] 134217728 proc sp Popen cmd **popen params out err proc communicate image tostring if proc returncode err '\\n' join [ '[ Movie Py] Running %s\\n' % cmd 'WARNING thiscommandreturnedanerror ' err decode 'utf 8 ' ] raise IO Error err del proc",
+        "question": "What does the code write to a file ?",
+        "answer": "an image"
+    },
+    {
+        "code": "def ffmpeg write image filename image logfile False if image dtype 'uint 8 ' image image astype 'uint 8 ' cmd [get setting 'FFMPEG BINARY' '-y' '-s' '%dx%d' % image shape[ 2][ -1 ] '-f' 'rawvideo' '-pix fmt' 'rgba' if image shape[ 2 ] 4 else 'rgb 24 ' '-i' '-' filename]if logfile log file open filename + ' log' 'w+' else log file sp PIP Epopen params {'stdout' DEVNULL 'stderr' log file 'stdin' sp PIPE}if os name 'nt' popen params['creationflags'] 134217728 proc sp Popen cmd **popen params out err proc communicate image tostring if proc returncode err '\\n' join [ '[ Movie Py] Running %s\\n' % cmd 'WARNING thiscommandreturnedanerror ' err decode 'utf 8 ' ] raise IO Error err del proc",
+        "question": "Does the code write an image to a file ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def url add parameters url params if params fragments list urlparse url value parse qs fragments[ 4 ] value update params fragments[ 4 ] urlencode value url urlunparse fragments return url",
+        "question": "What does the code add ?",
+        "answer": "parameters to url"
+    },
+    {
+        "code": "def url add parameters url params if params fragments list urlparse url value parse qs fragments[ 4 ] value update params fragments[ 4 ] urlencode value url urlunparse fragments return url",
+        "question": "Does the code add parameters to url ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def read sheets archive xml source archive read ARC WORKBOOK tree fromstring xml source for element in safe iterator tree '{%s}sheet' % SHEET MAIN NS attrib element attribattrib['id'] attrib[ '{%s}id' % REL NS ]del attrib[ '{%s}id' % REL NS ]if attrib['id'] yield attrib",
+        "question": "For what purpose do worksheet titles and ids read ?",
+        "answer": "for a workbook"
+    },
+    {
+        "code": "def get token profile token os environ get 'VAULT TOKEN' profile get 'vault token' if token is None raise Command Execution Error ' Atokenwasnotconfigured' return token",
+        "question": "Does the code raise an error if it ca nt be found ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def get token profile token os environ get 'VAULT TOKEN' profile get 'vault token' if token is None raise Command Execution Error ' Atokenwasnotconfigured' return token",
+        "question": "What does the code raise if it ca nt be found ?",
+        "answer": "an error"
+    },
+    {
+        "code": "def get token profile token os environ get 'VAULT TOKEN' profile get 'vault token' if token is None raise Command Execution Error ' Atokenwasnotconfigured' return token",
+        "question": "Does the code get a token if it ca nt be found ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def get token profile token os environ get 'VAULT TOKEN' profile get 'vault token' if token is None raise Command Execution Error ' Atokenwasnotconfigured' return token",
+        "question": "What does the code get if it ca nt be found ?",
+        "answer": "a token"
+    },
+    {
+        "code": "def is windows return sys platform startswith u'win'",
+        "question": "Are we using windows when ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def is windows return sys platform startswith u'win'",
+        "question": "What are we using when ?",
+        "answer": "windows"
+    },
+    {
+        "code": "def empty urlconf request t Template EMPTY URLCONF TEMPLATE name ' Empty URL Conftemplate' c Context {'project name' settings SETTINGS MODULE split ' ' [0 ]} return Http Response Not Found t render c mimetype 'text/html'",
+        "question": "What does the code create ?",
+        "answer": "an empty urlconf 404 error response"
+    }
+]

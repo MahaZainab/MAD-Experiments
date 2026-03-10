@@ -1,46 +1,3 @@
-# =============================================================================
-# CommonsenseQA Multi-Model Evaluator  -  Peer Debate with Confidence Scores
-#                                         (Ollama local inference backend)
-#
-# Dataset : CommonsenseQA  (each example has: id, question, question_concept,
-#                           choices {label: [...], text: [...]}, answerKey)
-#           The task is to select the single best answer (A-E) to a commonsense
-#           multiple-choice question.
-#
-# Models  (all served locally via Ollama):
-#   M     = mistral:7b-instruct-v0.3        (student agent)
-#   P     = phi4-mini                        (student agent)
-#   Q     = qwen2.5:7b                       (student agent)
-#   Judge = qwen2.5:7b                       (evaluator)
-#
-#   Pull them once before running:
-#     ollama pull mistral:7b-instruct-v0.3
-#     ollama pull phi4-mini
-#     ollama pull qwen2.5:7b
-#
-# Pipeline
-# --------
-# Phase 0   : Each agent independently answers + emits a confidence score (0-1).
-#             --> Judge scores Phase 0
-#
-# Rounds 1-4: Pure peer-debate (no teacher)
-#
-#   Step A  : Each agent sees its own previous answer + confidence, plus both
-#             peers' answer labels + confidence scores ONLY (no reasoning shared).
-#             Agent revises its answer and emits an updated confidence score.
-#   Step B  : Judge scores revised answers.
-#
-# Output    : Single JSON + CSV with ALL rounds side-by-side.
-#
-# CSV columns
-# -----------
-# id, question, question_concept, choices, gold_answer,
-# M_output,    M_confidence,    M_Correctness,    <- Phase 0
-# P_output,    P_confidence,    P_Correctness,
-# Q_output,    Q_confidence,    Q_Correctness,
-# M_output_d1, M_confidence_d1, M_Correctness_d1, <- Round 1
-# ...repeated for d2, d3, d4...
-# =============================================================================
 
 import csv
 import json
@@ -65,7 +22,7 @@ OLLAMA_BASE_URL      = "http://localhost:11434"
 # Model names exactly as registered in Ollama
 # ---------------------------------------------------------------------------
 MODEL_M     = "mistral:7b-instruct-v0.3"   # Mistral 7B Instruct v0.3
-MODEL_P     = "phi4-mini"                   # Phi-4 Mini
+MODEL_P     = "phi4:14b"                   # Phi-4 Mini
 MODEL_Q     = "qwen2.5:7b"                  # Qwen2.5 7B
 MODEL_JUDGE = "qwen2.5:7b"                  # reuse Qwen2.5 as judge
 

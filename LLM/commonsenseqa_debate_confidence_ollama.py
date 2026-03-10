@@ -23,7 +23,7 @@ OLLAMA_BASE_URL      = "http://localhost:11434"
 # ---------------------------------------------------------------------------
 MODEL_M     = "mistral:7b-instruct-v0.3"   # Mistral 7B Instruct v0.3
 MODEL_P     = "phi4:14b"                   # Phi-4 Mini
-MODEL_Q     = "qwen2.5:7b"                  # Qwen2.5 7B
+MODEL_Q     = "qwen3.5:35b"                  # Qwen2.5 7B
 MODEL_JUDGE = "qwen2.5:7b"                  # reuse Qwen2.5 as judge
 
 CONTESTANT_MODELS = [

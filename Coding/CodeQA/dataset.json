@@ -1,502 +1,107 @@
 [
-  {
-    "code": "def Make Suite From Dict d label None suite Suite label label suite Set Dict d suite Normalize return suite",
-    "question": "What does the code make ?",
-    "answer": "a suite"
-  },
-  {
-    "code": "def Make Suite From Dict d label None suite Suite label label suite Set Dict d suite Normalize return suite",
-    "question": "Does the code make a suite ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def receive message topic name subscription name pubsub client pubsub Client topic pubsub client topic topic name subscription topic subscription subscription name results subscription pull return immediately True print ' Received{}messages ' format len results for ack id message in results print '*{} {} {}' format message message id message data message attributes if results subscription acknowledge [ack id for ack id message in results]",
-    "question": "Does the code receive a message from a pull subscription ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def receive message topic name subscription name pubsub client pubsub Client topic pubsub client topic topic name subscription topic subscription subscription name results subscription pull return immediately True print ' Received{}messages ' format len results for ack id message in results print '*{} {} {}' format message message id message data message attributes if results subscription acknowledge [ack id for ack id message in results]",
-    "question": "What does the code receive from a pull subscription ?",
-    "answer": "a message"
-  },
-  {
-    "code": "def Create Shared Budget client budget service client Get Service ' Budget Service' version 'v 201609 ' budget {'name' ' Shared Interplanetary Budget#%s' % uuid uuid 4 'amount' {'micro Amount' '2000000 '} 'delivery Method' 'STANDARD' 'is Explicitly Shared' 'true'}operation {'operator' 'ADD' 'operand' budget}response budget service mutate [operation] return response['value'][ 0 ]",
-    "question": "What be an explicit budget used only ?",
-    "answer": "to create the campaign"
-  },
-  {
-    "code": "def Create Shared Budget client budget service client Get Service ' Budget Service' version 'v 201609 ' budget {'name' ' Shared Interplanetary Budget#%s' % uuid uuid 4 'amount' {'micro Amount' '2000000 '} 'delivery Method' 'STANDARD' 'is Explicitly Shared' 'true'}operation {'operator' 'ADD' 'operand' budget}response budget service mutate [operation] return response['value'][ 0 ]",
-    "question": "Be an explicit budget used to create the campaign only ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def Create Shared Budget client budget service client Get Service ' Budget Service' version 'v 201609 ' budget {'name' ' Shared Interplanetary Budget#%s' % uuid uuid 4 'amount' {'micro Amount' '2000000 '} 'delivery Method' 'STANDARD' 'is Explicitly Shared' 'true'}operation {'operator' 'ADD' 'operand' budget}response budget service mutate [operation] return response['value'][ 0 ]",
-    "question": "What be used to create the campaign only ?",
-    "answer": "an explicit budget"
-  },
-  {
-    "code": "def get Plugins Directory Path return archive get Absolute Frozen Folder Path file 'xml plugins'",
-    "question": "What does the code get ?",
-    "answer": "the plugins directory path"
-  },
-  {
-    "code": "def get Plugins Directory Path return archive get Absolute Frozen Folder Path file 'xml plugins'",
-    "question": "Does the code get the plugins directory path ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def ffmpeg write image filename image logfile False if image dtype 'uint 8 ' image image astype 'uint 8 ' cmd [get setting 'FFMPEG BINARY' '-y' '-s' '%dx%d' % image shape[ 2][ -1 ] '-f' 'rawvideo' '-pix fmt' 'rgba' if image shape[ 2 ] 4 else 'rgb 24 ' '-i' '-' filename]if logfile log file open filename + ' log' 'w+' else log file sp PIP Epopen params {'stdout' DEVNULL 'stderr' log file 'stdin' sp PIPE}if os name 'nt' popen params['creationflags'] 134217728 proc sp Popen cmd **popen params out err proc communicate image tostring if proc returncode err '\\n' join [ '[ Movie Py] Running %s\\n' % cmd 'WARNING thiscommandreturnedanerror ' err decode 'utf 8 ' ] raise IO Error err del proc",
-    "question": "What does the code write to a file ?",
-    "answer": "an image"
-  },
-  {
-    "code": "def ffmpeg write image filename image logfile False if image dtype 'uint 8 ' image image astype 'uint 8 ' cmd [get setting 'FFMPEG BINARY' '-y' '-s' '%dx%d' % image shape[ 2][ -1 ] '-f' 'rawvideo' '-pix fmt' 'rgba' if image shape[ 2 ] 4 else 'rgb 24 ' '-i' '-' filename]if logfile log file open filename + ' log' 'w+' else log file sp PIP Epopen params {'stdout' DEVNULL 'stderr' log file 'stdin' sp PIPE}if os name 'nt' popen params['creationflags'] 134217728 proc sp Popen cmd **popen params out err proc communicate image tostring if proc returncode err '\\n' join [ '[ Movie Py] Running %s\\n' % cmd 'WARNING thiscommandreturnedanerror ' err decode 'utf 8 ' ] raise IO Error err del proc",
-    "question": "Does the code write an image to a file ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def url add parameters url params if params fragments list urlparse url value parse qs fragments[ 4 ] value update params fragments[ 4 ] urlencode value url urlunparse fragments return url",
-    "question": "What does the code add ?",
-    "answer": "parameters to url"
-  },
-  {
-    "code": "def url add parameters url params if params fragments list urlparse url value parse qs fragments[ 4 ] value update params fragments[ 4 ] urlencode value url urlunparse fragments return url",
-    "question": "Does the code add parameters to url ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def read sheets archive xml source archive read ARC WORKBOOK tree fromstring xml source for element in safe iterator tree '{%s}sheet' % SHEET MAIN NS attrib element attribattrib['id'] attrib[ '{%s}id' % REL NS ]del attrib[ '{%s}id' % REL NS ]if attrib['id'] yield attrib",
-    "question": "For what purpose do worksheet titles and ids read ?",
-    "answer": "for a workbook"
-  },
-  {
-    "code": "def get token profile token os environ get 'VAULT TOKEN' profile get 'vault token' if token is None raise Command Execution Error ' Atokenwasnotconfigured' return token",
-    "question": "Does the code raise an error if it ca nt be found ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def get token profile token os environ get 'VAULT TOKEN' profile get 'vault token' if token is None raise Command Execution Error ' Atokenwasnotconfigured' return token",
-    "question": "What does the code raise if it ca nt be found ?",
-    "answer": "an error"
-  },
-  {
-    "code": "def get token profile token os environ get 'VAULT TOKEN' profile get 'vault token' if token is None raise Command Execution Error ' Atokenwasnotconfigured' return token",
-    "question": "Does the code get a token if it ca nt be found ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def get token profile token os environ get 'VAULT TOKEN' profile get 'vault token' if token is None raise Command Execution Error ' Atokenwasnotconfigured' return token",
-    "question": "What does the code get if it ca nt be found ?",
-    "answer": "a token"
-  },
-  {
-    "code": "def is windows return sys platform startswith u'win'",
-    "question": "Are we using windows when ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def is windows return sys platform startswith u'win'",
-    "question": "What are we using when ?",
-    "answer": "windows"
-  },
-  {
-    "code": "def empty urlconf request t Template EMPTY URLCONF TEMPLATE name ' Empty URL Conftemplate' c Context {'project name' settings SETTINGS MODULE split ' ' [0 ]} return Http Response Not Found t render c mimetype 'text/html'",
-    "question": "What does the code create ?",
-    "answer": "an empty urlconf 404 error response"
-  },
-  {
-    "code": "def empty urlconf request t Template EMPTY URLCONF TEMPLATE name ' Empty URL Conftemplate' c Context {'project name' settings SETTINGS MODULE split ' ' [0 ]} return Http Response Not Found t render c mimetype 'text/html'",
-    "question": "Does the code create an empty urlconf 404 error response ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def new key *args **kwargs return DES Cipher key *args **kwargs",
-    "question": "Does the code create a new des cipher ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def new key *args **kwargs return DES Cipher key *args **kwargs",
-    "question": "What does the code create ?",
-    "answer": "a new des cipher"
-  },
-  {
-    "code": "@contextmanagerdef pelican open filename mode u'rb' strip crs sys platform u'win 32 ' with codecs open filename mode encoding u'utf- 8 ' as infile content infile read if content[ 1] codecs BOM UTF 8 decode u'utf 8 ' content content[ 1 ]if strip crs content content replace u'\\r\\n' u'\\n' yield content",
-    "question": "What does the code open ?",
-    "answer": "a file"
-  },
-  {
-    "code": "@contextmanagerdef pelican open filename mode u'rb' strip crs sys platform u'win 32 ' with codecs open filename mode encoding u'utf- 8 ' as infile content infile read if content[ 1] codecs BOM UTF 8 decode u'utf 8 ' content content[ 1 ]if strip crs content content replace u'\\r\\n' u'\\n' yield content",
-    "question": "Does the code open a file ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "@contextmanagerdef pelican open filename mode u'rb' strip crs sys platform u'win 32 ' with codecs open filename mode encoding u'utf- 8 ' as infile content infile read if content[ 1] codecs BOM UTF 8 decode u'utf 8 ' content content[ 1 ]if strip crs content content replace u'\\r\\n' u'\\n' yield content",
-    "question": "Does the code return its content ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "@contextmanagerdef pelican open filename mode u'rb' strip crs sys platform u'win 32 ' with codecs open filename mode encoding u'utf- 8 ' as infile content infile read if content[ 1] codecs BOM UTF 8 decode u'utf 8 ' content content[ 1 ]if strip crs content content replace u'\\r\\n' u'\\n' yield content",
-    "question": "What does the code return ?",
-    "answer": "its content"
-  },
-  {
-    "code": "def init cnf CONFIG['host'] cnf get 'proxy' {} get 'host' if not CONFIG['host'] raise Minion Error message \" Cannotfind'host'parameterintheproxyconfiguration\" CONFIG['user'] cnf get 'proxy' {} get 'user' if not CONFIG['user'] raise Minion Error message \" Cannotfind'user'parameterintheproxyconfiguration\" CONFIG['uri'] '/api/{ 0 }' format CONFIG['user']",
-    "question": "Does the code initialize the module ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def init cnf CONFIG['host'] cnf get 'proxy' {} get 'host' if not CONFIG['host'] raise Minion Error message \" Cannotfind'host'parameterintheproxyconfiguration\" CONFIG['user'] cnf get 'proxy' {} get 'user' if not CONFIG['user'] raise Minion Error message \" Cannotfind'user'parameterintheproxyconfiguration\" CONFIG['uri'] '/api/{ 0 }' format CONFIG['user']",
-    "question": "What does the code initialize ?",
-    "answer": "the module"
-  },
-  {
-    "code": "def read plain byte array file obj count return [file obj read struct unpack '<i' file obj read 4 [0 ] for i in range count ]",
-    "question": "How did count byte arrays read ?",
-    "answer": "using the plain encoding"
-  },
-  {
-    "code": "def Index Definition To Proto app id index definition proto entity pb Composite Index proto set app id app id proto set id 0 proto set state entity pb Composite Index WRITE ONLY definition proto proto mutable definition definition proto set entity type index definition kind definition proto set ancestor index definition ancestor if index definition properties is not None for prop in index definition properties prop proto definition proto add property prop proto set name prop name prop proto set direction DIRECTION MAP[prop direction] return proto",
-    "question": "What does the code transform to protocol buffer ?",
-    "answer": "individual index definition"
-  },
-  {
-    "code": "def Index Definition To Proto app id index definition proto entity pb Composite Index proto set app id app id proto set id 0 proto set state entity pb Composite Index WRITE ONLY definition proto proto mutable definition definition proto set entity type index definition kind definition proto set ancestor index definition ancestor if index definition properties is not None for prop in index definition properties prop proto definition proto add property prop proto set name prop name prop proto set direction DIRECTION MAP[prop direction] return proto",
-    "question": "What does the code transform individual index definition ?",
-    "answer": "to protocol buffer"
-  },
-  {
-    "code": "def Index Definition To Proto app id index definition proto entity pb Composite Index proto set app id app id proto set id 0 proto set state entity pb Composite Index WRITE ONLY definition proto proto mutable definition definition proto set entity type index definition kind definition proto set ancestor index definition ancestor if index definition properties is not None for prop in index definition properties prop proto definition proto add property prop proto set name prop name prop proto set direction DIRECTION MAP[prop direction] return proto",
-    "question": "Does the code transform individual index definition to protocol buffer ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def Index Definition To Proto app id index definition proto entity pb Composite Index proto set app id app id proto set id 0 proto set state entity pb Composite Index WRITE ONLY definition proto proto mutable definition definition proto set entity type index definition kind definition proto set ancestor index definition ancestor if index definition properties is not None for prop in index definition properties prop proto definition proto add property prop proto set name prop name prop proto set direction DIRECTION MAP[prop direction] return proto",
-    "question": "Does the code transform to protocol buffer individual index definition ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def generate node environment name filename stream None if not isinstance node nodes Template raise Type Error \" Can'tcompilenontemplatenodes\" generator Code Generator environment name filename stream generator visit node if stream is None return generator stream getvalue",
-    "question": "What does the code generate ?",
-    "answer": "the python source for a node tree"
-  },
-  {
-    "code": "def generate node environment name filename stream None if not isinstance node nodes Template raise Type Error \" Can'tcompilenontemplatenodes\" generator Code Generator environment name filename stream generator visit node if stream is None return generator stream getvalue",
-    "question": "Does the code generate the python source for a node tree ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def replication group absent name wait 600 region None key None keyid None profile None **args ret {'name' name 'result' True 'comment' '' 'changes' {}}args dict [ k v for k v in args items if not k startswith ' ' ] exists salt ['boto 3 elasticache replication group exists'] name region region key key keyid keyid profile profile if exists if opts ['test'] ret['comment'] ' Replicationgroup{ 0 }wouldberemoved ' format name ret['result'] Nonereturn retdeleted salt ['boto 3 elasticache delete replication group'] name wait wait region region key key keyid keyid profile profile **args if deleted ret['changes']['old'] nameret['changes']['new'] Noneelse ret['result'] Falseret['comment'] ' Failedtodelete{ 0 }replicationgroup ' format name else ret['comment'] ' Replicationgroup{ 0 }alreadyabsent ' format name return ret",
-    "question": "What does the code ensure ?",
-    "answer": "a given cache cluster is deleted"
-  },
-  {
-    "code": "def replication group absent name wait 600 region None key None keyid None profile None **args ret {'name' name 'result' True 'comment' '' 'changes' {}}args dict [ k v for k v in args items if not k startswith ' ' ] exists salt ['boto 3 elasticache replication group exists'] name region region key key keyid keyid profile profile if exists if opts ['test'] ret['comment'] ' Replicationgroup{ 0 }wouldberemoved ' format name ret['result'] Nonereturn retdeleted salt ['boto 3 elasticache delete replication group'] name wait wait region region key key keyid keyid profile profile **args if deleted ret['changes']['old'] nameret['changes']['new'] Noneelse ret['result'] Falseret['comment'] ' Failedtodelete{ 0 }replicationgroup ' format name else ret['comment'] ' Replicationgroup{ 0 }alreadyabsent ' format name return ret",
-    "question": "Does the code ensure ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def is cohort exists course key name return Course User Group objects filter course id course key group type Course User Group COHORT name name exists",
-    "question": "When do a cohort exist ?",
-    "answer": "already"
-  },
-  {
-    "code": "def send instant emails recipient list feedback message reference exploration id has suggestion can users receive email email manager can users receive thread email recipient list exploration id has suggestion for index recipient id in enumerate recipient list if can users receive email[index] transaction services run in transaction enqueue feedback message instant email task recipient id feedback message reference",
-    "question": "Does the code add the given feedbackmessagereference to each of the recipients email buffers ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def send instant emails recipient list feedback message reference exploration id has suggestion can users receive email email manager can users receive thread email recipient list exploration id has suggestion for index recipient id in enumerate recipient list if can users receive email[index] transaction services run in transaction enqueue feedback message instant email task recipient id feedback message reference",
-    "question": "What does the code add to each of the recipients email buffers ?",
-    "answer": "the given feedbackmessagereference"
-  },
-  {
-    "code": "def ent 2 chr input str code input str group 1 code int int code if code isdigit else int code[ 1 ] 16 return chr code int if code int < 256 else '?'",
-    "question": "How do literal string unescape to symbols source : URL ?",
-    "answer": "in xml"
-  },
-  {
-    "code": "def get Accessible Attribute attribute Name xml Element function Name attribute Name[len 'get' ] lower if function Name not in evaluate global Creation Dictionary print ' Warning function Namenotinglobal Creation Dictionaryin get Accessible Attributeincreationfor 'print function Nameprint xml Elementreturn Noneplugin Module archive get Module With Path evaluate global Creation Dictionary[function Name] if plugin Module None print ' Warning get Accessible Attributeincreationcannotgetaplugin Modulefor 'print function Nameprint xml Elementreturn Nonereturn Creation plugin Module xml Element get Creation",
-    "question": "Does the code get the accessible attribute ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def get Accessible Attribute attribute Name xml Element function Name attribute Name[len 'get' ] lower if function Name not in evaluate global Creation Dictionary print ' Warning function Namenotinglobal Creation Dictionaryin get Accessible Attributeincreationfor 'print function Nameprint xml Elementreturn Noneplugin Module archive get Module With Path evaluate global Creation Dictionary[function Name] if plugin Module None print ' Warning get Accessible Attributeincreationcannotgetaplugin Modulefor 'print function Nameprint xml Elementreturn Nonereturn Creation plugin Module xml Element get Creation",
-    "question": "What does the code get ?",
-    "answer": "the accessible attribute"
-  },
-  {
-    "code": "def get cls kwargs cls set None toplevel set is None if toplevel set set ctr cls dict get ' init ' False has init ctr and isinstance ctr types Function Type and isinstance ctr code types Code Type if has init names has kw inspect func args ctr set update names if not has kw and not toplevel return Noneif not has init or has kw for c in cls bases if get cls kwargs c set is None break set discard 'self' return set",
-    "question": "For what purpose do the full set of inherited kwargs return ?",
-    "answer": "for the given cls"
-  },
-  {
-    "code": "def cli name ret {'name' name 'changes' {} 'result' True 'comment' ''}ret['changes'] salt ['junos cli'] name return ret",
-    "question": "What does the code execute ?",
-    "answer": "the cli commands"
-  },
-  {
-    "code": "def cli name ret {'name' name 'changes' {} 'result' True 'comment' ''}ret['changes'] salt ['junos cli'] name return ret",
-    "question": "Does the code execute the cli commands ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def cli name ret {'name' name 'changes' {} 'result' True 'comment' ''}ret['changes'] salt ['junos cli'] name return ret",
-    "question": "What does the code reuturn ?",
-    "answer": "the text output"
-  },
-  {
-    "code": "def cli name ret {'name' name 'changes' {} 'result' True 'comment' ''}ret['changes'] salt ['junos cli'] name return ret",
-    "question": "Does the code reuturn the text output ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def resolve layer request typename permission 'base view resourcebase' msg PERMISSION MSG GENERIC **kwargs service typename typename split ' ' 1 if Service objects filter name service typename[ 0 ] exists service Service objects filter name service typename[ 0 ] return resolve object request Layer {'typename' service typename[ 1 ] if service[ 0 ] method 'C' else typename } permission permission permission msg msg **kwargs else return resolve object request Layer {'typename' typename} permission permission permission msg msg **kwargs",
-    "question": "How does the code resolve the layer ?",
-    "answer": "by the provided typename"
-  },
-  {
-    "code": "def resolve layer request typename permission 'base view resourcebase' msg PERMISSION MSG GENERIC **kwargs service typename typename split ' ' 1 if Service objects filter name service typename[ 0 ] exists service Service objects filter name service typename[ 0 ] return resolve object request Layer {'typename' service typename[ 1 ] if service[ 0 ] method 'C' else typename } permission permission permission msg msg **kwargs else return resolve object request Layer {'typename' typename} permission permission permission msg msg **kwargs",
-    "question": "Does the code resolve the layer by the provided typename ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def resolve layer request typename permission 'base view resourcebase' msg PERMISSION MSG GENERIC **kwargs service typename typename split ' ' 1 if Service objects filter name service typename[ 0 ] exists service Service objects filter name service typename[ 0 ] return resolve object request Layer {'typename' service typename[ 1 ] if service[ 0 ] method 'C' else typename } permission permission permission msg msg **kwargs else return resolve object request Layer {'typename' typename} permission permission permission msg msg **kwargs",
-    "question": "What does the code check ?",
-    "answer": "the optional permission"
-  },
-  {
-    "code": "def resolve layer request typename permission 'base view resourcebase' msg PERMISSION MSG GENERIC **kwargs service typename typename split ' ' 1 if Service objects filter name service typename[ 0 ] exists service Service objects filter name service typename[ 0 ] return resolve object request Layer {'typename' service typename[ 1 ] if service[ 0 ] method 'C' else typename } permission permission permission msg msg **kwargs else return resolve object request Layer {'typename' typename} permission permission permission msg msg **kwargs",
-    "question": "What does the code resolve by the provided typename ?",
-    "answer": "the layer"
-  },
-  {
-    "code": "def resolve layer request typename permission 'base view resourcebase' msg PERMISSION MSG GENERIC **kwargs service typename typename split ' ' 1 if Service objects filter name service typename[ 0 ] exists service Service objects filter name service typename[ 0 ] return resolve object request Layer {'typename' service typename[ 1 ] if service[ 0 ] method 'C' else typename } permission permission permission msg msg **kwargs else return resolve object request Layer {'typename' typename} permission permission permission msg msg **kwargs",
-    "question": "Does the code check the optional permission ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def cookie date epoch seconds None rfcdate formatdate epoch seconds return '%s-%s-%s GMT' % rfcdate[ 7] rfcdate[ 8 11 ] rfcdate[ 12 25 ]",
-    "question": "When do compatibility with netscapes cookie standard ensure ?",
-    "answer": "the time"
-  },
-  {
-    "code": "def trim features value return trim var 'FEATURES' value",
-    "question": "What does the code remove from features variable in the make ?",
-    "answer": "a value"
-  },
-  {
-    "code": "def trim features value return trim var 'FEATURES' value",
-    "question": "Does the code remove a value from features variable in the make ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def installed features image None return get components ' Feature Name' ' Features' ' Enabled'",
-    "question": "Does image window offline ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def installed features image None return get components ' Feature Name' ' Features' ' Enabled'",
-    "question": "Where does image window ?",
-    "answer": "offline"
-  },
-  {
-    "code": "def installed features image None return get components ' Feature Name' ' Features' ' Enabled'",
-    "question": "What windows offline ?",
-    "answer": "image"
-  },
-  {
-    "code": "@waffle flag 'testing-autovouch-views' @allow unvouched@never cachedef unvouch request username profile get object or 404 User Profile user username username profile vouches received all delete messages success request ' Successfullyunvoucheduser ' return redirect 'phonebook profile view' profile user username",
-    "question": "How do all vouches remove from username ?",
-    "answer": "automatically"
-  },
-  {
-    "code": "def spherical kn n z derivative False if derivative return spherical kn d n z else return spherical kn n z",
-    "question": "How did the code modify the code ?",
-    "answer": "spherical bessel function"
-  },
-  {
-    "code": "def set Up Module global hasshass get test home assistant assert bootstrap setup component hass http DOMAIN {http DOMAIN {http CONF API PASSWORD API PASSWORD http CONF SERVER PORT SERVER PORT}} assert bootstrap setup component hass 'frontend' hass start",
-    "question": "What does the code initialize ?",
-    "answer": "a home assistant server"
-  },
-  {
-    "code": "def set Up Module global hasshass get test home assistant assert bootstrap setup component hass http DOMAIN {http DOMAIN {http CONF API PASSWORD API PASSWORD http CONF SERVER PORT SERVER PORT}} assert bootstrap setup component hass 'frontend' hass start",
-    "question": "Does the code initialize a home assistant server ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def negate all f return lambda *args **kwargs [ - y for y in f *args **kwargs ]",
-    "question": "Does f return a list of numbers when ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def negate all f return lambda *args **kwargs [ - y for y in f *args **kwargs ]",
-    "question": "What does f return when ?",
-    "answer": "a list of numbers"
-  },
-  {
-    "code": "def negate all f return lambda *args **kwargs [ - y for y in f *args **kwargs ]",
-    "question": "What returns a list of numbers when ?",
-    "answer": "f"
-  },
-  {
-    "code": "def get parser class parser name parser name parser name lower if parser aliases has key parser name parser name parser aliases[parser name]module import parser name globals locals return module Parser",
-    "question": "Does the code return the parser class ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def get parser class parser name parser name parser name lower if parser aliases has key parser name parser name parser aliases[parser name]module import parser name globals locals return module Parser",
-    "question": "What does the code return ?",
-    "answer": "the parser class"
-  },
-  {
-    "code": "def get volume group info vg out err execute 'vgs' '--noheadings' '--nosuffix' '--separator' ' ' '--units' 'b' '-o' 'vg size vg free' vg run as root True info out split ' ' if len info 2 raise Runtime Error 'vg%smustbe LV Mvolumegroup' % vg return {'total' int info[ 0 ] 'free' int info[ 1 ] 'used' int info[ 0 ] - int info[ 1 ] }",
-    "question": "Do for a volume group return in bytes ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def get volume group info vg out err execute 'vgs' '--noheadings' '--nosuffix' '--separator' ' ' '--units' 'b' '-o' 'vg size vg free' vg run as root True info out split ' ' if len info 2 raise Runtime Error 'vg%smustbe LV Mvolumegroup' % vg return {'total' int info[ 0 ] 'free' int info[ 1 ] 'used' int info[ 0 ] - int info[ 1 ] }",
-    "question": "What returns in bytes ?",
-    "answer": "for a volume group"
-  },
-  {
-    "code": "def get volume group info vg out err execute 'vgs' '--noheadings' '--nosuffix' '--separator' ' ' '--units' 'b' '-o' 'vg size vg free' vg run as root True info out split ' ' if len info 2 raise Runtime Error 'vg%smustbe LV Mvolumegroup' % vg return {'total' int info[ 0 ] 'free' int info[ 1 ] 'used' int info[ 0 ] - int info[ 1 ] }",
-    "question": "Where do for a volume group return ?",
-    "answer": "in bytes"
-  },
-  {
-    "code": "def ensure relative path drive path os path splitdrive path if path[ 0 1] os sep path drive + path[ 1 ] return path",
-    "question": "Does the code take the full path path ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def ensure relative path drive path os path splitdrive path if path[ 0 1] os sep path drive + path[ 1 ] return path",
-    "question": "What does the code take ?",
-    "answer": "the full path path"
-  },
-  {
-    "code": "def has capability check version 4 1 'zmq has' if isinstance capability unicode capability capability encode 'utf 8 ' return bool C zmq has capability",
-    "question": "How do for zmq capability check ?",
-    "answer": "by name"
-  },
-  {
-    "code": "@require contextdef volume types get by name or id context volume type list req volume types []for vol t in volume type list if not uuidutils is uuid like vol t vol type volume type get by name context vol t else vol type volume type get context vol t req volume types append vol type return req volume types",
-    "question": "What do a dict describe ?",
-    "answer": "specific volume_type"
-  },
-  {
-    "code": "@require contextdef volume types get by name or id context volume type list req volume types []for vol t in volume type list if not uuidutils is uuid like vol t vol type volume type get by name context vol t else vol type volume type get context vol t req volume types append vol type return req volume types",
-    "question": "Do a dict describe specific volume_type ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "@require contextdef volume types get by name or id context volume type list req volume types []for vol t in volume type list if not uuidutils is uuid like vol t vol type volume type get by name context vol t else vol type volume type get context vol t req volume types append vol type return req volume types",
-    "question": "What is describing specific volume_type ?",
-    "answer": "a dict"
-  },
-  {
-    "code": "def tenant exists keystone tenant return tenant in [x name for x in keystone tenants list ]",
-    "question": "When do tenant exist ?",
-    "answer": "already"
-  },
-  {
-    "code": "def stripid text return re stripid sub '\\\\ 1 ' text",
-    "question": "D the code remove the hexadecimal i d from a python object representation ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def stripid text return re stripid sub '\\\\ 1 ' text",
-    "question": "What d the code remove from a python object representation ?",
-    "answer": "the hexadecimal i d"
-  },
-  {
-    "code": "def b64 encode value *args **kwargs return base 64 b64 encode encode value *args **kwargs",
-    "question": "Does the code serialize a value to json ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def b64 encode value *args **kwargs return base 64 b64 encode encode value *args **kwargs",
-    "question": "Does the code use base64 ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def b64 encode value *args **kwargs return base 64 b64 encode encode value *args **kwargs",
-    "question": "What does the code use ?",
-    "answer": "base64"
-  },
-  {
-    "code": "def b64 encode value *args **kwargs return base 64 b64 encode encode value *args **kwargs",
-    "question": "What does the code serialize to json ?",
-    "answer": "a value"
-  },
-  {
-    "code": "def unparse Endpoint args kwargs description ' ' join [quote String Argument str arg for arg in args] + sorted [ '%s %s' % quote String Argument str key quote String Argument str value for key value in iteritems kwargs ] return description",
-    "question": "When did args parse ?",
-    "answer": "already"
-  },
-  {
-    "code": "def run setup script name script args None stop after 'run' if stop after not in 'init' 'config' 'commandline' 'run' raise Value Error \"invalidvaluefor'stop after' %r\" % stop after global setup stop after setup distribution setup stop after stop aftersave argv sys argvg {' file ' script name}l {}try try sys argv[ 0 ] script nameif script args is not None sys argv[ 1 ] script argsf open script name try exec f read in g lfinally f close finally sys argv save argv setup stop after Noneexcept System Exit passexcept raiseif setup distribution is None raise Runtime Error \"'distutils core setup 'wasnevercalled--perhaps'%s'isnota Distutilssetupscript?\" % script name return setup distribution",
-    "question": "Does the code run a setup script in a somewhat controlled environment ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def run setup script name script args None stop after 'run' if stop after not in 'init' 'config' 'commandline' 'run' raise Value Error \"invalidvaluefor'stop after' %r\" % stop after global setup stop after setup distribution setup stop after stop aftersave argv sys argvg {' file ' script name}l {}try try sys argv[ 0 ] script nameif script args is not None sys argv[ 1 ] script argsf open script name try exec f read in g lfinally f close finally sys argv save argv setup stop after Noneexcept System Exit passexcept raiseif setup distribution is None raise Runtime Error \"'distutils core setup 'wasnevercalled--perhaps'%s'isnota Distutilssetupscript?\" % script name return setup distribution",
-    "question": "What does the code run in a somewhat controlled environment ?",
-    "answer": "a setup script"
-  },
-  {
-    "code": "def run setup script name script args None stop after 'run' if stop after not in 'init' 'config' 'commandline' 'run' raise Value Error \"invalidvaluefor'stop after' %r\" % stop after global setup stop after setup distribution setup stop after stop aftersave argv sys argvg {' file ' script name}l {}try try sys argv[ 0 ] script nameif script args is not None sys argv[ 1 ] script argsf open script name try exec f read in g lfinally f close finally sys argv save argv setup stop after Noneexcept System Exit passexcept raiseif setup distribution is None raise Runtime Error \"'distutils core setup 'wasnevercalled--perhaps'%s'isnota Distutilssetupscript?\" % script name return setup distribution",
-    "question": "By how much did environment control ?",
-    "answer": "somewhat"
-  },
-  {
-    "code": "def run setup script name script args None stop after 'run' if stop after not in 'init' 'config' 'commandline' 'run' raise Value Error \"invalidvaluefor'stop after' %r\" % stop after global setup stop after setup distribution setup stop after stop aftersave argv sys argvg {' file ' script name}l {}try try sys argv[ 0 ] script nameif script args is not None sys argv[ 1 ] script argsf open script name try exec f read in g lfinally f close finally sys argv save argv setup stop after Noneexcept System Exit passexcept raiseif setup distribution is None raise Runtime Error \"'distutils core setup 'wasnevercalled--perhaps'%s'isnota Distutilssetupscript?\" % script name return setup distribution",
-    "question": "Where does the code run a setup script ?",
-    "answer": "in a somewhat controlled environment"
-  },
-  {
-    "code": "def monomial div A B C monomial ldiv A B if all c > 0 for c in C return tuple C else return None",
-    "question": "Do tuples represent monomials ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def monomial div A B C monomial ldiv A B if all c > 0 for c in C return tuple C else return None",
-    "question": "What do tuples represent ?",
-    "answer": "monomials"
-  },
-  {
-    "code": "def monomial div A B C monomial ldiv A B if all c > 0 for c in C return tuple C else return None",
-    "question": "What is representing monomials ?",
-    "answer": "tuples"
-  },
-  {
-    "code": "def get csr extensions csr ret Ordered Dict csrtempfile tempfile Named Temporary File csrtempfile write csr as pem csrtempfile flush csryaml parse openssl req csrtempfile name csrtempfile close if csryaml and ' Requested Extensions' in csryaml[' Certificate Request'][' Data'] csrexts csryaml[' Certificate Request'][' Data'][' Requested Extensions']if not csrexts return retfor short name long name in six iteritems EXT NAME MAPPINGS if csrexts and long name in csrexts ret[short name] csrexts[long name]return ret",
-    "question": "What do dicts contain ?",
-    "answer": "the name"
-  },
-  {
-    "code": "def get csr extensions csr ret Ordered Dict csrtempfile tempfile Named Temporary File csrtempfile write csr as pem csrtempfile flush csryaml parse openssl req csrtempfile name csrtempfile close if csryaml and ' Requested Extensions' in csryaml[' Certificate Request'][' Data'] csrexts csryaml[' Certificate Request'][' Data'][' Requested Extensions']if not csrexts return retfor short name long name in six iteritems EXT NAME MAPPINGS if csrexts and long name in csrexts ret[short name] csrexts[long name]return ret",
-    "question": "What is containing the name ?",
-    "answer": "dicts"
-  },
-  {
-    "code": "def get csr extensions csr ret Ordered Dict csrtempfile tempfile Named Temporary File csrtempfile write csr as pem csrtempfile flush csryaml parse openssl req csrtempfile name csrtempfile close if csryaml and ' Requested Extensions' in csryaml[' Certificate Request'][' Data'] csrexts csryaml[' Certificate Request'][' Data'][' Requested Extensions']if not csrexts return retfor short name long name in six iteritems EXT NAME MAPPINGS if csrexts and long name in csrexts ret[short name] csrexts[long name]return ret",
-    "question": "Do dicts contain the name ?",
-    "answer": "Yes"
-  },
-  {
-    "code": "def validate feature module mode 'show' feature module params['feature']feature to be mapped {'show' {'nvoverlay' 'nve' 'vn-segment-vlan-based' 'vnseg vlan' 'hsrp' 'hsrp engine' 'fabricmulticast' 'fabric mcast' 'scp-server' 'scp Server' 'sftp-server' 'sftp Server' 'slaresponder' 'sla responder' 'slasender' 'sla sender' 'ssh' 'ssh Server' 'tacacs+' 'tacacs' 'telnet' 'telnet Server' 'ethernet-link-oam' 'elo' 'port-security' 'eth port sec'} 'config' {'nve' 'nvoverlay' 'vnseg vlan' 'vn-segment-vlan-based' 'hsrp engine' 'hsrp' 'fabric mcast' 'fabricmulticast' 'scp Server' 'scp-server' 'sftp Server' 'sftp-server' 'sla sender' 'slasender' 'sla responder' 'slaresponder' 'ssh Server' 'ssh' 'tacacs' 'tacacs+' 'telnet Server' 'telnet' 'elo' 'ethernet-link-oam' 'eth port sec' 'port-security'}}if feature in feature to be mapped[mode] feature feature to be mapped[mode][feature]return feature",
-    "question": "How are they configured ?",
-    "answer": "how"
-  },
-  {
-    "code": "def validate feature module mode 'show' feature module params['feature']feature to be mapped {'show' {'nvoverlay' 'nve' 'vn-segment-vlan-based' 'vnseg vlan' 'hsrp' 'hsrp engine' 'fabricmulticast' 'fabric mcast' 'scp-server' 'scp Server' 'sftp-server' 'sftp Server' 'slaresponder' 'sla responder' 'slasender' 'sla sender' 'ssh' 'ssh Server' 'tacacs+' 'tacacs' 'telnet' 'telnet Server' 'ethernet-link-oam' 'elo' 'port-security' 'eth port sec'} 'config' {'nve' 'nvoverlay' 'vnseg vlan' 'vn-segment-vlan-based' 'hsrp engine' 'hsrp' 'fabric mcast' 'fabricmulticast' 'scp Server' 'scp-server' 'sftp Server' 'sftp-server' 'sla sender' 'slasender' 'sla responder' 'slaresponder' 'ssh Server' 'ssh' 'tacacs' 'tacacs+' 'telnet Server' 'telnet' 'elo' 'ethernet-link-oam' 'eth port sec' 'port-security'}}if feature in feature to be mapped[mode] feature feature to be mapped[mode][feature]return feature",
-    "question": "How do they appear from \" show feature \" output ?",
-    "answer": "how"
-  },
-  {
-    "code": "def validate feature module mode 'show' feature module params['feature']feature to be mapped {'show' {'nvoverlay' 'nve' 'vn-segment-vlan-based' 'vnseg vlan' 'hsrp' 'hsrp engine' 'fabricmulticast' 'fabric mcast' 'scp-server' 'scp Server' 'sftp-server' 'sftp Server' 'slaresponder' 'sla responder' 'slasender' 'sla sender' 'ssh' 'ssh Server' 'tacacs+' 'tacacs' 'telnet' 'telnet Server' 'ethernet-link-oam' 'elo' 'port-security' 'eth port sec'} 'config' {'nve' 'nvoverlay' 'vnseg vlan' 'vn-segment-vlan-based' 'hsrp engine' 'hsrp' 'fabric mcast' 'fabricmulticast' 'scp Server' 'scp-server' 'sftp Server' 'sftp-server' 'sla sender' 'slasender' 'sla responder' 'slaresponder' 'ssh Server' 'ssh' 'tacacs' 'tacacs+' 'telnet Server' 'telnet' 'elo' 'ethernet-link-oam' 'eth port sec' 'port-security'}}if feature in feature to be mapped[mode] feature feature to be mapped[mode][feature]return feature",
-    "question": "Why be some features mapped ?",
-    "answer": "due to inconsistency between how they appear from \" show feature \" output and how they are configured"
-  }
+    {
+        "code": "def Make Suite From Dict d label None suite Suite label label suite Set Dict d suite Normalize return suite",
+        "question": "What does the code make ?",
+        "answer": "a suite"
+    },
+    {
+        "code": "def Make Suite From Dict d label None suite Suite label label suite Set Dict d suite Normalize return suite",
+        "question": "Does the code make a suite ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def receive message topic name subscription name pubsub client pubsub Client topic pubsub client topic topic name subscription topic subscription subscription name results subscription pull return immediately True print ' Received{}messages ' format len results for ack id message in results print '*{} {} {}' format message message id message data message attributes if results subscription acknowledge [ack id for ack id message in results]",
+        "question": "Does the code receive a message from a pull subscription ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def receive message topic name subscription name pubsub client pubsub Client topic pubsub client topic topic name subscription topic subscription subscription name results subscription pull return immediately True print ' Received{}messages ' format len results for ack id message in results print '*{} {} {}' format message message id message data message attributes if results subscription acknowledge [ack id for ack id message in results]",
+        "question": "What does the code receive from a pull subscription ?",
+        "answer": "a message"
+    },
+    {
+        "code": "def Create Shared Budget client budget service client Get Service ' Budget Service' version 'v 201609 ' budget {'name' ' Shared Interplanetary Budget#%s' % uuid uuid 4 'amount' {'micro Amount' '2000000 '} 'delivery Method' 'STANDARD' 'is Explicitly Shared' 'true'}operation {'operator' 'ADD' 'operand' budget}response budget service mutate [operation] return response['value'][ 0 ]",
+        "question": "What be an explicit budget used only ?",
+        "answer": "to create the campaign"
+    },
+    {
+        "code": "def Create Shared Budget client budget service client Get Service ' Budget Service' version 'v 201609 ' budget {'name' ' Shared Interplanetary Budget#%s' % uuid uuid 4 'amount' {'micro Amount' '2000000 '} 'delivery Method' 'STANDARD' 'is Explicitly Shared' 'true'}operation {'operator' 'ADD' 'operand' budget}response budget service mutate [operation] return response['value'][ 0 ]",
+        "question": "Be an explicit budget used to create the campaign only ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def Create Shared Budget client budget service client Get Service ' Budget Service' version 'v 201609 ' budget {'name' ' Shared Interplanetary Budget#%s' % uuid uuid 4 'amount' {'micro Amount' '2000000 '} 'delivery Method' 'STANDARD' 'is Explicitly Shared' 'true'}operation {'operator' 'ADD' 'operand' budget}response budget service mutate [operation] return response['value'][ 0 ]",
+        "question": "What be used to create the campaign only ?",
+        "answer": "an explicit budget"
+    },
+    {
+        "code": "def get Plugins Directory Path return archive get Absolute Frozen Folder Path file 'xml plugins'",
+        "question": "What does the code get ?",
+        "answer": "the plugins directory path"
+    },
+    {
+        "code": "def get Plugins Directory Path return archive get Absolute Frozen Folder Path file 'xml plugins'",
+        "question": "Does the code get the plugins directory path ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def ffmpeg write image filename image logfile False if image dtype 'uint 8 ' image image astype 'uint 8 ' cmd [get setting 'FFMPEG BINARY' '-y' '-s' '%dx%d' % image shape[ 2][ -1 ] '-f' 'rawvideo' '-pix fmt' 'rgba' if image shape[ 2 ] 4 else 'rgb 24 ' '-i' '-' filename]if logfile log file open filename + ' log' 'w+' else log file sp PIP Epopen params {'stdout' DEVNULL 'stderr' log file 'stdin' sp PIPE}if os name 'nt' popen params['creationflags'] 134217728 proc sp Popen cmd **popen params out err proc communicate image tostring if proc returncode err '\\n' join [ '[ Movie Py] Running %s\\n' % cmd 'WARNING thiscommandreturnedanerror ' err decode 'utf 8 ' ] raise IO Error err del proc",
+        "question": "What does the code write to a file ?",
+        "answer": "an image"
+    },
+    {
+        "code": "def ffmpeg write image filename image logfile False if image dtype 'uint 8 ' image image astype 'uint 8 ' cmd [get setting 'FFMPEG BINARY' '-y' '-s' '%dx%d' % image shape[ 2][ -1 ] '-f' 'rawvideo' '-pix fmt' 'rgba' if image shape[ 2 ] 4 else 'rgb 24 ' '-i' '-' filename]if logfile log file open filename + ' log' 'w+' else log file sp PIP Epopen params {'stdout' DEVNULL 'stderr' log file 'stdin' sp PIPE}if os name 'nt' popen params['creationflags'] 134217728 proc sp Popen cmd **popen params out err proc communicate image tostring if proc returncode err '\\n' join [ '[ Movie Py] Running %s\\n' % cmd 'WARNING thiscommandreturnedanerror ' err decode 'utf 8 ' ] raise IO Error err del proc",
+        "question": "Does the code write an image to a file ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def url add parameters url params if params fragments list urlparse url value parse qs fragments[ 4 ] value update params fragments[ 4 ] urlencode value url urlunparse fragments return url",
+        "question": "What does the code add ?",
+        "answer": "parameters to url"
+    },
+    {
+        "code": "def url add parameters url params if params fragments list urlparse url value parse qs fragments[ 4 ] value update params fragments[ 4 ] urlencode value url urlunparse fragments return url",
+        "question": "Does the code add parameters to url ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def read sheets archive xml source archive read ARC WORKBOOK tree fromstring xml source for element in safe iterator tree '{%s}sheet' % SHEET MAIN NS attrib element attribattrib['id'] attrib[ '{%s}id' % REL NS ]del attrib[ '{%s}id' % REL NS ]if attrib['id'] yield attrib",
+        "question": "For what purpose do worksheet titles and ids read ?",
+        "answer": "for a workbook"
+    },
+    {
+        "code": "def get token profile token os environ get 'VAULT TOKEN' profile get 'vault token' if token is None raise Command Execution Error ' Atokenwasnotconfigured' return token",
+        "question": "Does the code raise an error if it ca nt be found ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def get token profile token os environ get 'VAULT TOKEN' profile get 'vault token' if token is None raise Command Execution Error ' Atokenwasnotconfigured' return token",
+        "question": "What does the code raise if it ca nt be found ?",
+        "answer": "an error"
+    },
+    {
+        "code": "def get token profile token os environ get 'VAULT TOKEN' profile get 'vault token' if token is None raise Command Execution Error ' Atokenwasnotconfigured' return token",
+        "question": "Does the code get a token if it ca nt be found ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def get token profile token os environ get 'VAULT TOKEN' profile get 'vault token' if token is None raise Command Execution Error ' Atokenwasnotconfigured' return token",
+        "question": "What does the code get if it ca nt be found ?",
+        "answer": "a token"
+    },
+    {
+        "code": "def is windows return sys platform startswith u'win'",
+        "question": "Are we using windows when ?",
+        "answer": "Yes"
+    },
+    {
+        "code": "def is windows return sys platform startswith u'win'",
+        "question": "What are we using when ?",
+        "answer": "windows"
+    },
+    {
+        "code": "def empty urlconf request t Template EMPTY URLCONF TEMPLATE name ' Empty URL Conftemplate' c Context {'project name' settings SETTINGS MODULE split ' ' [0 ]} return Http Response Not Found t render c mimetype 'text/html'",
+        "question": "What does the code create ?",
+        "answer": "an empty urlconf 404 error response"
+    }
 ]

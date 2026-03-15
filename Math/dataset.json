@@ -1,0 +1,164 @@
+[
+    {
+        "Problem": "the banker ' s gain of a certain sum due 3 years hence at 10 % per annum is rs . 36 . what is the present worth ?",
+        "Rationale": "\"explanation : t = 3 years r = 10 % td = ( bg \u00d7 100 ) / tr = ( 36 \u00d7 100 ) / ( 3 \u00d7 10 ) = 12 \u00d7 10 = rs . 120 td = ( pw \u00d7 tr ) / 100 \u21d2 120 = ( pw \u00d7 3 \u00d7 10 ) / 100 \u21d2 1200 = pw \u00d7 3 pw = 1200 / 3 = rs . 400 answer : option a\"",
+        "options": "a ) rs . 400 , b ) rs . 300 , c ) rs . 500 , d ) rs . 350 , e ) none of these",
+        "correct": "a",
+        "annotated_formula": "divide(multiply(const_100, divide(multiply(36, const_100), multiply(3, 10))), multiply(3, 10))",
+        "linear_formula": "multiply(n2,const_100)|multiply(n0,n1)|divide(#0,#1)|multiply(#2,const_100)|divide(#3,#1)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "average age of students of an adult school is 40 years . 120 new students whose average age is 32 years joined the school . as a result the average age is decreased by 4 years . find the number of students of the school after joining of the new students .",
+        "Rationale": "\"explanation : let the original no . of students be x . according to situation , 40 x + 120 * 32 = ( x + 120 ) 36 \u21d2 x = 120 so , required no . of students after joining the new students = x + 120 = 240 . answer : d\"",
+        "options": "a ) 1200 , b ) 120 , c ) 360 , d ) 240 , e ) none of these",
+        "correct": "d",
+        "annotated_formula": "multiply(divide(subtract(multiply(add(32, 4), 120), multiply(120, 32)), subtract(40, add(32, 4))), 4)",
+        "linear_formula": "add(n2,n3)|multiply(n1,n2)|multiply(n1,#0)|subtract(n0,#0)|subtract(#2,#1)|divide(#4,#3)|multiply(n3,#5)|",
+        "category": "general"
+    },
+    {
+        "Problem": "sophia finished 2 / 3 of a book . she calculated that she finished 90 more pages than she has yet to read . how long is her book ?",
+        "Rationale": "let xx be the total number of pages in the book , then she finished 23 \u22c5 x 23 \u22c5 x pages . then she has x \u2212 23 \u22c5 x = 13 \u22c5 xx \u2212 23 \u22c5 x = 13 \u22c5 x pages left . 23 \u22c5 x \u2212 13 \u22c5 x = 9023 \u22c5 x \u2212 13 \u22c5 x = 90 13 \u22c5 x = 9013 \u22c5 x = 90 x = 270 x = 270 so the book is 270 pages long . answer : b",
+        "options": "a ) 229 , b ) 270 , c ) 877 , d ) 266 , e ) 281",
+        "correct": "b",
+        "annotated_formula": "divide(90, subtract(const_1, divide(2, 3)))",
+        "linear_formula": "divide(n0,n1)|subtract(const_1,#0)|divide(n2,#1)",
+        "category": "general"
+    },
+    {
+        "Problem": "120 is what percent of 50 ?",
+        "Rationale": "\"50 * x = 120 - - > x = 2.4 - - > 2.4 expressed as percent is 240 % . answer : b .\"",
+        "options": "a ) 5 % , b ) 240 % , c ) 50 % , d ) 2 % , e ) 500 %",
+        "correct": "b",
+        "annotated_formula": "multiply(divide(120, 50), const_100)",
+        "linear_formula": "divide(n0,n1)|multiply(#0,const_100)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "there are 10 girls and 20 boys in a classroom . what is the ratio of girls to boys ?",
+        "Rationale": "if girls is 10 and boys is 20 , then 10 / 20 . so ratio of girls to boys is = 10 / 20 = 1 / 2 answer : a",
+        "options": "a ) 1 / 2 , b ) 1 / 3 , c ) 1 / 5 , d ) 10 / 30 , e ) 2 / 5",
+        "correct": "a",
+        "annotated_formula": "divide(10, 20)",
+        "linear_formula": "divide(n0,n1)",
+        "category": "other"
+    },
+    {
+        "Problem": "an empty fuel tank with a capacity of 218 gallons was filled partially with fuel a and then to capacity with fuel b . fuel a contains 12 % ethanol by volume and fuel b contains 16 % ethanol by volume . if the full fuel tank contains 30 gallons of ethanol , how many gallons of fuel a were added ?",
+        "Rationale": "\"say there are a gallons of fuel a in the tank , then there would be 218 - a gallons of fuel b . the amount of ethanol in a gallons of fuel a is 0.12 a ; the amount of ethanol in 218 - a gallons of fuel b is 0.16 ( 218 - a ) ; since the total amount of ethanol is 30 gallons then 0.12 a + 0.16 ( 218 - a ) = 30 - - > a = 122 . answer : a .\"",
+        "options": "a ) 122 , b ) 150 , c ) 100 , d ) 80 , e ) 50",
+        "correct": "a",
+        "annotated_formula": "divide(subtract(multiply(218, divide(16, const_100)), 30), subtract(divide(16, const_100), divide(12, const_100)))",
+        "linear_formula": "divide(n2,const_100)|divide(n1,const_100)|multiply(n0,#0)|subtract(#0,#1)|subtract(#2,n3)|divide(#4,#3)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "an article is bought for rs . 823 and sold for rs . 1000 , find the gain percent ?",
+        "Rationale": "\"823 - - - - 177 100 - - - - ? = > 21.5 % answer : b\"",
+        "options": "a ) 21.4 % , b ) 21.5 % , c ) 21.6 % , d ) 21.7 % , e ) 21.8 %",
+        "correct": "b",
+        "annotated_formula": "subtract(const_100, divide(multiply(1000, const_100), 823))",
+        "linear_formula": "multiply(n1,const_100)|divide(#0,n0)|subtract(const_100,#1)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "6 workers should finish a job in 8 days . after 3 days came 4 workers join them . how many days m do they need to finish the same job ?",
+        "Rationale": "\"let rate of one worker be r = > ( 6 * r ) * 8 = 1 ( rate * time = work ) = > r = 1 / 48 = > work remaining after 3 days 1 - ( 3 * 6 ) / 48 = 30 / 48 after 4 ppl joined in ( ( 6 + 4 ) * time ) / 48 = 30 / 48 time m = 3 days to finish the task imo a\"",
+        "options": "a ) 3 , b ) 4 , c ) 5 , d ) 6 , e ) 7",
+        "correct": "a",
+        "annotated_formula": "divide(subtract(multiply(6, 8), multiply(3, 6)), add(6, 4))",
+        "linear_formula": "add(n0,n3)|multiply(n0,n1)|multiply(n0,n2)|subtract(#1,#2)|divide(#3,#0)|",
+        "category": "physics"
+    },
+    {
+        "Problem": "j is 25 % less than p and 20 % less than t . t is q % less than p . what is the value of q ?",
+        "Rationale": "\"usually we can solve every question of this type by choosing appropriate value of the variable and deriving the value of other related variables . let , p = 400 then j = ( 75 / 100 ) * 400 = 300 also j = ( 80 / 100 ) * t i . e . t = 300 * 100 / 80 = 375 and t = [ 1 - ( q / 100 ) ] * p i . e . 100 - q = 100 * t / p = 100 * 375 / 400 = 93.75 i . e . q = 6.25 answer : option d\"",
+        "options": "a ) 93.5 , b ) 90 , c ) 6.75 , d ) 6.25 , e ) 2",
+        "correct": "d",
+        "annotated_formula": "divide(multiply(25, 25), const_100)",
+        "linear_formula": "multiply(n0,n0)|divide(#0,const_100)|",
+        "category": "gain"
+    },
+    {
+        "Problem": "a student was asked to find 4 / 5 of a number . but the student divided the number by 4 / 5 , thus the student got 36 more than the correct answer . find the number .",
+        "Rationale": "\"let the number be x . ( 5 / 4 ) * x = ( 4 / 5 ) * x + 36 25 x = 16 x + 720 9 x = 720 x = 80 the answer is c .\"",
+        "options": "a ) 60 , b ) 70 , c ) 80 , d ) 90 , e ) 100",
+        "correct": "c",
+        "annotated_formula": "divide(divide(multiply(multiply(36, divide(4, 5)), divide(4, 5)), subtract(const_1, multiply(divide(4, 5), divide(4, 5)))), divide(4, 5))",
+        "linear_formula": "divide(n0,n1)|multiply(n4,#0)|multiply(#0,#0)|multiply(#0,#1)|subtract(const_1,#2)|divide(#3,#4)|divide(#5,#0)|",
+        "category": "general"
+    },
+    {
+        "Problem": "the average weight of 8 person ' s increases by 1.5 kg when a new person comes in place of one of them weighing 75 kg . what might be the weight of the new person ?",
+        "Rationale": "\"total weight increased = ( 8 x 1.5 ) kg = 6 kg . weight of new person = ( 75 + 6 ) kg = 81 kg . answer : a\"",
+        "options": "a ) 81 kg , b ) 85 kg , c ) 90 kg , d ) 100 kg , e ) 110 kg",
+        "correct": "a",
+        "annotated_formula": "add(multiply(8, 1.5), 75)",
+        "linear_formula": "multiply(n0,n1)|add(n2,#0)|",
+        "category": "general"
+    },
+    {
+        "Problem": "a train 125 m long passes a man , running at 15 km / hr in the same direction in which the train is going , in 10 seconds . the speed of the train is ?",
+        "Rationale": "\"speed of the train relative to man = ( 125 / 10 ) m / sec = ( 25 / 2 ) m / sec . [ ( 25 / 2 ) * ( 18 / 5 ) ] km / hr = 45 km / hr . let the speed of the train be x km / hr . then , relative speed = ( x - 15 ) km / hr . x - 15 = 45 = = > x = 60 km / hr answer : a\"",
+        "options": "a ) 60 , b ) 50 , c ) 28 , d ) 26 , e ) 29",
+        "correct": "a",
+        "annotated_formula": "divide(divide(subtract(125, multiply(multiply(15, const_0_2778), 15)), 15), const_0_2778)",
+        "linear_formula": "multiply(n1,const_0_2778)|multiply(n1,#0)|subtract(n0,#1)|divide(#2,n1)|divide(#3,const_0_2778)|",
+        "category": "physics"
+    },
+    {
+        "Problem": "the average of 15 result is 60 . average of the first 10 of them is 10 and that of the last 10 is 80 . find the 8 th result ?",
+        "Rationale": "\"sum of all the 13 results = 15 * 60 = 900 sum of the first 7 of them = 10 * 10 = 100 sum of the last 7 of them = 10 * 80 = 800 so , the 8 th number = 900 + 100 - 800 = 200 . b\"",
+        "options": "a ) 35 , b ) 200 , c ) 150 , d ) 250 , e ) 300",
+        "correct": "b",
+        "annotated_formula": "subtract(add(multiply(10, 10), multiply(10, 80)), multiply(15, 60))",
+        "linear_formula": "multiply(n2,n3)|multiply(n2,n5)|multiply(n0,n1)|add(#0,#1)|subtract(#3,#2)|",
+        "category": "general"
+    },
+    {
+        "Problem": "a salesman \u00e2 \u20ac \u2122 s terms were changed from a flat commission of 5 % on all his sales to a fixed salary of rs . 1000 plus 2.5 % commission on all sales exceeding rs . 4,000 . if his remuneration as per new scheme was rs . 500 more than that by the previous schema , his sales were worth ?",
+        "Rationale": "\"[ 1000 + ( x - 4000 ) * ( 2.5 / 100 ) ] - x * ( 5 / 100 ) = 600 x = 16000 answer : c\"",
+        "options": "a ) s . 14,000 , b ) s . 12,000 , c ) s . 16,000 , d ) s . 40,000 , e ) s . 50,000",
+        "correct": "c",
+        "annotated_formula": "subtract(multiply(5, const_4), const_12)",
+        "linear_formula": "multiply(n0,const_4)|subtract(#0,const_12)|",
+        "category": "general"
+    },
+    {
+        "Problem": "a rectangular floor that measures 15 meters by 18 meters is to be covered with carpet squares that each measure 3 meters by 3 meters . if the carpet squares cost $ 12 apiece , what is the total cost for the number of carpet squares needed to cover the floor ?",
+        "Rationale": "\"the width of the rectangular floor ( 15 m ) is a multiple of one side of the square ( 3 m ) , and the length of the floor ( 18 m ) is also a multiple of the side of the square . so the number of carpets to cover the floor is ( 15 / 3 ) * ( 18 / 3 ) = 30 . the total cost is 30 * 12 = $ 360 . the answer is , therefore , c .\"",
+        "options": "a ) $ 200 , b ) $ 240 , c ) $ 360 , d ) $ 960 , e ) $ 1,920",
+        "correct": "c",
+        "annotated_formula": "multiply(15, 15)",
+        "linear_formula": "multiply(n0,n0)|",
+        "category": "geometry"
+    },
+    {
+        "Problem": "a vessel of capacity 2 litre has 30 % of alcohol and another vessel of capacity 6 litre had 40 % alcohol . the total liquid of 8 litre was poured out in a vessel of capacity 10 litre and thus the rest part of the vessel was filled with the water . what is the new concentration of mixture ?",
+        "Rationale": "\"30 % of 2 litres = 0.6 litres 40 % of 6 litres = 2.4 litres therefore , total quantity of alcohol is 3.0 litres . this mixture is in a 10 litre vessel . hence , the concentration of alcohol in this 10 litre vessel is 30 % answer : a\"",
+        "options": "a ) 30 % . , b ) 71 % . , c ) 49 % . , d ) 29 % . , e ) 51 % .",
+        "correct": "a",
+        "annotated_formula": "multiply(divide(add(multiply(divide(30, const_100), 2), multiply(divide(40, const_100), 6)), 10), const_100)",
+        "linear_formula": "divide(n1,const_100)|divide(n3,const_100)|multiply(n0,#0)|multiply(n2,#1)|add(#2,#3)|divide(#4,n5)|multiply(#5,const_100)|",
+        "category": "general"
+    },
+    {
+        "Problem": "the total of 324 of 20 paise and 25 paise make a sum of rs . 70 . the no of 20 paise coins is",
+        "Rationale": "\"explanation : let the number of 20 paise coins be x . then the no of 25 paise coins = ( 324 - x ) . 0.20 * ( x ) + 0.25 ( 324 - x ) = 70 = > x = 220 . . answer : c ) 220\"",
+        "options": "a ) 238 , b ) 277 , c ) 220 , d ) 200 , e ) 288",
+        "correct": "c",
+        "annotated_formula": "divide(subtract(multiply(324, 25), multiply(70, const_100)), subtract(25, 20))",
+        "linear_formula": "multiply(n0,n2)|multiply(n3,const_100)|subtract(n2,n1)|subtract(#0,#1)|divide(#3,#2)|",
+        "category": "general"
+    },
+    {
+        "Problem": "in 1970 there were 8,902 women stockbrokers in the united states . by 1978 the number had increased to 18,947 . approximately what was the percent increase ?",
+        "Rationale": "\"the percent increase is ( 18947 - 8902 ) / 8902 = 10045 / 8902 = 1.13 so the approximate answer is b\"",
+        "options": "a ) 45 % , b ) 113 % , c ) 145 % , d ) 150 % , e ) 225 %",
+        "correct": "b",
+        "annotated_formula": "divide(subtract(18,947, 8,902), 8,902)",
+        "linear_formula": "subtract(n3,n1)|divide(#0,n1)|",
+        "category": "general"
+    }
+]

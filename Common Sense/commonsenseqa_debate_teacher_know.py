@@ -73,8 +73,8 @@ from transformers import (
 # ---------------------------------------------------------------------------
 DEFAULT_DATASET        = "dataset.jsonl"          # CommonsenseQA JSONL file
 DEFAULT_MAX_NEW_TOKENS = 384
-DEFAULT_RESULTS_JSON   = "csqa_debate_results.json"
-DEFAULT_RESULTS_CSV    = "csqa_debate_results.csv"
+DEFAULT_RESULTS_JSON   = "csqa_debate_results_slm.json"
+DEFAULT_RESULTS_CSV    = "csqa_debate_results_slm.csv"
 
 NUM_DEBATE_ROUNDS      = 5
 

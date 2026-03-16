@@ -54,7 +54,7 @@ from transformers import (
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
-DEFAULT_DATASET        = "dataset.json"          # CommonsenseQA JSONL file
+DEFAULT_DATASET        = "dataset.jsonl"          # CommonsenseQA JSONL file
 DEFAULT_MAX_NEW_TOKENS = 256
 DEFAULT_RESULTS_JSON   = "csqa_confidence_results.json"
 DEFAULT_RESULTS_CSV    = "csqa_confidence_results.csv"

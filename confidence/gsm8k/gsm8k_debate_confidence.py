@@ -45,7 +45,7 @@ from transformers import (
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
-DEFAULT_DATASET        = "dataset.json"           # GSM8K JSON / JSONL file
+DEFAULT_DATASET        = "dataset_gsm.json"           # GSM8K JSON / JSONL file
 DEFAULT_MAX_NEW_TOKENS = 256
 DEFAULT_RESULTS_JSON   = "gsm8k_confidence_results.json"
 DEFAULT_RESULTS_CSV    = "gsm8k_confidence_results.csv"
